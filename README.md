@@ -1,5 +1,3 @@
 # 南京大学AIA社团
 
-欢迎来看看！
-
-* [自学指南](./datawhale_judges.html)
+这是https://nju-aia.github.io的源码仓库，主页就是index.html
