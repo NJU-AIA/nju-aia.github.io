@@ -1,6 +1,7 @@
 @font-face {
     font-family: "puhui";
     src: url(res/AlibabaPuHuiTi-3-35-Thin.woff2);
+    font-display: swap;
 }
 body {
     margin: 0;
