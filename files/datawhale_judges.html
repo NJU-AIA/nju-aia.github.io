@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+  @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+
+/*# sourceURL=webpack://./node_modules/github-markdown-css/github-markdown.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9naXRodWItbWFya2Rvd24tY3NzL2dpdGh1Yi1tYXJrZG93bi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsMkRBQXF0RTtBQUN2dEU7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLDJCQUEyQjtBQUM3Qjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTs7Ozs7O0VBTUUsY0FBYztFQUNkLHNCQUFzQjtFQUN0QixrQkFBa0I7QUFDcEI7O0FBRUE7Ozs7OztFQU1FLHFCQUFxQjtBQUN2Qjs7QUFFQTs7Ozs7O0VBTUUsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLDhCQUE4QjtFQUM5QixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLGtJQUFrSTtFQUNsSSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7QUFFQTs7RUFFRSxjQUFjO0FBQ2hCOztBQUVBOztFQUVFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTs7Ozs7OztFQU9FLGNBQWM7QUFDaEI7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7OztFQUdFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFD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 */
+  </style>
+  <style>
+  /**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	/* This background color was intended by the author of this theme. */
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+/*# sourceURL=webpack://./node_modules/prismjs/themes/prism.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9wcmlzbWpzL3RoZW1lcy9wcmlzbS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7RUFJRTs7QUFFRjs7Q0FFQyxZQUFZO0NBQ1osZ0JBQWdCO0NBQ2hCLHdCQUF3QjtDQUN4QixzRUFBc0U7Q0FDdEUsY0FBYztDQUNkLGdCQUFnQjtDQUNoQixnQkFBZ0I7Q0FDaEIsb0JBQW9CO0NBQ3BCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsZ0JBQWdCOztDQUVoQixnQkFBZ0I7Q0FDaEIsY0FBYztDQUNkLFdBQVc7O0NBRVgscUJBQXFCO0NBQ3JCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsYUFBYTtBQUNkOztBQUVBOztDQUVDLGlCQUFpQjtDQUNqQixtQkFBbUI7QUFDcEI7O0FBRUE7O0NBRUMsaUJBQWlCO0NBQ2pCLG1CQUFtQjtBQUNwQjs7QUFFQTtDQUNDOztFQUVDLGlCQUFpQjtDQUNsQjtBQUNEOztBQUVBLGdCQUFnQjtBQUNoQjtDQUNDLFlBQVk7Q0FDWixjQUFjO0NBQ2QsY0FBYztBQUNmOztBQUVBOztDQUVDLG1CQUFtQjtBQUNwQjs7QUFFQSxnQkFBZ0I7QUFDaEI7Q0FDQyxhQUFhO0NBQ2IsbUJBQW1CO0NBQ25CLG1CQUFtQjtBQUNwQjs7QUFFQTs7OztDQUlDLGdCQUFnQjtBQUNqQjs7QUFFQTtDQUNDLFdBQVc7QUFDWjs7QUFFQTtDQUNDLFdBQVc7QUFDWjs7QUFFQTs7Ozs7OztDQU9DLFdBQVc7QUFDWjs7QUFFQTs7Ozs7O0NBTUMsV0FBVztBQUNaOztBQUVBOzs7OztDQUtDLGNBQWM7Q0FDZCxvRUFBb0U7Q0FDcEUsaUNBQWlDO0FBQ2xDOztBQUVBOzs7Q0FHQyxXQUFXO0FBQ1o7O0FBRUE7O0NBRUMsY0FBYztBQUNmOztBQUVBOzs7Q0FHQyxXQUFXO0FBQ1o7O0FBRUE7O0NBRUMsaUJBQWlCO0FBQ2xCO0FBQ0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxZQUFZO0FBQ2IiLCJzb3VyY2VSb290IjoiIn0= */
+  </style>
+  <style>
+  
+  </style>
+  <style>
+    .markdown-body {
+      font-family: -apple-system,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media not print {
+      .markdown-body {
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    }
+
+    .hf-container {
+      color: #24292e;
+      line-height: 1.3;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      white-space: pre-wrap;
+    }
+    .markdown-body table {
+      display: table;
+    }
+    .markdown-body img[data-align="center"] {
+      display: block;
+      margin: 0 auto;
+    }
+    .markdown-body img[data-align="right"] {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+    .markdown-body li.task-list-item {
+      list-style-type: none;
+    }
+    .markdown-body li > [type=checkbox] {
+      margin: 0 0 0 -1.3em;
+    }
+    .markdown-body input[type="checkbox"] ~ p {
+      margin-top: 0;
+      display: inline-block;
+    }
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: decimal;
+    }
+    .markdown-body ol ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ul ul ol {
+      list-style-type: decimal;
+    }
+  </style>
+  <style>.markdown-body a.footnote-ref {
+  text-decoration: none;
+}
+
+.footnotes {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.footnotes li[role="doc-endnote"] {
+  position: relative;
+}
+
+.footnotes .footnote-back {
+  position: absolute;
+  font-family: initial;
+  top: .2em;
+  right: 1em;
+  text-decoration: none;
+}
+
+.inline-math.invalid,
+.multiple-math.invalid {
+  color: rgb(255, 105, 105);
+}
+
+.toc-container {
+  width: 100%;
+}
+
+.toc-container .toc-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.toc-container li,
+.toc-container ul,
+.toc-container ul li {
+  list-style: none !important;
+}
+
+.toc-container > ul {
+  padding-left: 0;
+}
+
+.toc-container ul li span {
+  display : flex;
+}
+
+.toc-container ul li span a {
+  color: inherit;
+  text-decoration: none;
+}
+.toc-container ul li span a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-container ul li span span.dots {
+  flex: 1;
+  height: 0.65em;
+  margin: 0 10px;
+  border-bottom: 2px dotted black;
+}
+
+/*# sourceURL=webpack://./src/muya/lib/assets/styles/exportStyle.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9tdXlhL2xpYi9hc3NldHMvc3R5bGVzL2V4cG9ydFN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFNBQVM7RUFDVCxVQUFVO0VBQ1YscUJBQXFCO0FBQ3ZCOztBQUVBOztFQUVFLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCOztBQUVBOzs7RUFHRSwyQkFBMkI7QUFDN0I7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7QUFDQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxPQUFPO0VBQ1AsY0FBYztFQUNkLGNBQWM7RUFDZCwrQkFBK0I7QUFDakMiLCJzb3VyY2VSb290IjoiIn0= */</style>
+  <style>.markdown-body{}pre.front-matter{display:none!important;}</style>
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="nlp">NLP</h1>
+<p>检查：王崧睿</p>
+<table>
+<thead>
+<tr>
+<th>课程性质</th>
+<th>课程类型</th>
+<th>课程名</th>
+<th>课程评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础</td>
+<td>Python基础</td>
+<td>聪明办法学Python</td>
+<td><a href="#%E8%81%AA%E6%98%8E%E5%8A%9E%E6%B3%95%E5%AD%A6Python%E8%AF%84%E4%BB%B7">聪明办法学Python评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习理论</td>
+<td>吃瓜教程</td>
+<td>西瓜书有点过誉了</td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习实践</td>
+<td>西瓜书代码实战</td>
+<td><a href="#%E8%A5%BF%E7%93%9C%E4%B9%A6%E4%BB%A3%E7%A0%81%E5%AE%9E%E6%88%98%E8%AF%84%E4%BB%B7">西瓜书代码实战评价</a><br>西瓜书有点过誉了，代码实战可以考虑李航的书或者动手机器学习</td>
+</tr>
+<tr>
+<td></td>
+<td>深度学习理论</td>
+<td>水很深的深度学习</td>
+<td><a href="#%E6%B0%B4%E5%BE%88%E6%B7%B1%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7">水很深的深度学习评价</a><br>推荐李宏毅的网课</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>李宏毅机器学习笔记</td>
+<td><a href="#%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%AF%84%E4%BB%B7">李宏毅机器学习笔记评价</a><br>它上面的学习笔记不错</td>
+</tr>
+<tr>
+<td></td>
+<td>深度学习实践</td>
+<td>深入浅出PyTorch</td>
+<td><a href="#%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPyTorch%E8%AF%84%E4%BB%B7">深入浅出PyTorch评价</a><br>深入浅出pytorch比较赞</td>
+</tr>
+<tr>
+<td>必修</td>
+<td>自然语言处理基础</td>
+<td>基于transformers的自然语言处理入门</td>
+<td><a href="#%E5%9F%BA%E4%BA%8Etransformers%E7%9A%84%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%E8%AF%84%E4%BB%B7">基于transformers的自然语言处理入门评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>大语言模型（LLM）基础 AIGC基础</td>
+<td>大语言模型（LLM）原理与实践</td>
+<td><a href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%EF%BC%88LLM%EF%BC%89%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E8%AF%84%E4%BB%B7">大语言模型（LLM）原理与实践评价</a></td>
+</tr>
+<tr>
+<td>选修</td>
+<td>强化学习基础</td>
+<td>强化学习教程</td>
+<td><a href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B%E8%AF%84%E4%BB%B7">强化学习教程评价</a>。</td>
+</tr>
+<tr>
+<td></td>
+<td>Pandas基础</td>
+<td>Pandas数据处理与分析</td>
+<td><a href="#Pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E8%AF%84%E4%BB%B7">Pandas数据处理与分析评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>SQL基础</td>
+<td>奇妙的SQL</td>
+<td>[奇妙的SQL评价](# 奇妙的SQL评价)</td>
+</tr>
+<tr>
+<td></td>
+<td>大数据开发基础</td>
+<td>妙趣横生大数据</td>
+<td><a href="#%E5%A6%99%E8%B6%A3%E6%A8%AA%E7%94%9F%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%AF%84%E4%BB%B7">妙趣横生大数据评价</a></td>
+</tr>
+<tr>
+<td>实践</td>
+<td>"大语言模型（LLM）实践 AIGC实践"</td>
+<td>ChatGPT原理与实践</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>面向开发者的Prompt工程</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Prompt从入门到应用</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Prompt手册</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>文本分类</td>
+<td>零基础入门NLP - 新闻文本分类</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>其他</td>
+<td>数据竞赛Baseline&amp;Topline分享</td>
+<td><a href="#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9BBaseline&amp;Topline%E5%88%86%E4%BA%AB%E8%AF%84%E4%BB%B7">数据竞赛Baseline&amp;Topline分享评价</a></td>
+</tr>
+</tbody></table>
+<h1 class="atx" id="rs">RS</h1>
+<p>检查：张磊</p>
+<table>
+<thead>
+<tr>
+<th>课程性质</th>
+<th>课程类型</th>
+<th>课程名</th>
+<th>课程评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础</td>
+<td>Python基础</td>
+<td>聪明办法学Python</td>
+<td><a href="#%E8%81%AA%E6%98%8E%E5%8A%9E%E6%B3%95%E5%AD%A6Python%E8%AF%84%E4%BB%B7">聪明办法学Python评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Pandas基础</td>
+<td>Pandas数据处理与分析</td>
+<td><a href="#Pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E8%AF%84%E4%BB%B7">Pandas数据处理与分析评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>NumPy基础</td>
+<td>巨硬的NumPy</td>
+<td><a href="#%E5%B7%A8%E7%A1%AC%E7%9A%84NumPy%E8%AF%84%E4%BB%B7">巨硬的NumPy评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习理论</td>
+<td>吃瓜教程</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习实践</td>
+<td>西瓜书代码实战</td>
+<td><a href="#%E8%A5%BF%E7%93%9C%E4%B9%A6%E4%BB%A3%E7%A0%81%E5%AE%9E%E6%88%98%E8%AF%84%E4%BB%B7">西瓜书代码实战评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>深度学习理论</td>
+<td>水很深的深度学习</td>
+<td><a href="#%E6%B0%B4%E5%BE%88%E6%B7%B1%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7">水很深的深度学习评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>李宏毅机器学习笔记</td>
+<td><a href="#%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%AF%84%E4%BB%B7">李宏毅机器学习笔记评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>深度学习实践</td>
+<td>深入浅出PyTorch</td>
+<td><a href="#%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPyTorch%E8%AF%84%E4%BB%B7">深入浅出PyTorch评价</a></td>
+</tr>
+<tr>
+<td>必修</td>
+<td>推荐系统基础</td>
+<td>有趣的推荐算法</td>
+<td><a href="#%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E8%AF%84%E4%BB%B7">有趣的推荐算法评价</a></td>
+</tr>
+<tr>
+<td>选修</td>
+<td>集成学习基础</td>
+<td>集成学习</td>
+<td><a href="#%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7">集成学习评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>强化学习基础</td>
+<td>强化学习教程</td>
+<td><a href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B%E8%AF%84%E4%BB%B7">强化学习教程评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>SQL基础</td>
+<td>奇妙的SQL</td>
+<td><a href="#%E5%A5%87%E5%A6%99%E7%9A%84SQL%E8%AF%84%E4%BB%B7">奇妙的SQL评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Excel基础</td>
+<td>自由Excel</td>
+<td><a href="#%E8%87%AA%E7%94%B1Excel%E8%AF%84%E4%BB%B7">自由Excel评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>大数据开发基础</td>
+<td>妙趣横生大数据</td>
+<td><a href="#%E5%A6%99%E8%B6%A3%E6%A8%AA%E7%94%9F%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%AF%84%E4%BB%B7">妙趣横生大数据评价</a></td>
+</tr>
+<tr>
+<td>实践</td>
+<td>新闻推荐</td>
+<td>零基础入门推荐系统 - 新闻推荐</td>
+<td><a href="#%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BB%B7">零基础入门推荐系统评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>其他</td>
+<td>数据竞赛Baseline&amp;Topline分享</td>
+<td><a href="#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9BBaseline&amp;Topline%E5%88%86%E4%BA%AB%E8%AF%84%E4%BB%B7">数据竞赛Baseline&amp;Topline分享评价</a></td>
+</tr>
+</tbody></table>
+<h1 class="atx" id="cv">CV</h1>
+<p>检查：徐乾凯，张凌翔</p>
+<table>
+<thead>
+<tr>
+<th>课程性质</th>
+<th>课程类型</th>
+<th>课程名</th>
+<th>课程评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础</td>
+<td>Python基础</td>
+<td>聪明办法学Python</td>
+<td><a href="#%E8%81%AA%E6%98%8E%E5%8A%9E%E6%B3%95%E5%AD%A6Python%E8%AF%84%E4%BB%B7">聪明办法学Python评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>NumPy基础</td>
+<td>巨硬的NumPy</td>
+<td><a href="#%E5%B7%A8%E7%A1%AC%E7%9A%84NumPy%E8%AF%84%E4%BB%B7">巨硬的NumPy评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习理论</td>
+<td>吃瓜教程</td>
+<td>即南瓜书，久闻大名，肯定不错（</td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习实践</td>
+<td>西瓜书代码实战</td>
+<td><a href="#%E8%A5%BF%E7%93%9C%E4%B9%A6%E4%BB%A3%E7%A0%81%E5%AE%9E%E6%88%98%E8%AF%84%E4%BB%B7">西瓜书代码实战评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>深度学习理论</td>
+<td>水很深的深度学习</td>
+<td><a href="#%E6%B0%B4%E5%BE%88%E6%B7%B1%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7">水很深的深度学习评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>李宏毅机器学习笔记</td>
+<td><a href="#%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%AF%84%E4%BB%B7">李宏毅机器学习笔记评价</a><br>建议优先学习李宏毅机器学习笔记</td>
+</tr>
+<tr>
+<td></td>
+<td>深度学习实践</td>
+<td>深入浅出PyTorch</td>
+<td><a href="#%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPyTorch%E8%AF%84%E4%BB%B7">深入浅出PyTorch评价</a></td>
+</tr>
+<tr>
+<td>必修</td>
+<td>"图像处理基础 AIGC基础"</td>
+<td>OpenCV</td>
+<td><a href="#OpenCV%E8%AF%84%E4%BB%B7">OpenCV评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>动手学CV</td>
+<td><a href="#%E5%8A%A8%E6%89%8B%E5%AD%A6CV%E8%AF%84%E4%BB%B7">动手学CV评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>"图像生成基础 AIGC实践"</td>
+<td>StableDiffusion教程</td>
+<td><a href="#StableDiffusion%E6%95%99%E7%A8%8B%E8%AF%84%E4%BB%B7">StableDiffusion教程评价</a></td>
+</tr>
+<tr>
+<td>实践</td>
+<td>语义分割</td>
+<td>零基础入门语义分割-地表建筑物识别</td>
+<td><a href="#%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E5%9C%B0%E8%A1%A8%E5%BB%BA%E7%AD%91%E7%89%A9%E8%AF%86%E5%88%AB%E8%AF%84%E4%BB%B7">零基础入门语义分割-地表建筑物识别评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>OCR</td>
+<td>零基础入门CV-街景字符编码识别</td>
+<td><a href="#%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8CV-%E8%A1%97%E6%99%AF%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AF%86%E5%88%AB%E8%AF%84%E4%BB%B7">零基础入门CV-街景字符编码识别评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>综合</td>
+<td>数据竞赛Baseline&amp;Topline分享</td>
+<td><a href="#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9BBaseline&amp;Topline%E5%88%86%E4%BA%AB%E8%AF%84%E4%BB%B7">数据竞赛Baseline&amp;Topline分享评价</a></td>
+</tr>
+</tbody></table>
+<h1 class="atx" id="bigdata">BigData</h1>
+<p>检查：李尚敖</p>
+<table>
+<thead>
+<tr>
+<th>课程性质</th>
+<th>课程类型</th>
+<th>课程名</th>
+<th>课程资料</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础</td>
+<td>Python基础</td>
+<td>聪明办法学Python</td>
+<td><a href="#%E8%81%AA%E6%98%8E%E5%8A%9E%E6%B3%95%E5%AD%A6Python%E8%AF%84%E4%BB%B7">聪明办法学Python评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>SQL基础</td>
+<td>奇妙的SQL</td>
+<td><a href="#%E5%A5%87%E5%A6%99%E7%9A%84SQL%E8%AF%84%E4%BB%B7">奇妙的SQL评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Excel基础</td>
+<td>自由Excel</td>
+<td><a href="#%E8%87%AA%E7%94%B1Excel%E8%AF%84%E4%BB%B7">自由Excel评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Pandas基础</td>
+<td>Pandas数据处理与分析</td>
+<td><a href="#Pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E8%AF%84%E4%BB%B7">Pandas数据处理与分析评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>NumPy基础</td>
+<td>巨硬的NumPy</td>
+<td><a href="#%E5%B7%A8%E7%A1%AC%E7%9A%84NumPy%E8%AF%84%E4%BB%B7">巨硬的NumPy评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习理论</td>
+<td>吃瓜教程</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习实践</td>
+<td>西瓜书代码实战</td>
+<td><a href="#%E8%A5%BF%E7%93%9C%E4%B9%A6%E4%BB%A3%E7%A0%81%E5%AE%9E%E6%88%98%E8%AF%84%E4%BB%B7">西瓜书代码实战评价</a></td>
+</tr>
+<tr>
+<td>必修</td>
+<td>大数据开发基础</td>
+<td>妙趣横生大数据</td>
+<td><a href="#%E5%A6%99%E8%B6%A3%E6%A8%AA%E7%94%9F%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%AF%84%E4%BB%B7">妙趣横生大数据评价</a></td>
+</tr>
+</tbody></table>
+<h1 class="atx" id="ds">DS</h1>
+<p>检查：许煜恒</p>
+<table>
+<thead>
+<tr>
+<th>课程性质</th>
+<th>课程类型</th>
+<th>课程名</th>
+<th>课程评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础</td>
+<td>Python基础</td>
+<td>聪明办法学Python</td>
+<td><a href="#%E8%81%AA%E6%98%8E%E5%8A%9E%E6%B3%95%E5%AD%A6Python%E8%AF%84%E4%BB%B7">聪明办法学Python评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>SQL基础</td>
+<td>奇妙的SQL</td>
+<td><a href="#%E5%A5%87%E5%A6%99%E7%9A%84SQL%E8%AF%84%E4%BB%B7">奇妙的SQL评价</a><br>讲的还行，能学到东西，但是后面完全没用上</td>
+</tr>
+<tr>
+<td></td>
+<td>Excel基础</td>
+<td>自由Excel</td>
+<td><a href="#%E8%87%AA%E7%94%B1Excel%E8%AF%84%E4%BB%B7">自由Excel评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Pandas基础</td>
+<td>Pandas数据处理与分析</td>
+<td><a href="#Pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E8%AF%84%E4%BB%B7">Pandas数据处理与分析评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>NumPy基础</td>
+<td>巨硬的NumPy</td>
+<td><a href="#%E5%B7%A8%E7%A1%AC%E7%9A%84NumPy%E8%AF%84%E4%BB%B7">巨硬的NumPy评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习理论</td>
+<td>吃瓜教程</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>机器学习实践</td>
+<td>西瓜书代码实战</td>
+<td><a href="#%E8%A5%BF%E7%93%9C%E4%B9%A6%E4%BB%A3%E7%A0%81%E5%AE%9E%E6%88%98%E8%AF%84%E4%BB%B7">西瓜书代码实战评价</a></td>
+</tr>
+<tr>
+<td>必修</td>
+<td>数据分析基础</td>
+<td>动手学数据分析</td>
+<td><a href="#%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%84%E4%BB%B7">动手学数据分析评价</a></td>
+</tr>
+<tr>
+<td>选修</td>
+<td>集成学习基础</td>
+<td>集成学习</td>
+<td><a href="#%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7">集成学习评价</a></td>
+</tr>
+<tr>
+<td></td>
+<td>数据可视化</td>
+<td>matplotlib奇遇记</td>
+<td>只看了matplotlib的前两章，我觉得这里的画图也就是大概了解一下数据，又不是画出来放上论文给别人看的，没必要学太多……</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>极好的Plotly</td>
+<td></td>
+</tr>
+<tr>
+<td>实践</td>
+<td>分类</td>
+<td>零基础入门金融风控-贷款违约预测</td>
+<td>跟前面集成学习基础的案例分享挺像的，就是在复习前面的内容</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>零基础入门数据挖掘-心跳信号分类预测</td>
+<td>跟前面集成学习基础的案例分享挺像的，就是在复习前面的内容</td>
+</tr>
+<tr>
+<td></td>
+<td>回归</td>
+<td>零基础入门数据挖掘之二手车交易价格预测</td>
+<td>跟前面集成学习基础的案例分享挺像的，就是在复习前面的内容</td>
+</tr>
+<tr>
+<td></td>
+<td>综合</td>
+<td>零基础入门数据分析之学术前沿趋势分析</td>
+<td>跟前面集成学习基础的案例分享挺像的，就是在复习前面的内容</td>
+</tr>
+<tr>
+<td></td>
+<td>其他</td>
+<td>数据竞赛Baseline&amp;Topline分享</td>
+<td><a href="#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9BBaseline&amp;Topline%E5%88%86%E4%BA%AB%E8%AF%84%E4%BB%B7">数据竞赛Baseline&amp;Topline分享评价</a></td>
+</tr>
+</tbody></table>
+<h1 class="atx" id="opencv评价">OpenCV评价</h1>
+<p><a name="OpenCV评价"> </a></p>
+<blockquote>
+<p>徐乾凯</p>
+</blockquote>
+<ul>
+<li><p>整体评价：整体难度不高，挺清晰的，文字理论、图片、实例代码相结合，比较基础且内容量不太大，适合入门。对代码基础要求较低，在不追究几个公式的详细推导前提下对数学要求也不太高。</p>
+</li>
+<li><p>有的章节只提供C++代码，有的章节只提供python代码，有点迷但不妨碍学习（一般来说现在OpenCV在python中用的比较多吧）。</p>
+</li>
+<li><p>如果直接在github上查看网页端的markdown文件，里面可能有些latex公式无法正常显示，可以下载文件夹本地浏览，能正常显示。</p>
+</li>
+<li><p>没有opencv基础介绍，以及imread、imshow、waitkey、destroyAllWindows这些基本函数的使用方法。</p>
+</li>
+<li><p>01 图像插值算法主要处理图像放大缩小。错别字“像素”错写成“象素”。python和C++代码都有。</p>
+</li>
+<li><p>02 几何变换主要处理图像的平移和旋转。warpAffined函数原型里的参数貌似写错了，以下方参数解释为准。只有C++代码没有python代码。</p>
+</li>
+<li><p>03 彩色空间互转主要介绍图像在RGB和HSV空间互相转换，HSV格式的图像更利于理解和操作。只有C++代码没有python代码。</p>
+</li>
+<li><p>04 图像滤波主要用于图像模糊、去除噪点、图像平滑化等。几个函数的参数解释都是英文，看不懂建议百度一下。也是只有C++代码没有python代码。</p>
+</li>
+<li><p>05 阈值分割/二值化主要介绍了大津阈值法，一种用于将分离图片前景和背景分离开来，并生成前景黑白图片的算法。几个函数的参数解释也都是英文。也是只有C++代码没有python代码。</p>
+</li>
+<li><p>06 边缘检测主要介绍了使用Sobel算子将图像中物体边缘单独分离开来的Canny算法。这章倒是只有python代码没有C++代码。</p>
+</li>
+<li><p>07 Harris特征点检测算法用于寻找图像中物体的“角点”，是一种基础的特征点算法。只有python代码没有C++代码。</p>
+</li>
+<li><p>08、09、10三章介绍了三个描述图像某些特征的算子，以前主要用于传统的人脸检测、人脸识别、行人检测等等，现在很大程度上被深度学习和神经网络干掉了，且理论部分都有些难度，这几章可以视情况选学。都有python代码。08章用400行C++代码根据原理自己实现了LBP算子，可以研究研究（）</p>
+</li>
+</ul>
+<blockquote>
+<p>张淩翔</p>
+</blockquote>
+<p>该课程侧重于使用OpenCV框架了解和实现图像处理算法。</p>
+<p>内容上较为全面，包含图像插值，边缘检测等常见的图像处理算法。</p>
+<p>讲义具体内容可能有一些难度，对于代码水平有一定要求，讲义（没有视频）更像是博客的集合。</p>
+<p>期待做出更好地优化调整。</p>
+<h1 class="atx" id="pandas数据处理与分析评价">Pandas数据处理与分析评价</h1>
+<p><a name="Pandas数据处理与分析评价"> </a></p>
+<blockquote>
+<p>王崧睿</p>
+</blockquote>
+<p>语言课都大同小异，自己判断熟悉了就ok</p>
+<blockquote>
+<p>张磊</p>
+</blockquote>
+<p>全书内容较为全面，学习完成后对pandas具有较为全面的了解，大致需要24学时。推荐有python编程、线性代数、概率论与数理统计、机器学习基础的同学学习。时间紧张的同学可以优先学习1-4、6-7章，其他章节可根据需要选择性阅读。</p>
+<h1 class="atx" id="stablediffusion教程评价">StableDiffusion教程评价</h1>
+<p><a name="StableDiffusion教程评价"> </a></p>
+<blockquote>
+<p>徐乾凯</p>
+</blockquote>
+<p>项目还在持续更新，很多部分都没写完，写完的部分难度也比较大，对相关计算机、数学知识要求较高，最关键的文生图部分还没更新，建议视为选修。</p>
+<h1 class="atx" id="动手学cv评价">动手学CV评价</h1>
+<p><a name="动手学CV评价"> </a></p>
+<blockquote>
+<p>徐乾凯</p>
+</blockquote>
+<p>以Pytorch为框架，主要是深度学习、神经网络方面，和必修上一章OpenCV不太一样，建议都学。第四章图像分割入门还没更新，但已经三年没更新了，估计是没有后续了。没啥好多说的，写得很好，难度中等，内容量较大，推荐入门。（除了有时候Latex公式无法正常显示）</p>
+<blockquote>
+<p>张淩翔</p>
+</blockquote>
+<p>《动手学CV》是一个基于Pytorch框架的计算机视觉教程项目，包括简单的图像分类、目标检测、生成式对抗网络、以及Transformer在CV中的应用。算是一个“新手友好 注重实践”的课程。</p>
+<p>课程中提供了丰富的代码，对于<code>torchvision</code>的API的解释也比较深入浅出，复制到本地就可以直接运行。</p>
+<p>课程对于pytorch的要求不算很高，理论上学完python和numpy就可以直接学习（雾）</p>
+<p>课程虽然没有视频教程，但是穿插了不少CV相关的实践项目，如一个识别街景字符的天池计算机视觉入门赛和</p>
+<p>使用GAN生成手写数字。</p>
+<h1 class="atx" id="动手学数据分析评价">动手学数据分析评价</h1>
+<p><a name="动手学数据分析评价"> </a></p>
+<blockquote>
+<p>许煜恒</p>
+</blockquote>
+<p>第一章：这里的pandas基础难度有点大，不配合查资料基本看不下去，可能需要配合前面的pandas基础食用
+第二章：感觉就是pandas进阶，还行
+第三章：感觉就是sklearn教程，还行</p>
+<h1 class="atx" id="基于transformers的自然语言处理入门评价">基于transformers的自然语言处理入门评价</h1>
+<p><a name="基于transformers的自然语言处理入门评价"> </a></p>
+<blockquote>
+<p>王崧睿</p>
+</blockquote>
+<p>质量尚可，建议先看DL相关内容过渡</p>
+<h1 class="atx" id="大语言模型（llm）原理与实践评价">大语言模型（LLM）原理与实践评价</h1>
+<p><a name="大语言模型（LLM）原理与实践评价"> </a></p>
+<blockquote>
+<p>王崧睿</p>
+</blockquote>
+<p>质量尚可，部分内容对前置知识要求较高，会比较难</p>
+<h1 class="atx" id="奇妙的sql评价">奇妙的SQL评价</h1>
+<p><a name="奇妙的SQL评价"> </a></p>
+<blockquote>
+<p>张磊</p>
+</blockquote>
+<p>配合实践代码介绍了SQL的一些基础操作，大致需要6-8学时，适合有数据库原理基础或者有数据分析需求的同学学习</p>
+<blockquote>
+<p>李尚敖</p>
+</blockquote>
+<p>能看，但感觉并不是讲的最好的。讲的逻辑组织并不非常系统，但也算是有章可循。学了能会很多sql命令，但个人认为难以称为最棒的SQL教程。可以速通(约3d)，学完后可以说基本会用SQL了。</p>
+<p>描述中低于，高于通常指的是&lt;=和&gt;=。</p>
+<h5 class="atx" id="第0章环境搭建，提供三个os的教程（但没有ubuntu的）">第0章环境搭建，提供三个OS的教程（但没有ubuntu的）</h5>
+<p>centOS中讲的感觉显得复杂了，实际上Ubuntu安装只用去<a href="https://dev.mysql.com/downloads/repo/apt/">MySQL :: Download MySQL APT Repository</a>下载一个deb包，安装后<code>apt update</code>，然后<code>apt install mysql-server mysql-client libmysqlclient-dev</code>就能安装，途中配置按着来就行。</p>
+<p>也没有初始随机密码，修改密码策略这些事（我没用密码123456，不建议用这么简单的，哪怕是练习，要不然可能那天就真忘了）</p>
+<p>各图形化数据库软件甚至提供资源，但明显偏windows一些，介绍界面也以Windows的为主，不过之后课程与GUI无关，命令行照学不误。</p>
+<h5 class="atx" id="第1章讲sql基本操作">第1章讲sql基本操作</h5>
+<p>内容不错，不过组织逻辑不是特别清晰，可以边学边捋，内容没什么缺漏断层。</p>
+<p>不过之前一直没说查看表要先</p>
+<p>use ;select * from ，以及</p>
+<p>show databases;show tables;可以查看有哪些表，可能会让萌新想看看自己修改的结果但不会看。</p>
+<p>设置默认值可在插入/修改时写DAFAULT，就像写NULL一样。</p>
+<h5 class="atx" id="第2章讲查询">第2章讲查询</h5>
+<p>关于DISTINCT他讲的有歧义。select distinct col from 是从table中显示col列中不同的值，不会删除重复的值（或者说，他只是把重复值再给你这次展示时折叠起来了）</p><p></p><p>2.5.2标点缺失，在给出常见错误原因后没加冒号。</p><p>2.5.2.1不一定得是聚合键，也可是其他列名的聚合函数</p><h5 class="atx" id="第3章是复杂查询">第3章是复杂查询</h5><p><code>show tables;</code>会展示表和视图，而<code>show table status where comment='view';</code>或者
+<code>select * from information_schema.views;</code>可以只展示视图。</p><p>多表视图就给了段代码意会，没具体讲规则（</p><p>关联子查询有些略过，可以看看博客的文章。</p><p>NOT IN参数列表里不能有NULL，否则通常结果为空，因为NOT IN是AND，而与NULL做！=判断都是false</p><h5 class="atx" id="第4章是集合操作">第4章是集合操作</h5><p>关于Mysql讲的内容有些老了（不过作者后面说也是为了大家能看一些过时代码），Mysql8.0之后作者说的很多8.0以前不支持的功能现在都支持了，比如INTERSECT和EXCEPT。</p><h5 class="atx" id="第5章高级处理">第5章高级处理</h5><p>讲了窗口函数，点了几个内置排名的RANK函数，又依靠代码讲了用聚合函数于窗口函数，随后教了自定义例程（其实就是自定义函数）</p><p>自定义例程这块更多是给代码来意会，关于规则没细讲（不过碍于篇幅应该也不好细讲）</p><h1 class="atx" id="妙趣横生大数据评价">妙趣横生大数据评价</h1><p><a name="妙趣横生大数据评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>介绍了主流的大数据处理框架Hadoop及其相关存储和计算引擎。既有理论又有代码实践，内容丰富且生动。大致需要12-16学时，适合有计算机基础/有大数据处理需求/为求职做准备的同学学习。</p><blockquote>
+<p>李尚敖</p>
+</blockquote><p>几乎每章都由背景——原理——教学——实操组成，内容极其充实且实用，</p><p>讲的形式有趣，穿插各种背景，历史<del>，还有梗</del>。练习内容也相当丰富，甚至还有期中与期末。写的相当让人满意。建议学。但耗时可能有些长，个人速通约4天。</p><h3 class="atx" id="第1章历史概论">第1章历史概论</h3><p>相当有趣，速过</p><h3 class="atx" id="第2章-hadoop配置">第2章 Hadoop配置</h3><p>几乎是手把手教，巨详细</p><p>用的vi编辑器，建议可以还是先学missing-semester，再不济也先会个vi的基本操作，这个还挺重要的。</p><p>用/etc/profile并不好，最好编辑<del>/</del>.bash_profile以免影响全局</p><p>ssh localhost虽然看起来离谱，但真可以。port22报错的可以apt remove openssh-server 和ssh，然后apt purge他们，最后再安装一次</p><p>修改hadoop-env.sh文件配置处vim etc/xxx要改成vim /etc/xxx</p><h3 class="atx" id="第3-8章">第3-8章</h3><p>颇为详细，没什么可吐槽的，写的很详细，内容作为导引是绝对够用了，能上手操控hadoop生态的各个大组件框架内容。</p><h3 class="atx" id=""></h3><h1 class="atx" id="巨硬的numpy评价">巨硬的NumPy评价</h1><p><a name="巨硬的NumPy评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>两部分：《从小白到入门》和《从入门到熟练》。
+《从小白到入门》：较为基础，大约需要4-6学时，学习完成后能够掌握numpy中最为常用的api，推荐学习完python编程、线性代数的同学作为编程练习，并作为学习深度学习框架pytorch/tensorflow的前置课程。
+《从入门到熟练》：内容较为进阶且不常用，适合想要扩展知识面的同学。</p><blockquote>
+<p>张淩翔</p>
+</blockquote><p>一般入门Numpy感觉有以下几种类型：</p><ul>
+<li>直接冲到Numpy官网上去RTFM，如果你英文能力不是甚佳，十分容易放弃</li>
+<li>找一本介绍Numpy的书籍，如果其中的代码不是很好copy，再加上懒的敲而只看不做，可以安然入睡了</li>
+</ul><p>（以上两种方式我大一都实践过）所以入门Numpy的重点应该是<strong>保持兴趣</strong>以及<strong>删繁就简</strong>（也许吧）</p><p>这门课程虽然没有视频，但是其中的jupyter notebook文档已经足够你速通numpy了，课程讲义可以在本地一键运行，《从小白到入门》课程选择了Numpy中比较基础的几个部分，包括创建数组，矩阵运算等内容，并配以几道题目巩固所学。《从入门到熟练》则包括一些Numpy的原理介绍，小白可以后续查阅参考。当然也可以参考其他不错的资源如numpy中文网、菜鸟教程以及Numpy官网。</p><h1 class="atx" id="强化学习教程评价">强化学习教程评价</h1><p><a name="强化学习教程评价"> </a></p><blockquote>
+<p>王崧睿</p>
+</blockquote><p>感觉不如sutton的圣经 reinforcement learning。会更加全面底层，唯一的不足是DQN部分介绍的少，这一部分可以看推荐的easy-RL内容</p><blockquote>
+<p>张磊</p>
+</blockquote><p>综合了李宏毅老师的《深度强化学习》，周博磊老师的《强化学习纲要》、李科浇老师的《世界冠军带你从零实践强化学习》。主要为经典的深度强化学习算法，通俗易懂，质量较高，大致需要16-24学时，适合对强化学习有浓厚兴趣且无强化学习基础的同学学习。学习对应算法时可以结合原始论文一起阅读</p><h1 class="atx" id="数据竞赛baselineandamptopline分享评价">数据竞赛Baseline&amp;Topline分享评价</h1><p><a name="数据竞赛Baseline&amp;Topline分享评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>一些竞赛的baseline代码仓库，适合有兴趣参加竞赛的同学入门学习。仓库内赛题较多，选择几个有代表性的赛题学习即可。</p><blockquote>
+<p>徐乾凯</p>
+</blockquote><p>汇聚了一些数据竞赛的信息，不过貌似不怎么持续更新了（）</p><blockquote>
+<p>许煜恒</p>
+</blockquote><p>集成了很多资源的中心，其中的资源我还没细看，但感觉还是挺不错的一份整合资源。</p><h1 class="atx" id="有趣的推荐算法评价">有趣的推荐算法评价</h1><p><a name="有趣的推荐算法评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>关于推荐算法较为基础和全面的介绍，包括推荐系统概述、推荐算法基础、推荐系统实战和推荐系统面经四个部分。内容较为详实，参考资料丰富，需要花费较多时间，适合有一定深度学习基础、对推荐算法感兴趣的高年级同学学习。面经部分适合有就业需求的同学为面试提前做准备。可以配合王喆 - 《深度学习推荐系统》以及王树森的视频课程《概要01：推荐系统的基本概念_哔哩哔哩_bilibili》一起学习。</p><h1 class="atx" id="李宏毅机器学习笔记评价">李宏毅机器学习笔记评价</h1><p><a name="李宏毅机器学习笔记评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>适合新手入门深度学习，课程后半部分各章节较为独立，可以选择性学习</p><blockquote>
+<p>徐乾凯</p>
+</blockquote><p>建议优先学习李宏毅机器学习笔记，文字教程+视频教程相结合体验良好，适合入门。</p><h1 class="atx" id="水很深的深度学习评价">水很深的深度学习评价</h1><p><a name="水很深的深度学习评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>质量一般，推荐学习吴恩达《深度学习》系列课程，约24-36学时，例如  1.0 深度学习概论_哔哩哔哩_bilibili</p><blockquote>
+<p>徐乾凯</p>
+</blockquote><p>知识点比较零散，文字教程比较简略，视频教程也没更新完。与李宏毅机器学习许多内容重复。</p><h1 class="atx" id="深入浅出pytorch评价">深入浅出PyTorch评价</h1><p><a name="深入浅出PyTorch评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>pytorch较为基础的教程，大致需要6-8学时，学习完成后基本具备读懂pytroch代码及使用pytorch训练深度学习模型的能力</p><h1 class="atx" id="聪明办法学python评价">聪明办法学Python评价</h1><p><a name="聪明办法学Python评价"> </a></p><blockquote>
+<p>王崧睿</p>
+</blockquote><p>python⼊⻔读物，怎么⼊⻔都⽆所谓，能写点题⽬就OK了</p><blockquote>
+<p>张磊</p>
+</blockquote><p>第一版基础但较为简略，适合有编程基础的同学快速入门python语法，学习完成后具备基本的读懂python代码的能力。
+第二版资源丰富、视频课程较为详细，相当于24-36学时的教学量，适合无编程基础的同学花大量时间充分掌握python及编程知识。但是目前仅更新基础部分（0-6章），进阶部分（7-12章）尚未更新。</p><blockquote>
+<p>张淩翔</p>
+</blockquote><p>本门课程主要侧重于python语言的简单了解，并为后来的<strong>人工智能</strong>相关内容的学习打下基础，可以称为是“面向人工智能的 Python 专项教程”。课程拥有：</p><ul>
+<li>独立的课程网站</li>
+<li>上传至B站的教学视频</li>
+<li>活跃的答疑社区</li>
+<li>可以下载的课程资源</li>
+<li>可供参考的课程笔记</li>
+<li>Office Hours</li>
+</ul><p>可以算得上一门<strong>比较合适</strong>的在线课程。</p><p>在python编程中也更加侧重于为未来AI的课程设计打下编程基础，在内容上删繁就简，在基础版中选取了python中十分核心的语法点如基本的流程控制，数据结构等。（进阶版）还没有出来，编程小白易于上手。</p><p>在环境的配置上也是尽心尽力，使用conda， pip等包管理器，突出了人工智能的一大特点（当然不是调包），同时也能够让小白可以十分顺利的体验到配置环境的乐（痛）趣（苦）。</p><p>课程讲义使用jupyter notebook编写也算是一大两点，真的比独立的PDF+<code>.py</code>文件要好很多！！！如果你有志于入门AI并且还什么都不会（好好好），还是一个比较建议入手的课程。</p><blockquote>
+<p>李尚敖</p>
+</blockquote><p>看的文字版，未搭配视频。写的不错，但目前课程并未完结。基础部分前6章已告完结，但提高内容目前尚未发布，预计于本次寒假课程完结。</p><p>提供助教答疑，OJ练习，对新手难度相当友好，内容也相当详细</p><p>如果已经学过C/C++，完全可以看文字速通</p><p>从导论开始，</p><p>第0章讲安装配环境</p><p>第1章讲输入输出交互，注释杂项</p><p>第2章讲内置数据类型，基本运算操作，甚至是短路求值都讲</p><p>第3章讲变量，命名规则等，函数定义，返回值规则，表达式，基本函数与作用域，借助可视化工具（这个真的很好用！在理解一些难懂的代码时）</p><p>第4章讲条件判断，甚至也讲代码风格</p><p>第5章讲循环体</p><p>第6章讲字符串的表示，索引，切片，运算，内置函数和格式化字符串；有几个我之前都不知道的有意思的点（比方说repr()和python本并没有多行注释）最后还讲了文件操作。</p><p><strong>替代课程</strong>：如果喜欢，可以考虑哈佛大学的CS50P，该课程共7讲，练习内容与讲解内容都相当全面。</p><h1 class="atx" id="自由excel评价">自由Excel评价</h1><p><a name="自由Excel评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>介绍了excel一些基础且常用的函数和操作，大致需要2-4学时，对计算机基础没有要求，适合各类需要使用Excel进行数据分析、数据统计的同学</p><h1 class="atx" id="西瓜书代码实战评价">西瓜书代码实战评价</h1><p><a name="西瓜书代码实战评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>调用sklearn完成各机器学习模型的训练，较为基础，每章需要0.5-1小时，适合初学者学习完西瓜书对应章节后的编程练习</p><blockquote>
+<p>张淩翔</p>
+</blockquote><p>包含一些实现常见机器学习算法的代码，建议结合西瓜书和南瓜书阅读，提升对机器学习算法的应用能力。写的确实不错（</p><h1 class="atx" id="集成学习评价">集成学习评价</h1><p><a name="集成学习评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>课程分为三个部分：机器学习模型回顾，基于sklearn的集成学习方法介绍, 项目实践。集成学习方法和项目实践部分相对基础且实用，适合有机器学习基础的同学快速入门和了解集成学习的基本原理和实践方案，大致需要8-12学时。</p><blockquote>
+<p>许煜恒</p>
+</blockquote><p>机器学习的数学基础：基本上就是数学，从高中到大学
+机器学习基础模型回顾：简单的概念讲的还行，复杂一点的算法感觉就讲的过于数学了，很多时候没怎么写思路就直接上公式了，看不懂
+bagging：讲的挺好
+boosting：讲的挺好
+blending与stacking：讲的挺好
+案例分享：基本就是复习前面的内容（除了特征工程），写的还不错</p><h1 class="atx" id="零基础入门推荐系统评价">零基础入门推荐系统评价</h1><p><a name="零基础入门推荐系统评价"> </a></p><blockquote>
+<p>张磊</p>
+</blockquote><p>取自《有趣的推荐算法》课程的推荐系统实战部分，大致需要5-7天时间，适合学习完该课程前两部分的同学作为实践项目进行练习。</p><h1 class="atx" id="零基础入门语义分割-地表建筑物识别评价-andamp-零基础入门cv-街景字符编码识别评价">零基础入门语义分割-地表建筑物识别评价 &amp; 零基础入门CV-街景字符编码识别评价</h1><p><a name="零基础入门语义分割-地表建筑物识别评价"> </a></p><p><a name="零基础入门CV-街景字符编码识别评价"> </a></p><blockquote>
+<p>徐乾凯</p>
+</blockquote><p>两场零基础入门系列赛事，一场关于语义分割一场关于字符识别，不用听到“赛事”就汗流浃背，实际上毕竟是新人赛，难度不算太大，并且提供了一步步完成比赛的任务指引和教程，还有参考代码（baseline），如果能把前面的部分认真学完这两场比赛应该没问题，很适合入门CV的小白实践。第一场比赛网址：<a href="https://tianchi.aliyun.com/competition/entrance/531872/information%EF%BC%8C%E7%AC%AC%E4%BA%8C%E5%9C%BA%E6%AF%94%E8%B5%9B%E7%BD%91%E5%9D%80%EF%BC%9Ahttps://tianchi.aliyun.com/competition/entrance/531795/information%EF%BC%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8A%E7%BD%91%E7%AB%99%E4%B8%8B%E8%BD%BD%E3%80%82">https://tianchi.aliyun.com/competition/entrance/531872/information，第二场比赛网址：https://tianchi.aliyun.com/competition/entrance/531795/information，数据集上网站下载。</a></p><table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table><p></p></article>
+</body>
+</html>
