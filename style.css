@@ -15,12 +15,14 @@ body {
     display: grid;
     justify-items: center;
 
-    /* background-color: #101317; */
     background-color: #ffffff;
 }
 #page_title {
     /* color: white; */
     font-size: 5em;
+    padding-inline: 15px;
+}
+#title-gradient {
     margin-bottom: 0;
     margin-top: 0;
     padding-top: 10%;
@@ -51,11 +53,32 @@ body {
 
 .content-title {
     font-size: 3em;
+    background-color: #1013173d;
+    width: 100%;
+    text-align: center;
+    margin-block: 0px;
+    padding-block: 20px;
 }
 
 .content-intro {
     font-size: 1.5em;
     padding-inline: 45px;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.content-footer {
+    padding-block: 25px;
+    background-color: #1013175e;
+    width: 100%;
+    text-align: center;
+}
+
+.same-line {
+    white-space: nowrap;
 }
 
 .content-entry {
@@ -71,9 +94,15 @@ body {
     justify-content: space-evenly;
 }
 
-.footer-content{
+.footer-content {
     display: flex;
     margin: 10px;
+}
+
+.footer-logo {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
 }
 
 .neat-link {
