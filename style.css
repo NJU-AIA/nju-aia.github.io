@@ -22,6 +22,7 @@ body {
     /* color: white; */
     font-size: 5em;
     padding-inline: 15px;
+    margin-block: 0px;
 }
 #title-gradient {
     margin-bottom: 0;
@@ -87,6 +88,12 @@ body {
     margin-inline: 15px;
     color: #50aaff;
     text-decoration: none;
+}
+
+.divider {
+    width: 100%;
+    background-color: #8a8a8a;
+    height: 5px;
 }
 
 #footer {
