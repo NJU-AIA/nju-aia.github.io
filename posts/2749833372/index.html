@@ -1,0 +1,418 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/layout.css">
+    <style>body {display: none;}</style> <!-- 初始隐藏 body -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <head>
+    <link rel="stylesheet" type="text/css" href="/css/partial/header.css">
+    <link rel="stylesheet" href="/lib/highlight/atom-one-light.css" id="highlight-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<header>
+    <h1>南京大学AIA协会 NJU AIA</h1>
+    <div class="logo">
+        <img src="/images/logo.png" alt="Company Logo">
+        <span>南京大学AIA协会(测试版)</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/learning">学习资料</a></li>
+            <li><a href="/activity">活动合辑</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <!-- <li><a href="/articles">articles</a></li> -->
+        </ul>
+    </nav>
+    <button id="toggle-dark-mode"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<script>
+
+    // 设置cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // 获取cookie
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // 切换黑夜模式
+    document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        setCookie('darkMode', isDarkMode, 7); // 记住模式7天
+        updateHighlightStyle();
+        updateButtonIcon();
+    });
+
+    // 更新代码高亮样式
+    function updateHighlightStyle() {
+        const highlightStyle = document.getElementById('highlight-style');
+        if (document.body.classList.contains('dark-mode')) {
+            highlightStyle.href = '/lib/highlight/atom-one-dark.css';
+        } else {
+            highlightStyle.href = '/lib/highlight/atom-one-light.css';
+        }
+    }
+
+    // 更新按钮图标
+        function updateButtonIcon() {
+        const button = document.getElementById('toggle-dark-mode');
+        const icon = button.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
+    // 初始化时根据cookie设置模式
+    window.onload = function() {
+        const darkMode = getCookie('darkMode');
+        if (darkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateHighlightStyle();
+        updateButtonIcon();
+    }
+</script>
+
+    <div class="content">
+        <head>
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
+</head>
+
+
+<section class="post">
+    <div class="sidebar">
+        <head>
+    <link rel="stylesheet" href="/css/partial/sidebar.css">
+</head>
+
+
+
+ <!-- 获取当前文章的类型 -->
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- 样例:_posts/dir/test.md -->
+        
+        
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- 样例:_posts/dir/test.md -->
+        
+        
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- 样例:_posts/dir/test.md -->
+        
+        
+    
+
+    
+
+    
+
+    
+
+
+<aside id="sidebar">
+    <div id="tree">
+        <ul>
+            
+                <li>
+                    <a href="#" class="directory" onclick="toggleSubdirectory('activity')"><i class="fa fa-folder"></i>
+                        activity
+                    </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+</aside>
+
+<button id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+
+<script>
+    // Function to get cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Function to set cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = `expires=${d.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/`;
+    }
+
+    // Initialize directoryStructure from global and cookie
+    const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
+    let directoryStructure = JSON.parse('{"activity":{"files":[{"name":"Datawhale.md","url":"posts/331058520/","title":"Datawhale AI + X 高校行「南大场」活动回顾"},{"name":"pytorch.md","url":"posts/2749833372/","title":"3月技术分享例会：pytorch速通教学"},{"name":"LangChainAgent.md","url":"posts/1389444303/","title":"11月技术例会：上手LangChain Agent开发"}],"activate":false}}');
+
+    expandedDirs.forEach(dir => {
+        if (directoryStructure[dir]) {
+            directoryStructure[dir].activate = true;
+        }
+    });
+
+    // Clean up invalid directories from cookie
+    const validExpandedDirs = expandedDirs.filter(dir => directoryStructure[dir]);
+    if (validExpandedDirs.length !== expandedDirs.length) {
+        setCookie('expandedDirs', validExpandedDirs.join(','), 7);
+    }
+
+    document.getElementById('toggle-sidebar').addEventListener('click', function () {
+        const sidebar = document.getElementById('tree');
+        sidebar.classList.toggle('invisible');
+    });
+
+    function toggleSubdirectory(dir) {
+        directoryStructure[dir].activate = !directoryStructure[dir].activate;
+        const updatedExpandedDirs = Object.keys(directoryStructure)
+            .filter(key => directoryStructure[key].activate);
+        setCookie('expandedDirs', updatedExpandedDirs.join(','), 7); // Store updated expanded directories in cookie
+        renderTree();
+    }
+
+
+
+    function renderTree() {
+        const tree = document.getElementById('tree');
+        tree.innerHTML = `
+            <ul>
+                ${Object.keys(directoryStructure).map(dir => `
+                    ${directoryStructure[dir].files.map(file => `
+                        <li><a href="/${file.url}">${file.title}</a></li>
+                    `).join('')}
+                `).join('')}
+            </ul>
+        `;
+    }
+
+    // Initial render
+    renderTree();
+</script>
+    </div>
+    <div>   
+        
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX", "TeX"],
+        linebreaks: { automatic: true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], // 支持块级数学公式
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"], // 添加 AMSmath 扩展
+        noUndefined: {
+            attributes: {
+                mathcolor: "red",
+                mathbackground: "#FFEEEE",
+                mathsize: "90%"
+            }
+        },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script async type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+ <!-- 引用 MathJax -->
+    </div>
+    <div class="post-content">
+        <h1> 3月技术分享例会：pytorch速通教学 </h1>
+        
+        <p class="post-meta">
+            
+                <span class="post-AuthorDate">作者: 南的AIA  |</span>
+            
+                <span class="post-AuthorDate">发布日期: 2024年5月11日</span>
+        </p>
+        <p>2024年3月31日，南大AIA在南大仙林校区开展了3月技术分享例会。本次例会主题是“pytorch速通教学”，旨在帮助初学或感兴趣的朋友了解numpy，pytorch常用组件内容。</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>推荐使用conda进行虚拟环境的配置以保证各个python应用环境依赖库互不冲突。</p>
+<p>演示配置：</p>
+<ul>
+<li>Ubuntu 22.04</li>
+<li>python 3.11</li>
+<li>cuda 12.1</li>
+<li>pytorch 2.2.2</li>
+</ul>
+<p>安装conda并配置运行环境：（下述指令建议前往mirror.nju.edu.cn里搜索anaconda，miniconda来找到最新符合机器架构的安装脚本）</p>
+<pre><code class="lang-shell">wget https://mirror.nju.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+</code></pre>
+<p>随后按说明配置conda安装位置，是否每次登录都自动激活conda等</p>
+<p>随后创建一个新环境并进入其中：(常见问题[1])</p>
+<p>注意，下述第3条命令建议前往pytorch官网查看适合您机器配置的命令</p>
+<pre><code class="lang-shell">conda create --name torch_test python=3.11 
+conda activate torch_test
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+</code></pre>
+<blockquote>
+<p>[1]：实际例会中，有不少朋友被提示“找不到conda命令”。这种情况发生时：如果安装正常完成的话，可以借助find命令在安装位置找到conda可执行文件，并通过export命令（本终端会话），或修改.bashrc（修改后记得sourse，永久地）（如果是别的sh，请更改对应的配置文件，如.zshrc）将conda添加至PATH变量；如果conda安装未正常完成，可以上网搜搜问题，或来群里问问大伙。</p>
+</blockquote>
+<h2 id="numpy常用介绍"><a href="#numpy常用介绍" class="headerlink" title="numpy常用介绍"></a>numpy常用介绍</h2><p>可以去runoob NumPy 教程学习更为全面的numpy介绍。</p>
+<p>这里主要强调</p>
+<ul>
+<li>数组创建</li>
+<li>数据类型</li>
+<li>数组形状</li>
+<li>切片索引访问</li>
+</ul>
+<p>特别值得注意的是，array默认数据类型int和float64的区别（只有后者可以求导），numpy各维度数组的形状规则，形状改变操作</p>
+<p>如果对python索引/切片不太熟悉的话，可以通过“NumPy 切片和索引”，”NumPy 高级索引“章节学习这些神奇方便的功能</p>
+<h2 id="pytorch速通介绍"><a href="#pytorch速通介绍" class="headerlink" title="pytorch速通介绍"></a>pytorch速通介绍</h2><p>我们借鉴了pytorch官网教程以及pytorch 60min blitz，深入浅出pytorch教程，同时也参考一篇知乎的60min blitz节选翻译.</p>
+<p>更完整的各功能文档教学可查看PyTorch recipes但是中文，或者更全的中文pytorch资源.</p>
+<p>主要讲解以下各点：</p>
+<ul>
+<li>tensor张量：其实就是pytorch版的numpy数组（可扔GPU里算）</li>
+<li>运算操作（尤其是利用广播机制）</li>
+<li>自动求导autoGrad（一维函数求导/多维下求Jacobi矩阵得数值）与梯度累计操作</li>
+<li>预定义的连接层，卷积池化层</li>
+<li>预定义的损失函数，优化器</li>
+<li>神经网络结构与反向传播（BP）原理</li>
+<li>神经网络速搭与代码解释</li>
+<li>转移数据至GPU与显卡设备</li>
+<li>多卡训练与数据平行的模型转化</li>
+</ul>
+<h4 id="神经网络速搭"><a href="#神经网络速搭" class="headerlink" title="神经网络速搭"></a>神经网络速搭</h4><p>1  <strong>定义网络结构</strong>：(定义组件，链接组件)</p>
+<pre><code class="lang-python">import torch.nn as nn
+import torch.nn.functional as F
+
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(3, 6, 5)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(16 * 5 * 5, 120)
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 5 * 5)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+net = Net()
+</code></pre>
+<p>2  <strong>准备优化器</strong></p>
+<pre><code class="lang-python">import torch.optim as optim
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+</code></pre>
+<p>3  <strong>开始训练的代码</strong></p>
+<pre><code>import time
+start = time.time()
+for epoch in range(2):
+    running_loss = 0.0
+    for i, data in enumerate(trainloader, 0):
+        # 获取输入数据
+        inputs, labels = data
+        # 清空梯度缓存
+        optimizer.zero_grad()
+
+        outputs = net(inputs)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+
+        # 打印统计信息
+        running_loss += loss.item()
+        if i % 2000 == 1999:
+            # 每 2000 次迭代打印一次信息
+            print(&#39;[%d, %5d] loss: %.3f&#39; % (epoch + 1, i+1, running_loss / 2000))
+            running_loss = 0.0
+print(&#39;Finished Training! Total cost time: &#39;, time.time()-start)
+</code></pre><p>训练完成后，可以检查模型准确性[2]：</p>
+<pre><code>correct = 0
+total = 0
+with torch.no_grad():
+    for data in testloader:
+        images, labels = data
+        outputs = net(images)
+        _, predicted = torch.max(outputs.data, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+
+print(&#39;Accuracy of the network on the 10000 test images: %d %%&#39; % (100 * correct / total))
+</code></pre><blockquote>
+<p>[2]：会上其实也提到过，此处用训练集数据做测试是极不可取的行为！测试集(test)应严格与训练集(train)分开，不可用同一批数据。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/sjMAsNXcpL3vUmH6tqTIYg">阅读原文</a></p>
+
+    </div>
+</section>
+
+    </div>
+    
+    <script src="/lib/highlight/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+            document.body.style.display = 'block'; // 显示 body
+        });
+    </script>
+
+    
+<head>
+    <link rel="stylesheet" href="/css/partial/footer.css">
+</head>
+
+<footer>
+    <p>&copy; 2024 南京大学AIA协会. All Rirghts Reserved</p>
+</footer>
+
+
+
+
+</body>
+
+</html>

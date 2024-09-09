@@ -1,0 +1,365 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/layout.css">
+    <style>body {display: none;}</style> <!-- 初始隐藏 body -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <head>
+    <link rel="stylesheet" type="text/css" href="/css/partial/header.css">
+    <link rel="stylesheet" href="/lib/highlight/atom-one-light.css" id="highlight-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<header>
+    <h1>南京大学AIA协会 NJU AIA</h1>
+    <div class="logo">
+        <img src="/images/logo.png" alt="Company Logo">
+        <span>南京大学AIA协会(测试版)</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/learning">学习资料</a></li>
+            <li><a href="/activity">活动合辑</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <!-- <li><a href="/articles">articles</a></li> -->
+        </ul>
+    </nav>
+    <button id="toggle-dark-mode"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<script>
+
+    // 设置cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // 获取cookie
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // 切换黑夜模式
+    document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        setCookie('darkMode', isDarkMode, 7); // 记住模式7天
+        updateHighlightStyle();
+        updateButtonIcon();
+    });
+
+    // 更新代码高亮样式
+    function updateHighlightStyle() {
+        const highlightStyle = document.getElementById('highlight-style');
+        if (document.body.classList.contains('dark-mode')) {
+            highlightStyle.href = '/lib/highlight/atom-one-dark.css';
+        } else {
+            highlightStyle.href = '/lib/highlight/atom-one-light.css';
+        }
+    }
+
+    // 更新按钮图标
+        function updateButtonIcon() {
+        const button = document.getElementById('toggle-dark-mode');
+        const icon = button.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
+    // 初始化时根据cookie设置模式
+    window.onload = function() {
+        const darkMode = getCookie('darkMode');
+        if (darkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateHighlightStyle();
+        updateButtonIcon();
+    }
+</script>
+
+    <div class="content">
+        <head>
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
+</head>
+
+
+<section class="post">
+    <div class="sidebar">
+        <head>
+    <link rel="stylesheet" href="/css/partial/sidebar.css">
+</head>
+
+
+
+ <!-- 获取当前文章的类型 -->
+
+    
+
+    
+
+    
+
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- 样例:_posts/dir/test.md -->
+        
+        
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- 样例:_posts/dir/test.md -->
+        
+        
+    
+
+
+<aside id="sidebar">
+    <div id="tree">
+        <ul>
+            
+                <li>
+                    <a href="#" class="directory" onclick="toggleSubdirectory('hello')"><i class="fa fa-folder"></i>
+                        hello
+                    </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+</aside>
+
+<button id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+
+<script>
+    // Function to get cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Function to set cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = `expires=${d.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/`;
+    }
+
+    // Initialize directoryStructure from global and cookie
+    const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
+    let directoryStructure = JSON.parse('{"hello":{"files":[{"name":"hello.md","url":"posts/3354030823/","title":"Hello加公式版"},{"name":"hello-world.md","url":"posts/1243066710/","title":"Hello World"}],"activate":false}}');
+
+    expandedDirs.forEach(dir => {
+        if (directoryStructure[dir]) {
+            directoryStructure[dir].activate = true;
+        }
+    });
+
+    // Clean up invalid directories from cookie
+    const validExpandedDirs = expandedDirs.filter(dir => directoryStructure[dir]);
+    if (validExpandedDirs.length !== expandedDirs.length) {
+        setCookie('expandedDirs', validExpandedDirs.join(','), 7);
+    }
+
+    document.getElementById('toggle-sidebar').addEventListener('click', function () {
+        const sidebar = document.getElementById('tree');
+        sidebar.classList.toggle('invisible');
+    });
+
+    function toggleSubdirectory(dir) {
+        directoryStructure[dir].activate = !directoryStructure[dir].activate;
+        const updatedExpandedDirs = Object.keys(directoryStructure)
+            .filter(key => directoryStructure[key].activate);
+        setCookie('expandedDirs', updatedExpandedDirs.join(','), 7); // Store updated expanded directories in cookie
+        renderTree();
+    }
+
+
+
+    function renderTree() {
+        const tree = document.getElementById('tree');
+        tree.innerHTML = `
+            <ul>
+                ${Object.keys(directoryStructure).map(dir => `
+                    ${directoryStructure[dir].files.map(file => `
+                        <li><a href="/${file.url}">${file.title}</a></li>
+                    `).join('')}
+                `).join('')}
+            </ul>
+        `;
+    }
+
+    // Initial render
+    renderTree();
+</script>
+    </div>
+    <div>   
+        
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX", "TeX"],
+        linebreaks: { automatic: true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], // 支持块级数学公式
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"], // 添加 AMSmath 扩展
+        noUndefined: {
+            attributes: {
+                mathcolor: "red",
+                mathbackground: "#FFEEEE",
+                mathsize: "90%"
+            }
+        },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script async type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+ <!-- 引用 MathJax -->
+    </div>
+    <div class="post-content">
+        <h1> Hello加公式版 </h1>
+        
+        <p class="post-meta">
+            
+                <span class="post-AuthorDate">发布日期: 2024年9月4日</span>
+        </p>
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="lang-bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="lang-bash">$ hexo server
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="lang-bash">$ hexo generate
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}</script><script type="math/tex; mode=display">
+\begin{align}
+\sqrt{A}\\
+\sqrt{B}
+\end{align}</script><p>内联公式$\sqrt{A} $</p>
+<h2 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h2><h3 id="你好-1"><a href="#你好-1" class="headerlink" title="你好"></a>你好</h3><h4 id="你好-2"><a href="#你好-2" class="headerlink" title="你好"></a>你好</h4><h6 id="你好-3"><a href="#你好-3" class="headerlink" title="你好"></a>你好</h6><pre><code class="lang-c">// 你的代码
+int main()&#123;
+    printf(&quot;Hello World!&quot;);
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="lang-bash">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css&quot;&gt;
+</code></pre>
+<pre><code class="lang-C">int main()
+</code></pre>
+<h2 id="傅里叶矩阵"><a href="#傅里叶矩阵" class="headerlink" title="傅里叶矩阵"></a>傅里叶矩阵</h2><p>因为一些原因，我们选择在单位根处采样，记 $\omega_n$ 为 n 次单位根, 在$[\omega^0,\omega,\omega_2,\cdots\omega^{n-1}] $ 采样得到傅里叶矩阵：</p>
+<script type="math/tex; mode=display">
+F=
+\begin{bmatrix}
+1&1&1&\cdots &1\\
+1&\omega&\omega^2&\cdots &\omega^{n-1}\\
+1&\omega^2&\omega^3&\cdots &\omega^{2(n-1)}\\
+\vdots&&&\ddots\\
+1&\omega^{n-1}&\omega^{2(n-1)}&\cdots &\omega^{(n-1)^2}
+\end{bmatrix}</script><p>&amp;可以发现 $F_{ij} = \omega^{i\cdot j}$ , $F$ 是一个对称矩阵。</p>
+<p>由单位根的性质，如果 n 为偶数，$\omega ^{n/2} = -1$  </p>
+<p>即</p>
+<script type="math/tex; mode=display">
+F_{n/2}PF_{n/2}\\
+F_{n/2}PF_{n/2}</script><script type="math/tex; mode=display">
+J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}</script><script type="math/tex; mode=display">
+\begin{align}
+a&\quad c\\
+b&\quad d
+\end{align}</script><p>这是一个内联公式 $a^2 + b^2 = c^2$。</p>
+<p>这是一个块级公式：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+1&1&1&\cdots &1\\
+1&\omega&\omega^2&\cdots &\omega^{n-1}\\
+1&\omega^2&\omega^3&\cdots &\omega^{2(n-1)}\\
+\vdots& & &\ddots\\
+1&\omega^{n-1}&\omega^{2(n-1)}&\cdots &\omega^{(n-1)^2}
+\end{bmatrix}</script><p>这是一个内联公式 $a^2 + b^2 = c^2$。</p>
+<p>这是一个块级公式：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}</script><script type="math/tex; mode=display">
+a\\b</script><p>$\alpha_s$ </p>
+<p>$a\\b$ </p>
+
+    </div>
+</section>
+
+    </div>
+    
+    <script src="/lib/highlight/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+            document.body.style.display = 'block'; // 显示 body
+        });
+    </script>
+
+    
+<head>
+    <link rel="stylesheet" href="/css/partial/footer.css">
+</head>
+
+<footer>
+    <p>&copy; 2024 南京大学AIA协会. All Rirghts Reserved</p>
+</footer>
+
+
+
+
+</body>
+
+</html>

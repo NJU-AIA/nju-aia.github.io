@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/layout.css">
+    <style>body {display: none;}</style> <!-- 初始隐藏 body -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <head>
+    <link rel="stylesheet" type="text/css" href="/css/partial/header.css">
+    <link rel="stylesheet" href="/lib/highlight/atom-one-light.css" id="highlight-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<header>
+    <h1>南京大学AIA协会 NJU AIA</h1>
+    <div class="logo">
+        <img src="/images/logo.png" alt="Company Logo">
+        <span>南京大学AIA协会(测试版)</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/learning">学习资料</a></li>
+            <li><a href="/activity">活动合辑</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <!-- <li><a href="/articles">articles</a></li> -->
+        </ul>
+    </nav>
+    <button id="toggle-dark-mode"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<script>
+
+    // 设置cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // 获取cookie
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // 切换黑夜模式
+    document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        setCookie('darkMode', isDarkMode, 7); // 记住模式7天
+        updateHighlightStyle();
+        updateButtonIcon();
+    });
+
+    // 更新代码高亮样式
+    function updateHighlightStyle() {
+        const highlightStyle = document.getElementById('highlight-style');
+        if (document.body.classList.contains('dark-mode')) {
+            highlightStyle.href = '/lib/highlight/atom-one-dark.css';
+        } else {
+            highlightStyle.href = '/lib/highlight/atom-one-light.css';
+        }
+    }
+
+    // 更新按钮图标
+        function updateButtonIcon() {
+        const button = document.getElementById('toggle-dark-mode');
+        const icon = button.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
+    // 初始化时根据cookie设置模式
+    window.onload = function() {
+        const darkMode = getCookie('darkMode');
+        if (darkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateHighlightStyle();
+        updateButtonIcon();
+    }
+</script>
+
+    <div class="content">
+        
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+
+
+<body>
+<main>
+    <section class="welcome">
+        <h2>欢迎来到NJU-AIA协会</h2>
+        <p>我们致力于AI知识的普及与交流，创建一个富有活力的AI社区</p>
+        <!-- <p><a href="#">了解更多</a></p> -->
+    </section>
+    <section class="introduction">
+        <p>我们定期举办讨论分享例会，交流AI领域的最新进展，探讨应用与编码AI上遇到的实践性问题
+            <br>预计每学期完成1至2个AI项目/比赛，鼓励成员之间的交流合作，形成一个富有创造力的社团环境
+        </p>
+    </section>
+    <section class="news">
+        <img src="/images/recurit.png" alt="news">
+        <div class="info">  
+            <h2>社团招新</h2>
+            <p>作为一个目标自由、开放的学术社区，我们的成长离不开每一位热心的贡献者的参与！
+                <br>如果您在学业之外有所空闲，愿意与我们共同运营社区，我们非常欢迎（并感谢）您的帮助！
+                <br>我们预计于9月份开展招新工作，请关注NJU_AIA招新交流群：897201506
+            </p>
+        </div>
+    </section>
+    
+    <section class="more">
+        <div>
+            <a href="/learning">
+                <img src="/images/learning.png" alt="learning">
+                <h3>学习资料</h3>
+                <p>我们提供丰富的学习资料，<br>帮助同学们提升AI技能。</p>
+            </a>
+        </div>
+        <div>
+            <a href="/activity">
+                <img src="/images/activity.png" alt="activity">
+                <h3>活动合辑</h3>
+                <p>我们定期举办各种活动，<br>让大家更好地交流AI。</p>
+            </a>
+        </div>
+        <div>
+            <a href="/about">
+                <img src="/images/contact.png" alt="contact">
+                <h3>关于我们</h3>
+                <p>了解我们的社团，<br>加入协会一起成长。</p>
+            </a>
+        </div>
+    </section>
+
+</main>
+</body>
+
+    </div>
+    
+    <script src="/lib/highlight/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+            document.body.style.display = 'block'; // 显示 body
+        });
+    </script>
+
+    
+<head>
+    <link rel="stylesheet" href="/css/partial/footer.css">
+</head>
+
+<footer>
+    <p>&copy; 2024 南京大学AIA协会. All Rirghts Reserved</p>
+</footer>
+
+
+
+
+</body>
+
+</html>
