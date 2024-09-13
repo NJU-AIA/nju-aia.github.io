@@ -76,10 +76,20 @@
 .info h2{
     font-size: 40px;
     margin-bottom: 30px;
+    text-align: center;
 }
 .info p{
     text-align: center;
     line-height: 2em;
+}
+.info a{
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.info a:hover{
+    background-color: #f1f1f1;
 }
 
 .more{
@@ -87,11 +97,12 @@
     background-color: rgb(229, 229, 229);   
     justify-content: space-between;
     align-items: center;
-    padding: 100px 180px 80px;
+    padding: 70px 120px 60px;
 }
 .more div{
-    width: 300px;
+    width: 400px;
     text-align: center;
+    margin: 0 25px;
 }
 .more img{
     width: 100%;
@@ -107,11 +118,20 @@
 }
 
 .more a {
-    text-decoration: none; /* 去掉链接下划线 */
-    color: inherit; /* 继承父元素的颜色 */
-    display: block; /* 将链接设置为块级元素 */
+    text-decoration: none; 
+    color: inherit; 
+    display: block;
+    padding: 25px; 
+    /* border: 2px solid transparent;  */
+    border-radius: 5px; 
+    /* transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;  */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    margin: 10px 0; 
 }
 
 .more a:hover {
-    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-color: #ccc; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
 }

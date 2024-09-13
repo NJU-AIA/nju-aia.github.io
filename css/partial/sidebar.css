@@ -10,9 +10,10 @@
     background-color: #f6f6f6;
     border-right: 1px solid #e1e4e8; 
     overflow-y: auto; /* 允许垂直滚动 */
-    color: #000; /* 设置字体颜色为黑色 */
+    color: #000;
     transition: left 0.3s ease; /* 添加过渡效果 */
     box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(27, 31, 35, 0.12); /* 阴影效果 */
+    /* font-size: 16px; */
 }
 
 #tree.invisible {
@@ -21,8 +22,8 @@
 
 #tree ul {
     list-style: none; /* 去掉列表项的默认样式 */
-    padding: 0; /* 去掉内边距 */
-    margin: 0; /* 去掉外边距 */
+    padding: 0; 
+    margin: 0; 
 }
 
 #tree ul li {
@@ -31,10 +32,10 @@
 
 #tree ul li a {
     text-decoration: none;
-    color: #000;
+    color: #0366d6;
     display: block; /* 将链接设置为块级元素 */
-    padding: 8px 12px; /* 链接内边距 */
-    border-radius: 6px; /* 圆角边框 */
+    padding: 8px 12px; 
+    border-radius: 6px; 
 }
 
 #tree ul li a .fa {
@@ -68,9 +69,10 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 16px;
     z-index: 1001; /* 确保按钮在侧边栏上方 */
-    width: 52px; /* 确保按钮宽度自适应内容 */
-    height: 38px; /* 确保按钮高度自适应内容 */
-    display: inline-block; /* 确保按钮不会占据整个行 */
+    width: 52px; 
+    height: 38px; 
+    /* display: inline-block; 确保按钮不会占据整个行 */
+    display: none; /* 默认隐藏按钮 */
 }
 
 #toggle-sidebar i {

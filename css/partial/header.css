@@ -20,14 +20,14 @@ header .logo {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 80px;
+    left: 90px;
     top: 0;
     line-height: 80px;
     width: 350px;
 }
 header .logo img {
     height: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 header .logo span {
     color: white;
@@ -37,20 +37,26 @@ header .logo span {
 
 header li{
     display: inline;
-    margin-right: 4vw;
+    margin-right: 2vw;
 }
 header ul{
     position: absolute;
-    right: 5vw;
+    right: 6vw;
     top: 0;
     line-height: 80px;
 }
 header a{
     color: white;
     text-decoration: none;
+    padding: 10px 25px;
+    /* border: 2px solid transparent;  */
+    border-radius: 5px; 
+    transition: background-color 0.3s, border-color 0.3s; 
 }
 header a:hover{
-    text-decoration: underline;
+    text-decoration: none; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    /* border-color: white;  */
 }
 
 
@@ -58,7 +64,7 @@ header a:hover{
 #toggle-dark-mode {
     position: absolute; /* 绝对定位 */
     top: 23px; 
-    right: 35px; 
+    right: 40px; 
     padding: 10px; 
     background-color: rgb(0,0,0,0.01); /* 背景颜色 */
     color: white;

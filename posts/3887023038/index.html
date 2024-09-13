@@ -110,12 +110,12 @@
 
  
 
-    
-
-    
-
-    
-
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        
     
 
     
@@ -134,6 +134,18 @@
          <!-- 第三个元素及之后 -->
         <!-- [ 'Datawhale.md' ] -->
         
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        
+    
+
+    
+
     
 
 
@@ -143,8 +155,26 @@
             
                  <!-- 仅当 dir 不为空时渲染文件夹样式 -->
                     <li>
-                        <a href="#" class="directory" onclick="toggleSubdirectory('hello')"><i class="fa fa-folder"></i>
-                            hello
+                        <a href="#" class="directory" onclick="toggleSubdirectory('技术例会')"><i class="fa fa-folder"></i>
+                            技术例会
+                        </a>
+                        
+                    </li>
+                
+            
+                 <!-- 仅当 dir 不为空时渲染文件夹样式 -->
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('招新')"><i class="fa fa-folder"></i>
+                            招新
+                        </a>
+                        
+                    </li>
+                
+            
+                 <!-- 仅当 dir 不为空时渲染文件夹样式 -->
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('活动')"><i class="fa fa-folder"></i>
+                            活动
                         </a>
                         
                     </li>
@@ -174,7 +204,7 @@
 
     // Initialize directoryStructure from global and cookie
     const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
-    let directoryStructure = JSON.parse('{"hello":{"files":[{"name":"hello-world.md","url":"posts/1243066710/","title":"Hello World"},{"name":"hello.md","url":"posts/3354030823/","title":"Hello加公式版"}],"activate":false}}');
+    let directoryStructure = JSON.parse('{"技术例会":{"files":[{"name":"LangChainAgent.md","url":"posts/1389444303/","title":"11月技术例会：上手LangChain Agent开发"},{"name":"pytorch.md","url":"posts/2749833372/","title":"3月技术分享例会：pytorch速通教学"}],"activate":false},"招新":{"files":[{"name":"mainpeople.md","url":"posts/3887023038/","title":"NJU_AIA核心成员组招新"}],"activate":false},"活动":{"files":[{"name":"Datawhale.md","url":"posts/331058520/","title":"Datawhale AI + X 高校行「南大场」活动回顾"}],"activate":false}}');
 
     expandedDirs.forEach(dir => {
         if (directoryStructure[dir]) {
@@ -279,81 +309,30 @@ MathJax.Hub.Queue(function() {
  <!-- 引用 MathJax -->
     </div>
     <div class="post-content">
-        <h1> Hello加公式版 </h1>
+        <h1> NJU_AIA核心成员组招新 </h1>
         
         <p class="post-meta">
             
-                <span class="post-AuthorDate">发布日期: 2024年9月4日</span>
+                <span class="post-AuthorDate">作者: 南的AIA  |</span>
+            
+                <span class="post-AuthorDate">发布日期: 2024年9月13日</span>
         </p>
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="lang-bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="lang-bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="lang-bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}</script><script type="math/tex; mode=display">
-\begin{align}
-\sqrt{A}\\
-\sqrt{B}
-\end{align}</script><p>内联公式$\sqrt{A} $</p>
-<h2 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h2><h3 id="你好-1"><a href="#你好-1" class="headerlink" title="你好"></a>你好</h3><h4 id="你好-2"><a href="#你好-2" class="headerlink" title="你好"></a>你好</h4><h6 id="你好-3"><a href="#你好-3" class="headerlink" title="你好"></a>你好</h6><pre><code class="lang-c">// 你的代码
-int main()&#123;
-    printf(&quot;Hello World!&quot;);
-    return 0;
-&#125;
-</code></pre>
-<pre><code class="lang-bash">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css&quot;&gt;
-</code></pre>
-<pre><code class="lang-C">int main()
-</code></pre>
-<h2 id="傅里叶矩阵"><a href="#傅里叶矩阵" class="headerlink" title="傅里叶矩阵"></a>傅里叶矩阵</h2><p>因为一些原因，我们选择在单位根处采样，记 $\omega_n$ 为 n 次单位根, 在$[\omega^0,\omega,\omega_2,\cdots\omega^{n-1}] $ 采样得到傅里叶矩阵：</p>
-<script type="math/tex; mode=display">
-F=
-\begin{bmatrix}
-1&1&1&\cdots &1\\
-1&\omega&\omega^2&\cdots &\omega^{n-1}\\
-1&\omega^2&\omega^3&\cdots &\omega^{2(n-1)}\\
-\vdots&&&\ddots\\
-1&\omega^{n-1}&\omega^{2(n-1)}&\cdots &\omega^{(n-1)^2}
-\end{bmatrix}</script><p>&amp;可以发现 $F_{ij} = \omega^{i\cdot j}$ , $F$ 是一个对称矩阵。</p>
-<p>由单位根的性质，如果 n 为偶数，$\omega ^{n/2} = -1$  </p>
-<p>即</p>
-<script type="math/tex; mode=display">
-F_{n/2}PF_{n/2}\\
-F_{n/2}PF_{n/2}</script><script type="math/tex; mode=display">
-J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}</script><script type="math/tex; mode=display">
-\begin{align}
-a&\quad c\\
-b&\quad d
-\end{align}</script><p>这是一个内联公式 $a^2 + b^2 = c^2$。</p>
-<p>这是一个块级公式：</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-1&1&1&\cdots &1\\
-1&\omega&\omega^2&\cdots &\omega^{n-1}\\
-1&\omega^2&\omega^3&\cdots &\omega^{2(n-1)}\\
-\vdots& & &\ddots\\
-1&\omega^{n-1}&\omega^{2(n-1)}&\cdots &\omega^{(n-1)^2}
-\end{bmatrix}</script><p>这是一个内联公式 $a^2 + b^2 = c^2$。</p>
-<p>这是一个块级公式：</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}</script><script type="math/tex; mode=display">
-a\\b</script><p>$\alpha_s$ </p>
-<p>$a\\b$ </p>
+        <blockquote>
+<p>大家好，这里是NJU-AIA社区，我们核心成员组的招新于今日正式启动！作为一个秉承自由、开放精神的学术社区，我们的成长与发展始终离不开每一位热心贡献者的支持与参与。如果你在学业之余有一些时间，并且愿意和我们一起为这个富有活力与潜力的社区贡献力量，我们真诚地欢迎你的加入！</p>
+</blockquote>
+<h3 id="关于NJU-AIA"><a href="#关于NJU-AIA" class="headerlink" title="关于NJU_AIA"></a>关于NJU_AIA</h3><h4 id="核心成员组是什么？"><a href="#核心成员组是什么？" class="headerlink" title="核心成员组是什么？"></a>核心成员组是什么？</h4><p>核心成员组是一群肩负着为AIA社区服务使命的志愿者。社区运营的方方面面，从日常管理到活动组织，再到技术支持，几乎所有事务都由核心成员组的伙伴们携手完成。当然，我们会提供相应的志愿时长、奖励报酬，但与其说我们在“发福利”，不如说我们更希望大家在这里获得无形的收获：来自团队合作的满足感、成长带来的喜悦，以及用行动去影响和改变的力量。</p>
+<h4 id="核心成员组的分工？"><a href="#核心成员组的分工？" class="headerlink" title="核心成员组的分工？"></a>核心成员组的分工？</h4><p>核⼼成员组包含技术组、⽂宣运营组和执⾏组。尽管⼯作内容繁多， 但通过合理分⼯与轮值，⼯作量将得到有效控制，不会过于繁重。</p>
+<p>本次招新面向技术组和文宣运营组。</p>
+<p>技术组：负责例会准备、项⽬引导、⽐赛组织、技术分享等与技术密切相关的⼯作。</p>
+<p>文宣运营组：负责活动策划、社区运营、⽂案撰写、推⽂美编、⽹站运维、活动记录及财务报销等⼯作。</p>
+<p>P.S. 实际上文宣运营组对于人工智能专业水平要求并不高。如果您有运营（组织活动，运营社区），宣传（公众号美编，网站运营美化，海报设计）的经验——哪怕您没有经验，但您有您认为不错的想法，欢迎您与我们交流。</p>
+<h4 id="如何报名？"><a href="#如何报名？" class="headerlink" title="如何报名？"></a>如何报名？</h4><p>有意向加入核心成员组的朋友，请填写《AIA核心组招新简历模板》并发送至我们的邮箱：NJU_AIA@163.com ，截止时间为9月18日晚上23:00，后续我们将审核并组织面试和筛选。</p>
+<p>点击下方阅读原文获取简历模版！</p>
+<hr>
+<p>我们将在群内发布新学期的工作计划，如果你对这些工作充满热情，不论是否有经验，只要你有创意、有想法，欢迎与我们联系（无论是私聊管理员、群内建议，还是发送邮件提议）！当然，即使没有加入核心成员组，也同样可以成为社区的一份子，参与我们的活动和项目。我们期待与你一起建设这个无限可能的社区！</p>
+<p>如果有意加入NJU_AIA（并非一定要加入核心成员组哦），请扫描下方二维码<strong>加入招新咨询QQ群</strong>获取更多有关信息～</p>
+<p><img src="/images/others/qqgroup.webp" alt=""></p>
+<p><a target="_blank" rel="noopener" href="https://box.nju.edu.cn/d/d25e4fd96e6e49f99ac2/">AIA核心成员组招新简历模板——南大云盘 NJU Box</a></p>
 
     </div>
 </section>

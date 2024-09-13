@@ -15,7 +15,7 @@
     <h1>南京大学AIA协会 NJU AIA</h1>
     <div class="logo">
         <img src="/images/logo.png" alt="Company Logo">
-        <span>南京大学AIA协会(测试版)</span>
+        <span>南京大学AIA协会</span>
     </div>
     <nav>
         <ul>
@@ -108,29 +108,40 @@
 
 
 
- <!-- 获取当前文章的类型 -->
+ 
 
      <!-- 只处理相同类型的文章 -->
         
-        <!-- 样例:_posts/dir/test.md -->
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
         
+    
+
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
         
     
 
      <!-- 只处理相同类型的文章 -->
         
-        <!-- 样例:_posts/dir/test.md -->
-        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
         
     
 
      <!-- 只处理相同类型的文章 -->
         
-        <!-- 样例:_posts/dir/test.md -->
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
         
-        
-    
-
     
 
     
@@ -142,12 +153,32 @@
     <div id="tree">
         <ul>
             
-                <li>
-                    <a href="#" class="directory" onclick="toggleSubdirectory('activity')"><i class="fa fa-folder"></i>
-                        activity
-                    </a>
-                    
-                </li>
+                 <!-- 仅当 dir 不为空时渲染文件夹样式 -->
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('技术例会')"><i class="fa fa-folder"></i>
+                            技术例会
+                        </a>
+                        
+                    </li>
+                
+            
+                 <!-- 仅当 dir 不为空时渲染文件夹样式 -->
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('招新')"><i class="fa fa-folder"></i>
+                            招新
+                        </a>
+                        
+                    </li>
+                
+            
+                 <!-- 仅当 dir 不为空时渲染文件夹样式 -->
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('活动')"><i class="fa fa-folder"></i>
+                            活动
+                        </a>
+                        
+                    </li>
+                
             
         </ul>
     </div>
@@ -173,7 +204,7 @@
 
     // Initialize directoryStructure from global and cookie
     const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
-    let directoryStructure = JSON.parse('{"activity":{"files":[{"name":"Datawhale.md","url":"posts/331058520/","title":"Datawhale AI + X 高校行「南大场」活动回顾"},{"name":"pytorch.md","url":"posts/2749833372/","title":"3月技术分享例会：pytorch速通教学"},{"name":"LangChainAgent.md","url":"posts/1389444303/","title":"11月技术例会：上手LangChain Agent开发"}],"activate":false}}');
+    let directoryStructure = JSON.parse('{"技术例会":{"files":[{"name":"LangChainAgent.md","url":"posts/1389444303/","title":"11月技术例会：上手LangChain Agent开发"},{"name":"pytorch.md","url":"posts/2749833372/","title":"3月技术分享例会：pytorch速通教学"}],"activate":false},"招新":{"files":[{"name":"mainpeople.md","url":"posts/3887023038/","title":"NJU_AIA核心成员组招新"}],"activate":false},"活动":{"files":[{"name":"Datawhale.md","url":"posts/331058520/","title":"Datawhale AI + X 高校行「南大场」活动回顾"}],"activate":false}}');
 
     expandedDirs.forEach(dir => {
         if (directoryStructure[dir]) {
@@ -201,15 +232,29 @@
     }
 
 
-
     function renderTree() {
         const tree = document.getElementById('tree');
         tree.innerHTML = `
             <ul>
                 ${Object.keys(directoryStructure).map(dir => `
-                    ${directoryStructure[dir].files.map(file => `
-                        <li><a href="/${file.url}">${file.title}</a></li>
-                    `).join('')}
+                    ${dir ? `
+                        <li>
+                            <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
+                                ${dir}
+                            </a>
+                            ${directoryStructure[dir].activate ? `
+                                <ul>
+                                    ${directoryStructure[dir].files.map(file => `
+                                        <li><a href="/${file.url}">${file.title}</a></li>
+                                    `).join('')}
+                                </ul>
+                            ` : ''}
+                        </li>
+                    ` : `
+                        ${directoryStructure[dir].files.map(file => `
+                            <li><a href="/${file.url}">${file.title}</a></li>
+                        `).join('')}
+                    `}
                 `).join('')}
             </ul>
         `;

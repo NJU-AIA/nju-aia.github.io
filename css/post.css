@@ -16,7 +16,7 @@ footer{
 
 /* post-AuthorDate 样式 */
 .post-AuthorDate {
-    font-size: 14px; /* 设置字体大小 */
+    font-size: 15px; /* 设置字体大小 */
     color: #858f9b; /* 设置字体颜色 */
     margin-right: 10px; /* 设置右外边距 */
     display: inline-block; /* 设置为内联块元素 */
@@ -27,14 +27,14 @@ footer{
 /* GitHub 风格的 Markdown 样式 */
 .post-content {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.6;
+    line-height: 1.8;
     color: #24292e;
     background-color: #ffffff;
     /* padding: 20px; */
     /* margin-left: 250px; */
     padding: 30px 70px;
     margin: 20px 120px 10px 320px;
-
+    font-size: 17px;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(27, 31, 35, 0.12);
@@ -47,38 +47,38 @@ footer{
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: 25px;
+    margin-bottom: 17px;
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
 .post-content h1 {
-    font-size: 2em;
+    font-size: 2.1em;
     border-bottom: 1px solid #eaecef;
     padding-bottom: 0.3em;
 }
 
 .post-content h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     border-bottom: 1px solid #eaecef;
     padding-bottom: 0.3em;
 }
 
 .post-content h3 {
-    font-size: 1.25em;
+    font-size: 1.35em;
 }
 
 .post-content h4 {
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .post-content h5 {
-    font-size: 0.875em;
+    font-size: 0.975em;
 }
 
 .post-content h6 {
-    font-size: 0.85em;
+    font-size: 0.95em;
     color: #6a737d;
 }
 
@@ -120,7 +120,7 @@ footer{
 .post-content code {
     padding: 0.2em 0.4em;
     margin: 0;
-    font-size: 85%;
+    font-size: 90%;
     background-color: rgba(27, 31, 35, 0.05);
     border-radius: 3px;
 }
@@ -128,7 +128,7 @@ footer{
 .post-content pre {
     padding: 16px;
     overflow: auto;
-    font-size: 85%;
+    font-size: 90%;
     line-height: 1.45;
     background-color: #f6f8fa;
     border-radius: 3px;

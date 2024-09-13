@@ -15,7 +15,7 @@
     <h1>南京大学AIA协会 NJU AIA</h1>
     <div class="logo">
         <img src="/images/logo.png" alt="Company Logo">
-        <span>南京大学AIA协会(测试版)</span>
+        <span>南京大学AIA协会</span>
     </div>
     <nav>
         <ul>
@@ -108,19 +108,22 @@
 
 
 
- <!-- 获取当前文章的类型 -->
-
-    
-
-    
+ 
 
     
 
      <!-- 只处理相同类型的文章 -->
         
-        <!-- 样例:_posts/dir/test.md -->
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
         
-        
+    
+
+    
+
+    
+
     
 
     
@@ -132,12 +135,11 @@
     <div id="tree">
         <ul>
             
-                <li>
-                    <a href="#" class="directory" onclick="toggleSubdirectory('learning')"><i class="fa fa-folder"></i>
-                        learning
-                    </a>
+                 <!-- 如果 dir 为空，直接渲染文件 -->
                     
-                </li>
+                        <li><a href="/posts/999555316/">Tosouth.md</a></li>
+                    
+                
             
         </ul>
     </div>
@@ -163,7 +165,7 @@
 
     // Initialize directoryStructure from global and cookie
     const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
-    let directoryStructure = JSON.parse('{"learning":{"files":[{"name":"Tosouth.md","url":"posts/999555316/","title":"自学指南"}],"activate":false}}');
+    let directoryStructure = JSON.parse('{"":{"files":[{"name":"Tosouth.md","url":"posts/999555316/","title":"自学指南"}],"activate":false}}');
 
     expandedDirs.forEach(dir => {
         if (directoryStructure[dir]) {
@@ -191,15 +193,29 @@
     }
 
 
-
     function renderTree() {
         const tree = document.getElementById('tree');
         tree.innerHTML = `
             <ul>
                 ${Object.keys(directoryStructure).map(dir => `
-                    ${directoryStructure[dir].files.map(file => `
-                        <li><a href="/${file.url}">${file.title}</a></li>
-                    `).join('')}
+                    ${dir ? `
+                        <li>
+                            <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
+                                ${dir}
+                            </a>
+                            ${directoryStructure[dir].activate ? `
+                                <ul>
+                                    ${directoryStructure[dir].files.map(file => `
+                                        <li><a href="/${file.url}">${file.title}</a></li>
+                                    `).join('')}
+                                </ul>
+                            ` : ''}
+                        </li>
+                    ` : `
+                        ${directoryStructure[dir].files.map(file => `
+                            <li><a href="/${file.url}">${file.title}</a></li>
+                        `).join('')}
+                    `}
                 `).join('')}
             </ul>
         `;
