@@ -32,7 +32,9 @@
 
 #tree ul li a {
     text-decoration: none;
-    color: #0366d6;
+    /* color: #0366d6; */
+    /* color: #0f54d4e5; */
+    color:rgb(112, 113, 118);
     display: block; /* 将链接设置为块级元素 */
     padding: 8px 12px; 
     border-radius: 6px; 
@@ -108,7 +110,8 @@ body.dark-mode #tree {
 }
 
 body.dark-mode #tree a {
-    color: #e0e0e0; /* 黑夜模式下链接字体颜色 */
+    /* color: #e0e0e0; */
+    color: #cacaca;
 }
 
 body.dark-mode #tree a:hover {

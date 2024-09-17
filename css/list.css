@@ -8,6 +8,7 @@ html{
     min-height: 100%;
 }
 footer{
+    background-color: #f4f4f4;
     width: 100%;
     position: absolute;
 }
@@ -68,7 +69,8 @@ body.dark-mode {
 }
 
 body.dark-mode .content-block {
-    background-color: #1e1e1e;
+    /* background-color: #1e1e1e; */
+    background-color: #1e1e1ed4;
     border-color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -83,4 +85,8 @@ body.dark-mode .content-intro {
 
 body.dark-mode .content-entry {
     color: #66b2ff;
+}
+
+body.dark-mode footer{
+    background-color: #1e1e1e;
 }

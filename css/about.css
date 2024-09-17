@@ -8,6 +8,7 @@ html{
     min-height: 100%;
 }
 footer{
+    background-color: #f4f4f4;
     width: 100%;
     position: absolute;
 }
@@ -66,4 +67,7 @@ body.dark-mode #contributors h2 {
 body.dark-mode #contact p,
 body.dark-mode #contributors ul li {
     color: #ccc;
+}
+body.dark-mode footer{
+    background-color: #1e1e1e;
 }

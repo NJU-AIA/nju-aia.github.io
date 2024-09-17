@@ -8,6 +8,7 @@ html{
     min-height: 100%;
 }
 footer{
+    background-color: #ffffff;
     width: 100%;
     position: absolute;
 }
@@ -265,4 +266,8 @@ body.dark-mode .post-content hr {
 
 body.dark-mode .post-content a {
     color: rgb(122, 174, 235);
+}
+
+body.dark-mode footer{
+    background-color: #1e1e1e;
 }
