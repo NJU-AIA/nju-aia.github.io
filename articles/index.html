@@ -23,6 +23,8 @@
             <li><a href="/learning">学习资料</a></li>
             <li><a href="/activity">活动合辑</a></li>
             <li><a href="/about">关于我们</a></li>
+            <!-- <li><a href="/chat">聊天</a></li> -->
+            <!-- <li><a href="/oml2d">看板娘</a></li> -->
             <!-- <li><a href="/articles">articles</a></li> -->
         </ul>
     </nav>
@@ -127,28 +129,6 @@
 
     <div class="content-block">
         <h2 class="content-title">
-            NJU_AIA核心成员组招新
-        </h2>
-
-        
-            <h3 class="content-type">activity</h3>
-        
-
-
-        <p class="content-intro">
-            2024NJU_AIA核心成员组招新
-        </p>
-        <div class="content-footer">
-            <a class="content-entry" href="/posts/3887023038/">
-                <span class="same-line">查看文章&gt;</span>
-            </a>
-        </div>
-    </div>
-   
-
-
-    <div class="content-block">
-        <h2 class="content-title">
             11月技术例会：上手LangChain Agent开发
         </h2>
 
@@ -162,6 +142,50 @@
         </p>
         <div class="content-footer">
             <a class="content-entry" href="/posts/1389444303/">
+                <span class="same-line">查看文章&gt;</span>
+            </a>
+        </div>
+    </div>
+   
+
+
+    <div class="content-block">
+        <h2 class="content-title">
+            3月技术分享例会：pytorch速通教学
+        </h2>
+
+        
+            <h3 class="content-type">activity</h3>
+        
+
+
+        <p class="content-intro">
+            关于numpy，pytorch等常用组件内容
+        </p>
+        <div class="content-footer">
+            <a class="content-entry" href="/posts/2749833372/">
+                <span class="same-line">查看文章&gt;</span>
+            </a>
+        </div>
+    </div>
+   
+
+
+    <div class="content-block">
+        <h2 class="content-title">
+            NJU_AIA核心成员组招新
+        </h2>
+
+        
+            <h3 class="content-type">activity</h3>
+        
+
+
+        <p class="content-intro">
+            2024NJU_AIA核心成员组招新
+        </p>
+        <div class="content-footer">
+            <a class="content-entry" href="/posts/3887023038/">
                 <span class="same-line">查看文章&gt;</span>
             </a>
         </div>
@@ -206,28 +230,6 @@
         </p>
         <div class="content-footer">
             <a class="content-entry" href="/posts/1243066710/">
-                <span class="same-line">查看文章&gt;</span>
-            </a>
-        </div>
-    </div>
-   
-
-
-    <div class="content-block">
-        <h2 class="content-title">
-            3月技术分享例会：pytorch速通教学
-        </h2>
-
-        
-            <h3 class="content-type">activity</h3>
-        
-
-
-        <p class="content-intro">
-            关于numpy，pytorch等常用组件内容
-        </p>
-        <div class="content-footer">
-            <a class="content-entry" href="/posts/2749833372/">
                 <span class="same-line">查看文章&gt;</span>
             </a>
         </div>
@@ -283,6 +285,31 @@
 
 
 
+
+    <script src="https://unpkg.com/oh-my-live2d@latest"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof OML2D !== 'undefined') {
+      OML2D.loadOml2d({
+        models: [
+          {
+            path: 'https://model.oml2d.com/Pio/model.json',
+            scale: 0.3,
+            position: [0, 50],
+            stageStyle: {
+              height: 300
+            }
+          }
+        ],
+        statusBar: {
+          loadingIcon: 'icon-loading'
+        },
+      });
+    } else {
+      console.error('OML2D 加载失败');
+    }
+  });
+</script>
 </body>
 
 </html>
