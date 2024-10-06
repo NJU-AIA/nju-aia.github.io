@@ -114,12 +114,10 @@
 
     
 
-     <!-- 只处理相同类型的文章 -->
-        
-        <!-- _posts/activity/Datawhale.md -->
-         <!-- 第三个元素及之后 -->
-        <!-- [ 'Datawhale.md' ] -->
-        
+    
+
+    
+
     
 
      <!-- 只处理相同类型的文章 -->
@@ -146,8 +144,12 @@
         
     
 
-    
-
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        
     
 
 
@@ -157,8 +159,8 @@
             
                  <!-- 仅当 dir 不为空时渲染文件夹样式 -->
                     <li>
-                        <a href="#" class="directory" onclick="toggleSubdirectory('技术例会')"><i class="fa fa-folder"></i>
-                            技术例会
+                        <a href="#" class="directory" onclick="toggleSubdirectory('招新')"><i class="fa fa-folder"></i>
+                            招新
                         </a>
                         
                     </li>
@@ -166,8 +168,8 @@
             
                  <!-- 仅当 dir 不为空时渲染文件夹样式 -->
                     <li>
-                        <a href="#" class="directory" onclick="toggleSubdirectory('招新')"><i class="fa fa-folder"></i>
-                            招新
+                        <a href="#" class="directory" onclick="toggleSubdirectory('技术例会')"><i class="fa fa-folder"></i>
+                            技术例会
                         </a>
                         
                     </li>
@@ -206,7 +208,7 @@
 
     // Initialize directoryStructure from global and cookie
     const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
-    let directoryStructure = JSON.parse('{"技术例会":{"files":[{"name":"LangChainAgent.md","url":"posts/1389444303/","title":"11月技术例会：上手LangChain Agent开发"},{"name":"pytorch.md","url":"posts/2749833372/","title":"3月技术分享例会：pytorch速通教学"}],"activate":false},"招新":{"files":[{"name":"mainpeople.md","url":"posts/3887023038/","title":"NJU_AIA核心成员组招新"}],"activate":false},"活动":{"files":[{"name":"Datawhale.md","url":"posts/331058520/","title":"Datawhale AI + X 高校行「南大场」活动回顾"}],"activate":false}}');
+    let directoryStructure = JSON.parse('{"招新":{"files":[{"name":"mainpeople.md","url":"posts/3887023038/","title":"NJU_AIA核心成员组招新"}],"activate":false},"技术例会":{"files":[{"name":"LangChainAgent.md","url":"posts/1389444303/","title":"11月技术例会：上手LangChain Agent开发"},{"name":"pytorch.md","url":"posts/2749833372/","title":"3月技术分享例会：pytorch速通教学"}],"activate":false},"活动":{"files":[{"name":"Datawhale.md","url":"posts/331058520/","title":"Datawhale AI + X 高校行「南大场」活动回顾"}],"activate":false}}');
 
     expandedDirs.forEach(dir => {
         if (directoryStructure[dir]) {

@@ -1,0 +1,441 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/layout.css">
+    <style>body {display: none;}</style> <!-- 初始隐藏 body -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <head>
+    <link rel="stylesheet" type="text/css" href="/css/partial/header.css">
+    <link rel="stylesheet" href="/lib/highlight/atom-one-light.css" id="highlight-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<header>
+    <h1>南京大学AIA协会 NJU AIA</h1>
+    <div class="logo">
+        <img src="/images/logo.png" alt="Company Logo">
+        <span>南京大学AIA协会</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/learning">学习资料</a></li>
+            <li><a href="/activity">活动合辑</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <!-- <li><a href="/chat">聊天</a></li> -->
+            <!-- <li><a href="/oml2d">看板娘</a></li> -->
+            <!-- <li><a href="/articles">articles</a></li> -->
+        </ul>
+    </nav>
+    <button id="toggle-dark-mode"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<script>
+
+    // 设置cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // 获取cookie
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // 切换黑夜模式
+    document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        setCookie('darkMode', isDarkMode, 7); // 记住模式7天
+        updateHighlightStyle();
+        updateButtonIcon();
+    });
+
+    // 更新代码高亮样式
+    function updateHighlightStyle() {
+        const highlightStyle = document.getElementById('highlight-style');
+        if (document.body.classList.contains('dark-mode')) {
+            highlightStyle.href = '/lib/highlight/atom-one-dark.css';
+        } else {
+            highlightStyle.href = '/lib/highlight/atom-one-light.css';
+        }
+    }
+
+    // 更新按钮图标
+        function updateButtonIcon() {
+        const button = document.getElementById('toggle-dark-mode');
+        const icon = button.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
+    // 初始化时根据cookie设置模式
+    window.onload = function() {
+        const darkMode = getCookie('darkMode');
+        if (darkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateHighlightStyle();
+        updateButtonIcon();
+    }
+</script>
+
+    <div class="content">
+        <head>
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
+</head>
+
+
+<section class="post">
+    <div class="sidebar">
+        <head>
+    <link rel="stylesheet" href="/css/partial/sidebar.css">
+</head>
+
+
+
+ 
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        
+    
+
+    
+
+    
+
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<aside id="sidebar">
+    <div id="tree">
+        <ul>
+            
+                 <!-- 如果 dir 为空，直接渲染文件 -->
+                    
+                        <li><a href="/posts/3114420454/">qqbot.md</a></li>
+                    
+                        <li><a href="/posts/999555316/">Tosouth.md</a></li>
+                    
+                
+            
+        </ul>
+    </div>
+</aside>
+
+<button id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+
+<script>
+    // Function to get cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Function to set cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = `expires=${d.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/`;
+    }
+
+    // Initialize directoryStructure from global and cookie
+    const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
+    let directoryStructure = JSON.parse('{"":{"files":[{"name":"qqbot.md","url":"posts/3114420454/","title":"qqbot部署"},{"name":"Tosouth.md","url":"posts/999555316/","title":"自学指南"}],"activate":false}}');
+
+    expandedDirs.forEach(dir => {
+        if (directoryStructure[dir]) {
+            directoryStructure[dir].activate = true;
+        }
+    });
+
+    // Clean up invalid directories from cookie
+    const validExpandedDirs = expandedDirs.filter(dir => directoryStructure[dir]);
+    if (validExpandedDirs.length !== expandedDirs.length) {
+        setCookie('expandedDirs', validExpandedDirs.join(','), 7);
+    }
+
+    document.getElementById('toggle-sidebar').addEventListener('click', function () {
+        const sidebar = document.getElementById('tree');
+        sidebar.classList.toggle('invisible');
+    });
+
+    function toggleSubdirectory(dir) {
+        directoryStructure[dir].activate = !directoryStructure[dir].activate;
+        const updatedExpandedDirs = Object.keys(directoryStructure)
+            .filter(key => directoryStructure[key].activate);
+        setCookie('expandedDirs', updatedExpandedDirs.join(','), 7); // Store updated expanded directories in cookie
+        renderTree();
+    }
+
+
+    function renderTree() {
+        const tree = document.getElementById('tree');
+        tree.innerHTML = `
+            <ul>
+                ${Object.keys(directoryStructure).map(dir => `
+                    ${dir ? `
+                        <li>
+                            <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
+                                ${dir}
+                            </a>
+                            ${directoryStructure[dir].activate ? `
+                                <ul>
+                                    ${directoryStructure[dir].files.map(file => `
+                                        <li><a href="/${file.url}">${file.title}</a></li>
+                                    `).join('')}
+                                </ul>
+                            ` : ''}
+                        </li>
+                    ` : `
+                        ${directoryStructure[dir].files.map(file => `
+                            <li><a href="/${file.url}">${file.title}</a></li>
+                        `).join('')}
+                    `}
+                `).join('')}
+            </ul>
+        `;
+    }
+
+    // Initial render
+    renderTree();
+</script>
+    </div>
+    <div>   
+        
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX", "TeX"],
+        linebreaks: { automatic: true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], // 支持块级数学公式
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"], // 添加 AMSmath 扩展
+        noUndefined: {
+            attributes: {
+                mathcolor: "red",
+                mathbackground: "#FFEEEE",
+                mathsize: "90%"
+            }
+        },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script async type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+ <!-- 引用 MathJax -->
+    </div>
+    <div class="post-content">
+        <h1> qqbot部署 </h1>
+        
+        <p class="post-meta">
+            
+                <span class="post-AuthorDate">发布日期: 2024年10月6日</span>
+        </p>
+        <h2 id="方案介绍"><a href="#方案介绍" class="headerlink" title="方案介绍"></a>方案介绍</h2><p>想要部署一个 QQ 机器人，首先要有一个聊天机器人的框架用来处理消息，这里选择  (nonebot)[<a target="_blank" rel="noopener" href="https://nonebot.dev/docs">https://nonebot.dev/docs</a>]  。其次需要让机器人对接到 QQ 账号实现消息的收发，目前来看最稳定的方案是使用新版QQ的插件<a target="_blank" rel="noopener" href="https://llonebot.github.io/zh-CN/">LLOneBot</a>。 </p>
+<blockquote>
+<p>Caution！</p>
+<p>请不要在 QQ 官方群聊和任何影响力较大的简中互联网平台（包括但不限于: 哔哩哔哩，微博，知乎，抖音等）发布和讨论任何与本插件存在相关性的信息</p>
+</blockquote>
+<h2 id="快速部署-nonebot"><a href="#快速部署-nonebot" class="headerlink" title="快速部署 nonebot"></a>快速部署 nonebot</h2><p>有能力的同学建议直接观看官方文档，接下来的内容是写给没有配置环境基础的同学的。</p>
+<h3 id="python-环境准备"><a href="#python-环境准备" class="headerlink" title="python 环境准备"></a>python 环境准备</h3><blockquote>
+<ul>
+<li>请确保你的 Python 版本 &gt;= 3.9</li>
+<li><strong>我们强烈建议使用虚拟环境进行开发</strong>，如果没有使用虚拟环境，请确保已经卸载可能存在的 NoneBot v1！！！</li>
+</ul>
+</blockquote>
+<p>建议使用 conda/miniconda 创建虚拟环境</p>
+<p>去 <a target="_blank" rel="noopener" href="https://docs.conda.io/projects/conda/en/stable/">conda官网</a> 下载安装包一件安装即可，C 盘不够大的同学记得修改安装路径，因为 conda 环境多起来的话会占用相当多硬盘空间。 </p>
+<p>安装完 conda 你会发现在终端不能直接使用conda命令，如果你想要通过直接在命令行中键入<code>conda activate</code>命令打开任意conda环境。可以参考这篇文章： <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_57170739/article/details/134833229">安装Anaconda（miniconda）后如何在powershell使用conda activate命令（Windows）-CSDN博客</a> </p>
+<p>安装完成后创建并进入虚拟环境</p>
+<pre><code class="lang-bash">conda create --name QQbot
+conda activate QQbot
+</code></pre>
+<p>因为nonebot 官方文档十分详细（甚至有可以直接复制文本的视频），接下来直接按照 <a target="_blank" rel="noopener" href="https://nonebot.dev/docs/quick-start">快速上手 | NoneBot</a> 操作即可。如果你没有看懂，或者觉得我的教程比官方文档更可靠，可以看下面我的操作。</p>
+<h3 id="安装脚手架"><a href="#安装脚手架" class="headerlink" title="安装脚手架"></a><a target="_blank" rel="noopener" href="https://nonebot.dev/docs/quick-start#安装脚手架">安装脚手架</a></h3><p>确保你已经安装了 Python 3.9 及以上版本，然后在命令行中执行以下命令：</p>
+<ol>
+<li><p>安装 <a target="_blank" rel="noopener" href="https://pypa.github.io/pipx/">pipx</a></p>
+<pre><code class="lang-bash">python -m pip install --user pipx
+python -m pipx ensurepath
+</code></pre>
+</li>
+</ol>
+<p>   如果在此步骤的输出中出现了“open a new terminal”或者“re-login”字样，那么请关闭当前终端并重新打开一个新的终端。</p>
+<ol>
+<li><p>安装脚手架</p>
+<pre><code class="lang-bash">pipx install nb-cli
+</code></pre>
+</li>
+</ol>
+<p>安装完成后，你可以在命令行使用 <code>nb</code> 命令来使用脚手架。如果出现无法找到命令的情况（例如出现“Command not found”字样），请参考 <a target="_blank" rel="noopener" href="https://pypa.github.io/pipx/">pipx 文档</a> 检查你的环境变量。</p>
+<h3 id="创建运行项目"><a href="#创建运行项目" class="headerlink" title="创建运行项目"></a>创建运行项目</h3>
+        <link rel="stylesheet" type="text/css" href="/asciinema-player/asciinema-player.css" />
+        <div id="asciicast-/recording/demo"></div>
+        <script src="/asciinema-player/asciinema-player.min.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                AsciinemaPlayer.create('https://nju-aia.github.io//recording/demo.cast', document.getElementById('asciicast-/recording/demo'));
+            });
+        </script>
+    
+<p>当你看到如下内容，表示 nonebot 成功运行：</p>
+<pre><code class="lang-powershell">(QQbot) PS F:\QQbot\test&gt; nb run
+使用 Python: F:\QQbot\test\.venv\Scripts\python.exe
+10-06 12:28:17 [SUCCESS] nonebot | NoneBot is initializing...
+10-06 12:28:17 [INFO] nonebot | Current Env: dev
+10-06 12:28:17 [DEBUG] nonebot | Loaded Config: &#123;&#39;driver&#39;: &#39;~fastapi&#39;, &#39;host&#39;: IPv4Address(&#39;127.0.0.1&#39;), &#39;port&#39;: 8080, &#39;log_level&#39;: &#39;DEBUG&#39;, &#39;api_timeout&#39;: 30.0, &#39;superusers&#39;: set(), &#39;nickname&#39;: set(), &#39;command_start&#39;: &#123;&#39;/&#39;&#125;, &#39;command_sep&#39;: &#123;&#39;.&#39;&#125;, &#39;session_expire_timeout&#39;: datetime.timedelta(seconds=120), &#39;environment&#39;: &#39;dev&#39;&#125;
+10-06 12:28:18 [DEBUG] nonebot | Succeeded to load adapter &quot;OneBot V11&quot;
+10-06 12:28:18 [SUCCESS] nonebot | Succeeded to load plugin &quot;echo&quot; from &quot;nonebot.plugins.echo&quot;
+10-06 12:28:18 [SUCCESS] nonebot | Running NoneBot...
+10-06 12:28:18 [DEBUG] nonebot | Loaded adapters: OneBot V11
+10-06 12:28:18 [INFO] uvicorn | Started server process [17284]
+10-06 12:28:18 [INFO] uvicorn | Waiting for application startup.
+10-06 12:28:18 [INFO] uvicorn | Application startup complete.
+10-06 12:28:18 [INFO] uvicorn | Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+</code></pre>
+<p>可以看到 nonebot 在本地的 8080 端口使用开启了服务，使用 OneBot V11 协议。</p>
+<h2 id="利用LLOneBot-插件开启-websocket-反向代理"><a href="#利用LLOneBot-插件开启-websocket-反向代理" class="headerlink" title="利用LLOneBot 插件开启 websocket 反向代理"></a>利用LLOneBot 插件开启 websocket 反向代理</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><strong>首先检查自己的QQ是否是NTQQ，旧版本的 QQ 和 Tim 无法安装插件。</strong>  </p>
+<p>安装教程：<a target="_blank" rel="noopener" href="https://llonebot.github.io/zh-CN/guide/getting-started">快速开始 | LLOneBot</a>  </p>
+<p>因为QQ会检查文件完整性，安装插件失败可能导致无法打开QQ，可以重装QQ尝试别的方案。</p>
+<p>（我使用通用安装方法：使用 <a target="_blank" rel="noopener" href="https://github.com/Mzdyl/LiteLoaderQQNT_Install/releases">一键安装脚本</a> 安装 LiteLoaderQQNT，然后下载 <a target="_blank" rel="noopener" href="https://github.com/LLOneBot/LLOneBot/releases">LLOneBot</a> 最新版本解压放到 <code>plugins</code> 目录下，然后重启 QQ ）</p>
+<h3 id="对接"><a href="#对接" class="headerlink" title="对接"></a>对接</h3><p>正确安装插件之后在设置中可以看到 LLOneBot 的配置</p>
+<p><img src="/images/qqbot/llonebot.png" alt=""></p>
+<p>只用开启反向 WebSocket 监听服务，地址填写 <code>ws://127.0.0.1:8080/onebot/v11/ws</code> </p>
+<p>这时候再运行 nonebot </p>
+<pre><code class="lang-powershell">PS F:\QQbot\test&gt; nb run
+使用 Python: F:\QQbot\test\.venv\Scripts\python.exe
+10-06 13:17:16 [SUCCESS] nonebot | NoneBot is initializing...
+10-06 13:17:16 [INFO] nonebot | Current Env: dev
+10-06 13:17:16 [DEBUG] nonebot | Loaded Config: &#123;&#39;driver&#39;: &#39;~fastapi&#39;, &#39;host&#39;: IPv4Address(&#39;127.0.0.1&#39;), &#39;port&#39;: 8080, &#39;log_level&#39;: &#39;DEBUG&#39;, &#39;api_timeout&#39;: 30.0, &#39;superusers&#39;: set(), &#39;nickname&#39;: set(), &#39;command_start&#39;: &#123;&#39;/&#39;&#125;, &#39;command_sep&#39;: &#123;&#39;.&#39;&#125;, &#39;session_expire_timeout&#39;: datetime.timedelta(seconds=120), &#39;environment&#39;: &#39;dev&#39;&#125;
+10-06 13:17:16 [DEBUG] nonebot | Succeeded to load adapter &quot;OneBot V11&quot;
+10-06 13:17:16 [SUCCESS] nonebot | Succeeded to load plugin &quot;echo&quot; from &quot;nonebot.plugins.echo&quot;
+10-06 13:17:16 [SUCCESS] nonebot | Running NoneBot...
+10-06 13:17:16 [DEBUG] nonebot | Loaded adapters: OneBot V11
+10-06 13:17:17 [INFO] uvicorn | Started server process [4300]
+10-06 13:17:17 [INFO] uvicorn | Waiting for application startup.
+10-06 13:17:17 [INFO] uvicorn | Application startup complete.
+10-06 13:17:17 [INFO] uvicorn | Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+10-06 13:17:17 [INFO] uvicorn | (&#39;127.0.0.1&#39;, 64214) - &quot;WebSocket /onebot/v11/ws&quot; [accepted]
+10-06 13:17:17 [INFO] nonebot | OneBot V11 | Bot 1561365020 connected
+10-06 13:17:17 [INFO] websockets | connection open
+</code></pre>
+<p>你可以发现成功连上了QQ </p>
+<p>如果有人给你发消息，消息的信息会在控制台显示，</p>
+<pre><code class="lang-powershell">10-06 13:19:14 [SUCCESS] nonebot | OneBot V11 1561365020 | [message.private.friend]: Message 526119788 from 3792761726 &#39;你好&#39;
+10-06 13:19:14 [DEBUG] nonebot | Checking for matchers in priority 1...
+10-06 13:19:14 [DEBUG] nonebot | Checking for matchers completed
+10-06 13:19:38 [SUCCESS] nonebot | OneBot V11 1561365020 | [message.private.friend]:
+</code></pre>
+<p>如果你安装了 echo 插件（默认选项会安装）那么别人给你发送消息 “/echo hello” 的时候，none 会进行相应并且进行回声 (给别人发送 “hello”)</p>
+<p><img src="/images/qqbot/echo.png" alt=""></p>
+
+    </div>
+</section>
+
+    </div>
+    
+    <script src="/lib/highlight/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+            document.body.style.display = 'block'; // 显示 body
+        });
+    </script>
+
+    
+<head>
+    <link rel="stylesheet" href="/css/partial/footer.css">
+</head>
+
+<footer>
+    <p>&copy; 2024 南京大学AIA协会. All Rirghts Reserved</p>
+</footer>
+
+
+
+
+
+    <script src="https://unpkg.com/oh-my-live2d@latest"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof OML2D !== 'undefined') {
+      OML2D.loadOml2d({
+        models: [
+          {
+            path: 'https://model.oml2d.com/Pio/model.json',
+            scale: 0.3,
+            position: [0, 50],
+            stageStyle: {
+              height: 300
+            }
+          }
+        ],
+        statusBar: {
+          loadingIcon: 'icon-loading'
+        },
+      });
+    } else {
+      console.error('OML2D 加载失败');
+    }
+  });
+</script>
+</body>
+
+</html>

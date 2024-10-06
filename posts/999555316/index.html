@@ -124,6 +124,14 @@
 
     
 
+     <!-- 只处理相同类型的文章 -->
+        
+        <!-- _posts/activity/Datawhale.md -->
+         <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        
+    
+
     
 
     
@@ -138,6 +146,8 @@
         <ul>
             
                  <!-- 如果 dir 为空，直接渲染文件 -->
+                    
+                        <li><a href="/posts/3114420454/">qqbot.md</a></li>
                     
                         <li><a href="/posts/999555316/">Tosouth.md</a></li>
                     
@@ -167,7 +177,7 @@
 
     // Initialize directoryStructure from global and cookie
     const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
-    let directoryStructure = JSON.parse('{"":{"files":[{"name":"Tosouth.md","url":"posts/999555316/","title":"自学指南"}],"activate":false}}');
+    let directoryStructure = JSON.parse('{"":{"files":[{"name":"qqbot.md","url":"posts/3114420454/","title":"qqbot部署"},{"name":"Tosouth.md","url":"posts/999555316/","title":"自学指南"}],"activate":false}}');
 
     expandedDirs.forEach(dir => {
         if (directoryStructure[dir]) {
