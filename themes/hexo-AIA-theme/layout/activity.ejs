@@ -1,0 +1,23 @@
+<head>
+    <title>Activity</title>
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <% site.posts.forEach(function(post) { %>
+        <% if (post.type === 'activity') { %>
+        <div class="content-block">
+            <h2 class="content-title">
+                <%= post.title %>
+            </h2>  
+            <p class="content-intro">
+                <%= post.description %>
+            </p>
+            <div class="content-footer">
+                <a class="content-entry" href="/<%= post.path %>">
+                    <span class="same-line">查看文章&gt;</span>
+                </a>
+            </div>
+        </div>
+        <% } %>
+    <% }); %>
+</body>

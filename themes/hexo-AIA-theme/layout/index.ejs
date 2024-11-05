@@ -1,0 +1,37 @@
+<head>
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<body>
+
+<% site.posts.forEach(function(post) { %>
+
+    <div class="content-block">
+        <h2 class="content-title">
+            <%= post.title %>
+        </h2>
+
+        <% if (post.type === 'learning') { %>
+            <h3 class="content-type">learning</h3>
+        <% } else if (post.type === 'activity') { %>
+            <h3 class="content-type">activity</h3>
+        <% } else { %>
+            <h3 class="content-type">未分类</h3>
+        <% } %>
+
+
+        <p class="content-intro">
+            <%= post.description %>
+        </p>
+        <div class="content-footer">
+            <a class="content-entry" href="/<%= post.path %>">
+                <span class="same-line">查看文章&gt;</span>
+            </a>
+        </div>
+    </div>
+   
+<% }); %>
+
+</body>
+
+

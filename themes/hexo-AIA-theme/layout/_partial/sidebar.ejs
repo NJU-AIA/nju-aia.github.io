@@ -1,0 +1,140 @@
+<head>
+    <link rel="stylesheet" href="/css/partial/sidebar.css">
+</head>
+
+
+<% global.directoryStructure = {}; %>
+<% const currentPostType = page.type; %> 
+<% site.posts.forEach(function(post) { %>
+    <% if (post.type === currentPostType) { %> <!-- 只处理相同类型的文章 -->
+        <% raw_path = post.source %>
+        <!-- _posts/activity/Datawhale.md -->
+        <% path = raw_path.split('/').slice(2) %> <!-- 第三个元素及之后 -->
+        <!-- [ 'Datawhale.md' ] -->
+        <% 
+            <!-- console.log(path); -->
+            let dir, file, relativePath;
+            file = path[path.length - 1]; 
+            dir = path.slice(0, -1).join('/'); 
+            relativePath = path.join('/');
+            <!-- console.log(dir); -->
+            <!-- console.log(file); -->
+            <!-- console.log(relativePath); -->
+
+            if (global.directoryStructure[dir] === undefined) {
+                global.directoryStructure[dir] = { files: [], activate: false };
+            }
+            global.directoryStructure[dir].files.push({
+                name: file, url: post.path, title: post.title
+                <!-- url: posts/331058520/ -->
+            });
+        %>
+    <% } %>
+<% }); %>
+
+<aside id="sidebar">
+    <div id="tree">
+        <ul>
+            <% Object.keys(global.directoryStructure).forEach(function(dir) { %>
+                <% if (dir) { %> <!-- 仅当 dir 不为空时渲染文件夹样式 -->
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('<%= dir %>')"><i class="fa fa-folder"></i>
+                            <%= dir %>
+                        </a>
+                        <% if (global.directoryStructure[dir].activate) { %>
+                            <ul>
+                                <% global.directoryStructure[dir].files.forEach(function(file) { %>
+                                    <li><a href="/<%= file.url %>"><%= file.name %></a></li>
+                                <% }); %>
+                            </ul>
+                        <% } %>
+                    </li>
+                <% } else { %> <!-- 如果 dir 为空，直接渲染文件 -->
+                    <% global.directoryStructure[dir].files.forEach(function(file) { %>
+                        <li><a href="/<%= file.url %>"><%= file.name %></a></li>
+                    <% }); %>
+                <% } %>
+            <% }); %>
+        </ul>
+    </div>
+</aside>
+
+<button id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+
+<script>
+    // Function to get cookie by name
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Function to set cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = `expires=${d.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/`;
+    }
+
+    // Initialize directoryStructure from global and cookie
+    const expandedDirs = (getCookie('expandedDirs') || '').split(',').filter(Boolean);
+    let directoryStructure = JSON.parse('<%- JSON.stringify(global.directoryStructure) %>');
+
+    expandedDirs.forEach(dir => {
+        if (directoryStructure[dir]) {
+            directoryStructure[dir].activate = true;
+        }
+    });
+
+    // Clean up invalid directories from cookie
+    const validExpandedDirs = expandedDirs.filter(dir => directoryStructure[dir]);
+    if (validExpandedDirs.length !== expandedDirs.length) {
+        setCookie('expandedDirs', validExpandedDirs.join(','), 7);
+    }
+
+    document.getElementById('toggle-sidebar').addEventListener('click', function () {
+        const sidebar = document.getElementById('tree');
+        sidebar.classList.toggle('invisible');
+    });
+
+    function toggleSubdirectory(dir) {
+        directoryStructure[dir].activate = !directoryStructure[dir].activate;
+        const updatedExpandedDirs = Object.keys(directoryStructure)
+            .filter(key => directoryStructure[key].activate);
+        setCookie('expandedDirs', updatedExpandedDirs.join(','), 7); // Store updated expanded directories in cookie
+        renderTree();
+    }
+
+
+    function renderTree() {
+        const tree = document.getElementById('tree');
+        tree.innerHTML = `
+            <ul>
+                ${Object.keys(directoryStructure).map(dir => `
+                    ${dir ? `
+                        <li>
+                            <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
+                                ${dir}
+                            </a>
+                            ${directoryStructure[dir].activate ? `
+                                <ul>
+                                    ${directoryStructure[dir].files.map(file => `
+                                        <li><a href="/${file.url}">${file.title}</a></li>
+                                    `).join('')}
+                                </ul>
+                            ` : ''}
+                        </li>
+                    ` : `
+                        ${directoryStructure[dir].files.map(file => `
+                            <li><a href="/${file.url}">${file.title}</a></li>
+                        `).join('')}
+                    `}
+                `).join('')}
+            </ul>
+        `;
+    }
+
+    // Initial render
+    renderTree();
+</script>

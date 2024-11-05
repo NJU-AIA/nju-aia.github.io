@@ -1,0 +1,121 @@
+
+/* 侧边目录栏样式 */
+#tree {
+    position: fixed;
+    width: 250px; 
+    height: calc(100vh - 80px);
+    top: 80px;
+    left: 0;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-right: 1px solid #e1e4e8; 
+    overflow-y: auto; /* 允许垂直滚动 */
+    color: #000;
+    transition: left 0.3s ease; /* 添加过渡效果 */
+    box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(27, 31, 35, 0.12); /* 阴影效果 */
+    /* font-size: 16px; */
+}
+
+#tree.invisible {
+    left: -250px; /* 隐藏侧边栏 */
+}
+
+#tree ul {
+    list-style: none; /* 去掉列表项的默认样式 */
+    padding: 0; 
+    margin: 0; 
+}
+
+#tree ul li {
+    margin-bottom: 10px; 
+}
+
+#tree ul li a {
+    text-decoration: none;
+    /* color: #0366d6; */
+    /* color: #0f54d4e5; */
+    color:rgb(112, 113, 118);
+    display: block; /* 将链接设置为块级元素 */
+    padding: 8px 12px; 
+    border-radius: 6px; 
+}
+
+#tree ul li a .fa {
+    margin-right: 5px;
+}
+
+#tree ul li a:hover {
+    background-color: #e1e4e8; /* 悬停时的背景颜色 */
+}
+
+#tree ul li a.active {
+    background-color: #0366d6; /* 活动链接的背景颜色 */
+    color: #ffffff; /* 活动链接的字体颜色 */
+}
+
+#tree ul li ul {
+    display: block; /* 默认显示子目录 */
+}
+
+#toggle-sidebar {
+    position: fixed;
+    top: 100px;
+    left: 240px; 
+    transform: translateY(-50%); /* 垂直居中 */
+    padding: 10px 20px;
+    background-color: rgb(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1001; /* 确保按钮在侧边栏上方 */
+    width: 52px; 
+    height: 38px; 
+    /* display: inline-block; 确保按钮不会占据整个行 */
+    display: none; /* 默认隐藏按钮 */
+}
+
+#toggle-sidebar i {
+    margin-right: 5px; /* 图标与文本之间的间距 */
+}
+
+@media screen and (max-width: 768px) {
+    #tree {
+        left: -250px; /* 隐藏侧边栏 */
+    }
+
+    #toggle-sidebar {
+        left: 10px; /* 调整位置到左侧 */
+    }
+}
+
+
+/* 黑夜模式样式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode #search {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark-mode #tree {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0; /* 黑夜模式下字体颜色 */
+}
+
+body.dark-mode #tree a {
+    /* color: #e0e0e0; */
+    color: #cacaca;
+}
+
+body.dark-mode #tree a:hover {
+    color: #fff;
+    background-color: #555;
+}
+

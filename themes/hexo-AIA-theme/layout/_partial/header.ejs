@@ -1,0 +1,89 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/partial/header.css">
+    <link rel="stylesheet" href="/lib/highlight/atom-one-light.css" id="highlight-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<header>
+    <h1>南京大学AIA协会 NJU AIA</h1>
+    <div class="logo">
+        <img src="/images/logo.png" alt="Company Logo">
+        <span>南京大学AIA协会</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/learning">学习资料</a></li>
+            <li><a href="/activity">活动合辑</a></li>
+            <li><a href="/about">关于我们</a></li>
+            <!-- <li><a href="/chat">聊天</a></li> -->
+            <!-- <li><a href="/oml2d">看板娘</a></li> -->
+            <!-- <li><a href="/articles">articles</a></li> -->
+        </ul>
+    </nav>
+    <button id="toggle-dark-mode"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<script>
+
+    // 设置cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // 获取cookie
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // 切换黑夜模式
+    document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        setCookie('darkMode', isDarkMode, 7); // 记住模式7天
+        updateHighlightStyle();
+        updateButtonIcon();
+    });
+
+    // 更新代码高亮样式
+    function updateHighlightStyle() {
+        const highlightStyle = document.getElementById('highlight-style');
+        if (document.body.classList.contains('dark-mode')) {
+            highlightStyle.href = '/lib/highlight/atom-one-dark.css';
+        } else {
+            highlightStyle.href = '/lib/highlight/atom-one-light.css';
+        }
+    }
+
+    // 更新按钮图标
+        function updateButtonIcon() {
+        const button = document.getElementById('toggle-dark-mode');
+        const icon = button.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
+    // 初始化时根据cookie设置模式
+    window.onload = function() {
+        const darkMode = getCookie('darkMode');
+        if (darkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateHighlightStyle();
+        updateButtonIcon();
+    }
+</script>

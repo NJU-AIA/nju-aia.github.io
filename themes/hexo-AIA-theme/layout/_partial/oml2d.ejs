@@ -1,0 +1,24 @@
+<script src="https://unpkg.com/oh-my-live2d@latest"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof OML2D !== 'undefined') {
+      OML2D.loadOml2d({
+        models: [
+          {
+            path: 'https://model.oml2d.com/Pio/model.json',
+            scale: 0.3,
+            position: [0, 50],
+            stageStyle: {
+              height: 300
+            }
+          }
+        ],
+        statusBar: {
+          loadingIcon: 'icon-loading'
+        },
+      });
+    } else {
+      console.error('OML2D 加载失败');
+    }
+  });
+</script>
