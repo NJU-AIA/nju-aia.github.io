@@ -26,6 +26,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: custom kramed
+        run: cp custom_files/kramed/inline.js node_modules/kramed/lib/rules/inline.js
       - name: Build
         run: npm run build
       - name: Upload Pages artifact
