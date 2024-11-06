@@ -2,7 +2,7 @@
 title: Datawhale AI + X 高校行「南大场」活动回顾
 type: activity
 abbrlink: 331058520
-author: 南的AIA
+author: NJU-AIA & Datawhale
 date: 2024-05-07
 layout: post
 description: Datawhale AI + X 高校行系列活动

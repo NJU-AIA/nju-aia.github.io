@@ -3,7 +3,7 @@ title: 11月技术例会：上手LangChain Agent开发
 abbrlink: 1389444303
 date: 2023-12-10 
 type: activity
-author: 南的AIA
+author: NJU-AIA & 未来开发者协会
 description: 关于LangChain Agent开发的入门学习
 ---
 

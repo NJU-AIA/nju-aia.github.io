@@ -4,7 +4,7 @@ title: 3月技术分享例会：pytorch速通教学
 type: activity
 description: 关于numpy，pytorch等常用组件内容
 date: 2024-05-11
-author: 南的AIA
+author: NJU-AIA
 ---
 
 2024年3月31日，南大AIA在南大仙林校区开展了3月技术分享例会。本次例会主题是“pytorch速通教学”，旨在帮助初学或感兴趣的朋友了解numpy，pytorch常用组件内容。
