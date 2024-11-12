@@ -37,6 +37,8 @@ conda activate QQbot
 
 因为nonebot 官方文档十分详细（甚至有可以直接复制文本的视频），接下来直接按照 [快速上手 | NoneBot](https://nonebot.dev/docs/quick-start) 操作即可。如果你没有看懂，或者觉得我的教程比官方文档更可靠，可以看下面我的操作。
 
+{% asciinema /record/example.cast true true 2 %}
+
 ###  [安装脚手架](https://nonebot.dev/docs/quick-start#安装脚手架)   
 
 确保你已经安装了 Python 3.9 及以上版本，然后在命令行中执行以下命令：

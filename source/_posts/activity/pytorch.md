@@ -164,4 +164,4 @@ print('Accuracy of the network on the 10000 test images: %d %%' % (100 * correct
 
 [阅读原文](https://mp.weixin.qq.com/s/sjMAsNXcpL3vUmH6tqTIYg)
 
-{% asciinema /record/example.cast true true 2 %}
+
