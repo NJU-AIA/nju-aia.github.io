@@ -3,6 +3,8 @@ title: qqbot部署
 type: learning
 description: 一个稳定部署qqbot的方案
 abbrlink: 3114420454
+date: 2024-10-6
+author: 张文权
 ---
 
 ## 方案介绍
@@ -102,7 +104,7 @@ conda activate QQbot
 
 正确安装插件之后在设置中可以看到 LLOneBot 的配置
 
-![](/images/llonebot.png)
+![](/images/qqbot/llonebot.png)
 
 只用开启反向 WebSocket 监听服务，地址填写 `ws://127.0.0.1:8080/onebot/v11/ws ` 
 
@@ -140,5 +142,5 @@ PS F:\QQbot\test> nb run
 
 如果你安装了 echo 插件（默认选项会安装）那么别人给你发送消息 "/echo hello" 的时候，none 会进行相应并且进行回声 (给别人发送 "hello")
 
-![](/images/echo.png)
+![](/images/qqbot/echo.png)
 

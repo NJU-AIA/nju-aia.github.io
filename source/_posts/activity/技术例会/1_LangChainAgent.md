@@ -1,10 +1,11 @@
 ---
 title: 11月技术例会：上手LangChain Agent开发
 abbrlink: 1389444303
-date: 2023-12-10 
+date: 2023-11-26
 type: activity
 author: 南的AIA & 未来开发者协会
 description: 关于LangChain Agent开发的入门学习
+num: 1
 ---
 
 2023年11月26日，南大AIA在南京大学仙林校区举办了本学期第一次技术例会。本次例会与未来开发者协会合作开展，内容主要关于LangChain Agent开发的入门学习。

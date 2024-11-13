@@ -5,7 +5,8 @@ author: 南的AIA
 layout: post
 description: 2024NJU_AIA核心成员组招新
 abbrlink: 3887023038
-date: 2024-09-13 00:00:00
+date: 2024-09-13
+num: 4
 ---
 
 

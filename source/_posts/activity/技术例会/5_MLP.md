@@ -5,6 +5,7 @@ type: activity
 author: 南的AIA
 date: 2024-11-3
 description: 神经网络--多层感知机(MLP)模型
+num: 5
 ---
 
 

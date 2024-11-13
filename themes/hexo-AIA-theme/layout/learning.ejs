@@ -3,24 +3,27 @@
     <link rel="stylesheet" href="/css/list.css">
 </head>
 <body>
+    <% 
+        var postsInfo = site.posts
+            .filter(function(post) {
+                return post.type == 'learning'; 
+            })
+            .map(function(post) {
+                return {
+                    date: new Date(post.date),
+                    num: post.num,
+                    title: post.title,
+                    description: post.description,
+                    path: post.path
+                };
+            })
+            .sort(function(a, b) {
+                return b.date - a.date; 
+            });
+    %>
 
-
-    <div class="content-block">
-        <h2 class="content-title">
-            Datawhale人工智能培养方案V2.0
-        </h2>  
-        <div class="content-footer">
-            <a class = "content-entry" href="https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc">
-                <span class="same-line">查看Datawhale自学教程></span>
-            </a>
-        </div>
-    </div>
-
-    
-
-
-    <% site.posts.forEach(function(post) { %>
-        <% if (post.type === 'learning') { %>
+    <% postsInfo.forEach(function(post) { %>
+        <% console.log(post.title); console.log(post.date); %>
         <div class="content-block">
             <h2 class="content-title">
                 <%= post.title %>
@@ -34,6 +37,19 @@
                 </a>
             </div>
         </div>
-        <% } %>
     <% }); %>
+
+    
+    <div class="content-block">
+        <h2 class="content-title">
+            Datawhale人工智能培养方案V2.0
+        </h2>  
+        <div class="content-footer">
+            <a class = "content-entry" href="https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc">
+                <span class="same-line">查看Datawhale自学教程></span>
+            </a>
+        </div>
+    </div>
+
+
 </body>
