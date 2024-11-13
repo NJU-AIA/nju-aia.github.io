@@ -2,7 +2,7 @@ const { url } = require("hexo/dist/hexo/default_config");
 
 hexo.extend.tag.register('asciinema', function(args) {
     const [castFile] = args; // 从参数中获取 .cast 文件名
-    console.log(castFile);
+    // console.log(castFile);
 
     // 生成 HTML 输出
     return `

@@ -15,7 +15,7 @@ abbrlink: 3114420454
 
 ## 快速部署 nonebot
 
-有能力的同学建议直接观看官方文档，接下来的内容是写给没有配置环境基础的同学的。
+有能力的同学建议直接观看官方文档。
 
 ### python 环境准备
 
@@ -37,7 +37,7 @@ conda activate QQbot
 
 因为nonebot 官方文档十分详细（甚至有可以直接复制文本的视频），接下来直接按照 [快速上手 | NoneBot](https://nonebot.dev/docs/quick-start) 操作即可。如果你没有看懂，或者觉得我的教程比官方文档更可靠，可以看下面我的操作。
 
-{% asciinema /record/example.cast true true 2 %}
+{% asciinema /record/nonebot.cast true true 2 %}
 
 ###  [安装脚手架](https://nonebot.dev/docs/quick-start#安装脚手架)   
 

@@ -155,3 +155,6 @@ $a\\b$
 
 
 {% asciinema /record/example.cast true true 2 %}
+
+点击这里下载示例文件：[data8.json](/downloads/data8.json)
+<a href="/downloads/data8.json" download>下载文件</a>
