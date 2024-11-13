@@ -3,7 +3,7 @@ title: 11月技术例会：上手LangChain Agent开发
 abbrlink: 1389444303
 date: 2023-12-10 
 type: activity
-author: NJU-AIA & 未来开发者协会
+author: 南的AIA & 未来开发者协会
 description: 关于LangChain Agent开发的入门学习
 ---
 
@@ -94,7 +94,7 @@ CommaSeparatedListOutputParser()
 尽管我们网页中使用的大模型一般可以记住上下文，调用API的时候一般都要自己提供上下文。这不难但是很烦，因此LangChain为我们提供了便利的方法：
 
 ```
-template = """You are a nice chatbot having a conversation with a human. 
+template = """"You are a nice chatbot having a conversation with a human. 
 
 Previous conversation:
 {chat_history}
