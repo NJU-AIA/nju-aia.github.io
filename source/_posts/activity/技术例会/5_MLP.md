@@ -67,9 +67,101 @@ MLP中每个神经元的输出公式为 $f(\sum{w_ix_i}+b) $，其中 $w_i$ 代
 
 ![](/images/MLP/2.png)
 
-[阅读原文](https://mp.weixin.qq.com/s/O8_7OchrD2uljW3vhhrqgQ)
-
-
 
 > 文编|李炎培 岳逸帆  
 美编|张馨月
+
+[阅读原文](https://mp.weixin.qq.com/s/O8_7OchrD2uljW3vhhrqgQ)
+
+[示例代码](https://github.com/NJU-AIA/Learning/blob/main/MLP_Learning/lecture_code/MLP_Done.ipynb)
+
+```python
+import numpy as np # 只会用到这个
+import json # 用来加载数据
+# 一些辅助的函数
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+def d_sigmoid(x):
+    return sigmoid(x) * (1 - sigmoid(x))
+
+def relu(x):
+    return np.maximum(x,0)
+
+def d_relu(x):
+    return np.array([0 if i <= 0 else 1 for i in x])
+
+def load_data(path):
+    with open(path, 'r') as f:
+        json_data = json.load(f)
+        X = np.array(json_data['x'])
+        X = (X - np.mean(X,axis=0)) / np.std(X, axis=0)
+        y = np.array(json_data['y'])
+        return X,y 
+
+class Layer:
+    def __init__(self, input_dim, output_dim, function):
+        self.input_dim = input_dim
+        self.output_dim = output_dim
+        self.function = function
+        if function == sigmoid:
+            self.derevative = d_sigmoid
+        if function == relu:
+            self.derevative = d_relu
+        self.weights = np.random.randn(input_dim+1, output_dim)
+    def forward(self, x):
+        x = np.array([np.append(data, 1) for data in x])
+        return self.function(x @ self.weights)
+    # def backward(self, delta): We'll do it next time
+        
+class MLP:
+    def __init__(self, shapes):
+        self.layers = [
+            Layer(shapes[i], shapes[i+1], sigmoid)
+            for i in range(len(shapes) - 1)
+        ]
+    def forward(self, x):
+        for layer in self.layers:
+            x = layer.forward(x)
+        return x
+    
+    # def backward(self, y): We will do this next time!
+    # def train(self, train_set, loss='mse', epochs=100, lr=0.3): We will do this next time!
+    
+    def load_ckpt(self, ckpt_file_name):
+        with open(ckpt_file_name, 'r') as f:
+            json_data = json.load(f)
+            weights = json_data['weights']
+            for index, layer in enumerate(self.layers):
+                layer.weights = np.array(weights[index])
+                layer.weights = layer.weights.T
+            
+
+    def save_ckpt(self, ckpt_file_name):
+        with open(ckpt_file_name, 'w') as f:
+            data = {
+                'weights': [layer.weights for layer in self.layers]       
+            }
+            json_data = json.dumps(data)
+            f.write(json_data)
+            
+    def evaluate(self, X, y):
+        pred = self.forward(X)
+        accuracy = 0
+        for i, predi in enumerate(pred):
+            predi = predi[0] # 因为我们的模型输出是1维的
+            if np.abs(predi - y[i]) < 0.5:
+                accuracy += 1
+        accuracy = accuracy / len(pred)
+        return accuracy
+
+def main():
+    test_X, test_y = load_data("data.json")
+    n, dim = test_X.shape
+    mlp = MLP([dim,64,1])
+    mlp.load_ckpt("quad.ckpt")
+    print(mlp.evaluate(test_X, test_y))
+
+main()
+```
