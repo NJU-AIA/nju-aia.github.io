@@ -158,3 +158,30 @@ $a\\b$
 
 点击这里下载示例文件：[data8.json](/downloads/data8.json)
 <a href="/downloads/data8.json" download>下载文件</a>
+😋
+
+([hello])
+@username
+abcd
+- 1123
+- 3333
+
+
+[gpt]
+user: 你好，GPT?$A$
+bot: 你好！有什么我可以帮助你的吗？
+
+$$
+\sqrt{A}
+$$
+
+```c
+int main(){}
+```
+<br>
+不知道谁说的话
+user: 我想了解一下天气。
+- 1123
+- 3333
+bot: 今天的天气是晴朗，气温在20度左右。
+[/gpt]
