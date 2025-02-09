@@ -3,6 +3,7 @@ import { Sun, Moon } from 'lucide-react';
 ---
 
 <button
+
   id="theme-toggle"
   class=" p-2 glass-card-hover"
   aria-label="切换主题"
@@ -11,15 +12,24 @@ import { Sun, Moon } from 'lucide-react';
   <Moon className="w-5 h-5 block dark:hidden" />
 </button>
 
-<script>
-  const themeToggle = document.getElementById("theme-toggle");
+<script is:inline>
+  function setupThemeToggle() {
+    const themeToggle = document.getElementById("theme-toggle");
+    if (!themeToggle) return;
 
-  themeToggle?.addEventListener("click", () => {
-    const root = document.documentElement;
-    const currentTheme = root.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    themeToggle.addEventListener("click", () => {
+      const root = document.documentElement;
+      const currentTheme = root.getAttribute("data-theme") || "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-    root.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  });
+      root.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  }
+
+  // 初始绑定
+  setupThemeToggle();
+
+  // 监听 Astro 的页面切换事件，确保事件重新绑定
+  document.addEventListener("astro:after-swap", setupThemeToggle);
 </script>

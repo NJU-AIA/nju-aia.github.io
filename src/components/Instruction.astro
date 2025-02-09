@@ -1,3 +1,9 @@
+---
+// import Image from "astro/components/Image.astro";
+import { Image } from 'astro:assets';
+import capooImage from '../assets/cat love Sticker by Capoo.gif';
+---
+
 <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
 	<div class="absolute inset-0 z-0">
 		<div class="absolute top-0 left-0 w-96 h-96 bg-[#40B3FF] opacity-20 blur-3xl"></div>
@@ -25,7 +31,9 @@
 			</div>
 		</div>
 		<div class="relative">
-			<img src="\cat love Sticker by Capoo.gif" alt="AI Visualization" class="w-full h-auto" />
+			<!-- <Image src="../assets/cat love Sticker by Capoo.gif" alt="AI Visualization" class="w-full h-auto" />
+			  -->
+			  <Image src={capooImage} alt="AI Visualization" class="w-full h-auto" width="500" height="500" />
 		</div>
 	</div>
 </section>
