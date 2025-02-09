@@ -1,27 +1,7 @@
 ---
-const activityPosts = [
-  {
-    title: "AI创新沙龙：探讨机器学习的未来",
-    date: "2023年6月15日",
-    description: "本次沙龙将邀请行业专家分享最新的机器学习趋势和应用。",
-    image: "/placeholder.svg?height=200&width=300",
-    tags: ["机器学习", "创新", "沙龙"]
-  },
-  {
-    title: "2023年度AI黑客马拉松报名开始",
-    date: "2023年7月1日",
-    description: "为期48小时的编程挑战，展示你的AI开发技能！",
-    image: "/placeholder.svg?height=200&width=300",
-    tags: ["黑客马拉松", "编程", "比赛"]
-  },
-  {
-    title: "AI伦理与社会影响论坛",
-    date: "2023年7月20日",
-    description: "探讨AI技术发展对社会的影响，以及相关的伦理问题。",
-    image: "/placeholder.svg?height=200&width=300",
-    tags: ["AI伦理", "社会影响", "论坛"]
-  }
-];
+import { getCollection} from 'astro:content';
+
+const activityPosts = await getCollection('activityPosts');
 ---
 
 <section class="py-20 md:py-32 relative">
@@ -41,15 +21,15 @@ const activityPosts = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {activityPosts.map((post) => (
         <div class="glass-card overflow-hidden transition-all duration-300 hover:scale-105">
-          <img src={post.image || "/placeholder.svg"} alt={post.title} class="w-full h-48 object-cover" />
+          <img src={post.data.image || "/placeholder.svg"} alt={post.data.title} class="w-full h-48 object-cover" />
           <div class="p-6">
             <h2 class="text-xl font-semibold mb-2 hover:text-[#40B3FF] transition-colors">
-              {post.title}
+              {post.data.title}
             </h2>
-            <p class="text-sm mb-4 dark:text-gray-400 text-gray-500">{post.date}</p>
-            <p class="mb-4 dark:text-gray-300 text-gray-600">{post.description}</p>
+            <p class="text-sm mb-4 dark:text-gray-400 text-gray-500">{post.data.date}</p>
+            <p class="mb-4 dark:text-gray-300 text-gray-600">{post.data.description}</p>
             <div class="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
+              {post.data.tags.map((tag) => (
                 <span class="px-2 py-1 bg-[#40B3FF] bg-opacity-10 text-[#40B3FF] rounded-full text-sm">
                   {tag}
                 </span>
