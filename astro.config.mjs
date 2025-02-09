@@ -6,10 +6,12 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nju-aia.github.io/',
-  integrations: [vue(), mdx(), react()],
+  integrations: [vue(), mdx(), react(), icon()],
 
   markdown: {
     remarkPlugins: [remarkMath],
