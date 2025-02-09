@@ -54,7 +54,7 @@ date: 2024-02-17
 | 实践 | 新闻推荐 | 零基础入门推荐系统 - 新闻推荐 | [零基础入门推荐系统评价](#%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BB%B7) |
 |  | 其他 | 数据竞赛Baseline&Topline分享 | [数据竞赛Baseline&Topline分享评价](#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9BBaseline&Topline%E5%88%86%E4%BA%AB%E8%AF%84%E4%BB%B7) |
 
-## CV
+## CV 
 
 检查：徐乾凯，张凌翔
 
@@ -75,6 +75,7 @@ date: 2024-02-17
 |  | 综合 | 数据竞赛Baseline&Topline分享 | [数据竞赛Baseline&Topline分享评价](#%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9BBaseline&Topline%E5%88%86%E4%BA%AB%E8%AF%84%E4%BB%B7) |
 
 ## BigData
+
 
 检查：李尚敖
 
