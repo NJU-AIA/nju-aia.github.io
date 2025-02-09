@@ -3,20 +3,23 @@ import { Sun, Moon } from 'lucide-react';
 ---
 
 <button
-	id="theme-toggle"
-	class="glass-card p-2 hover:bg-[#40B3FF] transition-colors"
-	aria-label="切换主题"
+  id="theme-toggle"
+  class=" p-2 glass-card-hover"
+  aria-label="切换主题"
 >
-	<Sun className="w-5 h-5 hidden dark:block" />
-	<Moon className="w-5 h-5 block dark:hidden" />
+  <Sun className="w-5 h-5 hidden dark:block dark:text-white" />
+  <Moon className="w-5 h-5 block dark:hidden" />
 </button>
 
 <script>
-	const themeToggle = document.getElementById('theme-toggle');
-	
-	themeToggle?.addEventListener('click', () => {
-		const isDark = document.documentElement.classList.toggle('dark');
-		localStorage.setItem('theme', isDark ? 'dark' : 'light');
-	});
-</script>
+  const themeToggle = document.getElementById("theme-toggle");
 
+  themeToggle?.addEventListener("click", () => {
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    root.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
+</script>

@@ -2,22 +2,23 @@
 import ThemeToggle from './ThemeToggle.astro';
 ---
 
-<header class="fixed w-full top-0 z-50 px-4 py-3">
-	<nav class="container mx-auto glass-card px-6 py-3 flex justify-between items-center">
+<header class="fixed w-full top-0 z-50 px-4 py-3 ">
+	<nav class="container mx-auto px-6 py-3 flex justify-between items-center glass-card">
 		<h1 class="text-2xl font-bold bg-gradient-to-r from-[#40B3FF] to-[#954CE9] bg-clip-text text-transparent">
-			AI研究社
+			NJU-AIA
+			<span class="text-base">
+				南京大学人工智能协会
+			</span>
 		</h1>
-		<ul class="flex space-x-6">
-			<li><a href="#" class="hover:text-[#40B3FF] transition-colors dark:text-white text-gray-800">首页</a></li>
-			<li><a href="#" class="hover:text-[#40B3FF] transition-colors dark:text-white text-gray-800">活动</a></li>
-			<li><a href="/honor-wall" class="hover:text-[#40B3FF] transition-colors dark:text-white text-gray-800">荣誉墙</a></li>
-			<li><a href="#" class="hover:text-[#40B3FF] transition-colors dark:text-white text-gray-800">成员</a></li>
-			<li><a href="#" class="hover:text-[#40B3FF] transition-colors dark:text-white text-gray-800">联系我们</a></li>
+		<ul class="flex space-x-6 dark:text-white text-gray-800">
+			<li><a href="/" class="hover:text-[#40B3FF] transition-colors">首页</a></li>
+			<li><a href="/articles" class="hover:text-[#40B3FF] transition-colors ">文章</a></li>
+			<li><a href="/about" class="hover:text-[#40B3FF] transition-colors ">关于我们</a></li>
 		</ul>
 		<div class="flex items-center space-x-4">
 			<ThemeToggle />
-			<a href="#" class="px-4 py-2 glass-card hover:bg-[#40B3FF] transition-colors">登录</a>
-			<a href="#" class="px-4 py-2 bg-[#40B3FF] rounded-lg hover:bg-[#954CE9] transition-colors">加入我们</a>
+			<!-- <a href="#" class="px-4 py-2 glass-card hover:bg-[#40B3FF] transition-colors">登录</a>
+			<a href="#" class="px-4 py-2 bg-[#40B3FF] rounded-lg hover:bg-[#954CE9] transition-colors">加入我们</a> -->
 		</div>
 	</nav>
 </header>
