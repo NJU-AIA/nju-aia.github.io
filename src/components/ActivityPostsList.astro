@@ -20,6 +20,7 @@ const activityPosts = await getCollection('activityPosts');
     </p>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {activityPosts.map((post) => (
+        <a href={`/activities/${post.slug}`} >
         <div class="glass-card overflow-hidden transition-all duration-300 hover:scale-105">
           <img src={post.data.image || "/placeholder.svg"} alt={post.data.title} class="w-full h-48 object-cover" />
           <div class="p-6">
@@ -37,6 +38,8 @@ const activityPosts = await getCollection('activityPosts');
             </div>
           </div>
         </div>
+      </a>
+
       ))}
     </div>
   </div>

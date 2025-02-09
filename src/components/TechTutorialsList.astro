@@ -1,32 +1,7 @@
 ---
 import { Book, Clock, User } from 'lucide-react';
-
-const techTutorials = [
-  {
-    title: "深度学习入门：神经网络基础",
-    author: "张明",
-    date: "2023年6月10日",
-    readTime: "15分钟",
-    difficulty: "初级",
-    description: "本教程将介绍神经网络的基本概念和工作原理，帮助你开始深度学习之旅。"
-  },
-  {
-    title: "使用TensorFlow构建图像分类模型",
-    author: "李华",
-    date: "2023年6月18日",
-    readTime: "25分钟",
-    difficulty: "中级",
-    description: "学习如何使用TensorFlow框架构建和训练一个图像分类模型。"
-  },
-  {
-    title: "自然语言处理：词向量和词嵌入技术",
-    author: "王芳",
-    date: "2023年6月25日",
-    readTime: "20分钟",
-    difficulty: "中级",
-    description: "探索词向量和词嵌入技术在自然语言处理中的应用。"
-  }
-];
+import { getCollection } from 'astro:content';
+const techTutorials = await getCollection('TechTutorials');
 ---
 
 <section class="py-20 md:py-32 relative">
@@ -45,34 +20,36 @@ const techTutorials = [
     </p>
     <div class="space-y-8">
       {techTutorials.map((tutorial) => (
+        <a href={`/tutorials/${tutorial.slug}`} >
         <div class="glass-card p-6 transition-all duration-300 hover:scale-105">
           <div class="flex justify-between items-start mb-4">
             <h2 class="text-2xl font-semibold hover:text-[#40B3FF] transition-colors">
-              {tutorial.title}
+              {tutorial.data.title}
             </h2>
             <span class={`px-3 py-1 rounded-full text-sm ${
-              tutorial.difficulty === "初级" ? "bg-green-500" :
-              tutorial.difficulty === "中级" ? "bg-yellow-500" : "bg-red-500"
+              tutorial.data.difficulty === "初级" ? "bg-green-500" :
+              tutorial.data.difficulty === "中级" ? "bg-yellow-500" : "bg-red-500"
             } text-white`}>
-              {tutorial.difficulty}
+              {tutorial.data.difficulty}
             </span>
           </div>
-          <p class="mb-4 dark:text-gray-300 text-gray-600">{tutorial.description}</p>
+          <p class="mb-4 dark:text-gray-300 text-gray-600">{tutorial.data.description}</p>
           <div class="flex items-center space-x-6 text-sm dark:text-gray-400 text-gray-500">
             <div class="flex items-center">
               <User className="w-4 h-4 mr-2" />
-              {tutorial.author}
+              {tutorial.data.author}
             </div>
             <div class="flex items-center">
               <Clock className="w-4 h-4 mr-2" />
-              {tutorial.readTime}
+              {tutorial.data.readTime}
             </div>
             <div class="flex items-center">
               <Book className="w-4 h-4 mr-2" />
-              {tutorial.date}
+              {tutorial.data.date}
             </div>
           </div>
         </div>
+      </a>
       ))}
     </div>
   </div>
