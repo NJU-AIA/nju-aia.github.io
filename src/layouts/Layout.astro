@@ -1,22 +1,81 @@
-<!doctype html>
-<html lang="en">
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="zh">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-		<!-- <meta name="generator" content={Astro.generator} /> -->
-		<title>AIA</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<script>
+			// 检查用户的主题偏好
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+					return 'light';
+				}
+				return 'dark';
+			})();
+			
+			if (theme === 'light') {
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
+<style is:global>
+	:root {
+		--accent-blue: rgb(64, 179, 255);
+		--accent-purple: rgb(149, 76, 233);
+		--glass-bg: rgba(255, 255, 255, 0.1);
+		--glass-border: rgba(255, 255, 255, 0.05);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+	}
+	html.dark {
+		background-color: #0a0a0a;
+		color: #ffffff;
+	}
+	html:not(.dark) {
+		background-color: #ffffff;
+		color: #0a0a0a;
+	}
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+		min-height: 100vh;
+	}
+	.dark body {
+		background: radial-gradient(circle at top left, rgba(149, 76, 233, 0.15), transparent 40%),
+					radial-gradient(circle at bottom right, rgba(64, 179, 255, 0.15), transparent 40%);
+	}
+	.glass-card {
+		background: var(--glass-bg);
+		backdrop-filter: blur(12px);
+		border: 1px solid var(--glass-border);
+		border-radius: 1rem;
+	}
+	.dark .glass-card {
+		--glass-bg: rgba(255, 255, 255, 0.1);
+		--glass-border: rgba(255, 255, 255, 0.05);
+	}
+	html:not(.dark) .glass-card {
+		--glass-bg: rgba(255, 255, 255, 0.9);
+		--glass-border: rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	}
 </style>
