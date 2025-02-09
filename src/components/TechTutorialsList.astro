@@ -1,0 +1,66 @@
+---
+import { Book, Clock, User } from 'lucide-react';
+import { getCollection } from 'astro:content';
+const techTutorials = await getCollection('TechTutorials');
+---
+
+<section class="py-20 md:py-32 relative">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 right-1/3 w-64 h-64 bg-[#40B3FF] opacity-10 blur-3xl"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-[#954CE9] opacity-10 blur-3xl"></div>
+  </div>
+  <div class="container mx-auto px-4 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-12">
+      <span class="bg-gradient-to-r from-[#40B3FF] to-[#954CE9] bg-clip-text text-transparent">
+        技术教程
+      </span>
+    </h1>
+    <p class="text-center text-xl mb-16 dark:text-gray-300 text-gray-600">
+      深入学习AI技术，提升专业技能
+    </p>
+    <div class="space-y-8">
+      {techTutorials.map((tutorial) => (
+        <a href={`/tutorials/${tutorial.slug}`} >
+        <div class="glass-card p-6 transition-all duration-300 hover:scale-105">
+          <div class="flex justify-between items-start mb-4">
+            <h2 class="text-2xl font-semibold hover:text-[#40B3FF] transition-colors">
+              {tutorial.data.title}
+            </h2>
+            <span class={`px-3 py-1 rounded-full text-sm ${
+              tutorial.data.difficulty === "初级" ? "bg-green-500" :
+              tutorial.data.difficulty === "中级" ? "bg-yellow-500" : "bg-red-500"
+            } text-white`}>
+              {tutorial.data.difficulty}
+            </span>
+          </div>
+          <p class="mb-4 dark:text-gray-300 text-gray-600">{tutorial.data.description}</p>
+          <div class="flex items-center space-x-6 text-sm dark:text-gray-400 text-gray-500">
+            <div class="flex items-center">
+              <User className="w-4 h-4 mr-2" />
+              {tutorial.data.author}
+            </div>
+            <div class="flex items-center">
+              <Clock className="w-4 h-4 mr-2" />
+              {tutorial.data.readTime}
+            </div>
+            <div class="flex items-center">
+              <Book className="w-4 h-4 mr-2" />
+              {tutorial.data.date}
+            </div>
+          </div>
+        </div>
+      </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .glass-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px);
+  }
+</style>
+

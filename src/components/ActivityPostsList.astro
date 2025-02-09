@@ -1,0 +1,56 @@
+---
+import { getCollection} from 'astro:content';
+
+const activityPosts = await getCollection('activityPosts');
+---
+
+<section class="py-20 md:py-32 relative">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 left-1/3 w-64 h-64 bg-[#40B3FF] opacity-10 blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-64 h-64 bg-[#954CE9] opacity-10 blur-3xl"></div>
+  </div>
+  <div class="container mx-auto px-4 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-12">
+      <span class="bg-gradient-to-r from-[#40B3FF] to-[#954CE9] bg-clip-text text-transparent">
+        活动推文
+      </span>
+    </h1>
+    <p class="text-center text-xl mb-16 dark:text-gray-300 text-gray-600">
+      了解最新AI活动，参与精彩讨论
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {activityPosts.map((post) => (
+        <a href={`/activities/${post.slug}`} >
+        <div class="glass-card overflow-hidden transition-all duration-300 hover:scale-105">
+          <img src={post.data.image || "/placeholder.svg"} alt={post.data.title} class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h2 class="text-xl font-semibold mb-2 hover:text-[#40B3FF] transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="text-sm mb-4 dark:text-gray-400 text-gray-500">{post.data.date}</p>
+            <p class="mb-4 dark:text-gray-300 text-gray-600">{post.data.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {post.data.tags.map((tag) => (
+                <span class="px-2 py-1 bg-[#40B3FF] bg-opacity-10 text-[#40B3FF] rounded-full text-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </a>
+
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .glass-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px);
+  }
+</style>
+
