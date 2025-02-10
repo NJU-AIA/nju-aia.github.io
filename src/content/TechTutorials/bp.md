@@ -3,8 +3,8 @@ title: BP 教学例会完整教程
 author: "张文权"
 description: 对 2024 年 BP 教学例会的完全总结
 date: 2025-02-08
-difficulty: "中等"
-readTime: "未知"
+difficulty: "中级"
+readTime: "30 min"
 tags: ["自学","BP" ]
 ---
 
@@ -111,7 +111,7 @@ $$
 
 其实核心代码只有这么几行：
 
-```
+```python
 def forward(self, X: np.ndarray):
     # 前向传播
     self.Z1 = np.dot(X, self.W1) + self.b1

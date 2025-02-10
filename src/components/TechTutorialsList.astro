@@ -23,7 +23,7 @@ const techTutorials = await getCollection('TechTutorials');
         <a href={`/tutorials/${tutorial.slug}`} >
         <div class="glass-card p-6 transition-all duration-300 hover:scale-105">
           <div class="flex justify-between items-start mb-4">
-            <h2 class="text-2xl font-semibold hover:text-[#40B3FF] transition-colors">
+            <h2 class="text-2xl font-semibold hover:text-[#40B3FF] transition-colors dark:text-gray-200 text-gray-800">
               {tutorial.data.title}
             </h2>
             <span class={`px-3 py-1 rounded-full text-sm ${

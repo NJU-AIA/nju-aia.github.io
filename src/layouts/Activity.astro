@@ -44,12 +44,14 @@ const { title } = Astro.props;
           </div>
         )} -->
       </header>
-      <div class="prose dark:prose-invert max-w-none">
+      <div class="prose dark:prose-invert max-w-none dark:text-white">
         <slot />
       </div>
     </article>
   </main>
 </Layout>
+
+
 
 <style is:global>
   /* 自定义文章样式 */
@@ -108,49 +110,61 @@ const { title } = Astro.props;
     color: #4b5563;
   }
 
-  .prose code {
-    background-color: #f3f4f6;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.25rem;
-    font-size: 0.875em;
-  }
-
+  /* 代码块（`pre`），模仿 GitHub */
   .prose pre {
-    background-color: #1f2937;
-    color: #e5e7eb;
+    font-family: "Fira Code", "Courier New", monospace;
+    background-color: #f6f8fa;
+    color: #24292f;
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 6px;
     overflow-x: auto;
+    border: 1px solid #d1d5da;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   }
 
+  /*列表样式，模仿 GPT 风格 */
+  .prose ol {
+    counter-reset: list-counter;
+    list-style: none;
+    padding-left: 1.625rem;
+  }
+  .prose ol li {
+    counter-increment: list-counter;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.625rem;
+  }
+  .prose ol li::before {
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #2563eb;
+  }
+
+  .prose ul {
+    list-style: none;
+    padding-left: 1.625rem;
+  }
+  .prose ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.625rem;
+  }
+
+  .prose ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 1rem;
+  }
   .prose img {
     border-radius: 0.5rem;
     margin: 2rem auto;
   }
 
-  /* 深色模式样式 */
-  .dark .prose h2 {
-    color: #60a5fa;
-  }
-
-  .dark .prose h3 {
-    color: #93c5fd;
-  }
-
-  .dark .prose a {
-    color: #60a5fa;
-  }
-
-  .dark .prose a:hover {
-    color: #3b82f6;
-  }
-
-  .dark .prose blockquote {
-    color: #9ca3af;
-  }
-
-  .dark .prose code {
-    background-color: #374151;
-  }
-</style>
+ 
+</style> 
 
