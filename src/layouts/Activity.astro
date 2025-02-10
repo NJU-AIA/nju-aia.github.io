@@ -1,16 +1,16 @@
 ---
 import Layout from './Layout.astro';
-import { Clock, Calendar, User } from 'lucide-react';
+// import { Clock, Calendar, User } from 'lucide-react';
 
 export interface Props {
   title: string;
   // author: string;
   // date: string;
   // readingTime: string;
-  tags?: string[];
+  // tags?: string[];
 }
 
-const { title,  tags } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <Layout title={title}>
@@ -34,7 +34,7 @@ const { title,  tags } = Astro.props;
             {readingTime}
           </div> -->
         </div>
-        {tags && tags.length > 0 && (
+        <!-- {tags && tags.length > 0 && (
           <div class="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span class="px-2 py-1 bg-[#40B3FF] bg-opacity-10 text-[#40B3FF] rounded-full text-sm">
@@ -42,7 +42,7 @@ const { title,  tags } = Astro.props;
               </span>
             ))}
           </div>
-        )}
+        )} -->
       </header>
       <div class="prose dark:prose-invert max-w-none">
         <slot />

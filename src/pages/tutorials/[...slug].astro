@@ -19,15 +19,18 @@ export async function  getStaticPaths  (){
     ));
 }
 type Props = {
-    entry: CollectionEntry<"activityPosts">;
+    entry: CollectionEntry<"TechTutorials">;
 };
 const { entry } = Astro.props ;
 const {Content} = await entry.render();
+
 ---
 
 <Layout title={entry.data.title}
     title={entry.data.title}
-
+    author={entry.data.author}
+    date={entry.data.date}
+    readingTime={entry.data.readTime as string}
     
 >
     <Content />
