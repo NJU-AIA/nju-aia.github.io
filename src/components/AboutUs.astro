@@ -1,0 +1,81 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 pt-28 pb-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-4xl font-extrabold text-blue-900 dark:text-blue-100 text-center mb-8">
+      欢迎来到 NJU-AIA 协会
+    </h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">关于我们</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          我们是NJU-AIA协会。我们的计划旨在将AI的知识普及给更多对此感兴趣的同学，不论他们是否是AI专业的学生，我们将为他们提供AI概念理论的入门引导知识与入门的实践内容普及。同时吸引更多专业的AI同学，从而形成一个富有活力的AI社区。
+        </p>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">我们的目标</h2>
+        <ul class="space-y-2">
+          {[
+            "普及AI知识",
+            "提供入门引导",
+            "形成活跃的AI社区",
+            "促进学术交流",
+            "鼓励实践创新"
+          ].map((goal) => (
+            <li class="flex items-center space-x-2">
+              <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 dark:text-green-400 flex-shrink-0" />
+              <span class="text-gray-700 dark:text-gray-300">{goal}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-12">
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">我们的活动</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex items-start space-x-4">
+          <Icon name="mdi:account-group" class="w-8 h-8 text-blue-500 dark:text-blue-400 flex-shrink-0" />
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-gray-100">定期讨论分享例会</h3>
+            <p class="text-gray-700 dark:text-gray-300">交流AI领域发展方向的见解，探讨课业上应用与编码AI上遇到的实践性问题。</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <Icon name="mdi:trophy" class="w-8 h-8 text-yellow-500 dark:text-yellow-400 flex-shrink-0" />
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-gray-100">项目/比赛导引</h3>
+            <p class="text-gray-700 dark:text-gray-300">每学期选定、完成1至2个AI项目/比赛，促进成员交流合作，创造富有创造力的环境。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">联系我们</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="flex items-center space-x-3">
+          <Icon name="mdi:qqchat" class="w-6 h-6 text-blue-500 dark:text-blue-400" />
+          <span class="text-gray-700 dark:text-gray-300">QQ群：897201506</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <Icon name="mdi:wechat" class="w-6 h-6 text-green-500 dark:text-green-400" />
+          <span class="text-gray-700 dark:text-gray-300">公众号：南的AIA</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <Icon name="mdi:email" class="w-6 h-6 text-red-500 dark:text-red-400" />
+          <a href="mailto:NJU_AIA@163.com" class="text-blue-600 dark:text-blue-400 hover:underline">NJU_AIA@163.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <p class="text-center text-gray-700 dark:text-gray-300 mt-8">
+      感谢大家的到来和参与，相信我们能创造出许多美好的记忆～
+    </p>
+  </div>
+</section>
+

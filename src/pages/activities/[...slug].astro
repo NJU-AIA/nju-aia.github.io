@@ -2,8 +2,8 @@
 // import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection} from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-
+import Layout from '../../layouts/Activity.astro';
+// import 
 // const activityPosts = await getCollection('activityPosts');
 
 export async function  getStaticPaths  (){
@@ -23,11 +23,21 @@ type Props = {
 };
 const { entry } = Astro.props ;
 const {Content} = await entry.render();
+
+
+// 格式化日期
+// const formattedDate = new Date(entry.data.date).toLocaleDateString('zh-CN', {
+//     year: 'numeric',
+//     month: 'long',
+//     day: 'numeric'
+// });
+
+// 估算阅读时间（假设每分钟阅读200字）
+// const readingTime = Math.ceil(entry.body.split(/\s+/).length / 200);
 ---
 
-<Layout title={entry.data.title}>
-    <main>
-        <h1>{entry.data.title}</h1>
-        <Content />
-    </main>
+<Layout title={entry.data.title}
+    title={entry.data.title}
+>
+    <Content />
 </Layout>

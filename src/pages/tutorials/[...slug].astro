@@ -2,7 +2,7 @@
 // import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection} from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/Tutorial.astro';
 
 // const activityPosts = await getCollection('activityPosts');
 
@@ -19,15 +19,19 @@ export async function  getStaticPaths  (){
     ));
 }
 type Props = {
-    entry: CollectionEntry<"activityPosts">;
+    entry: CollectionEntry<"TechTutorials">;
 };
 const { entry } = Astro.props ;
 const {Content} = await entry.render();
+
 ---
 
-<Layout title={entry.data.title}>
-    <main>
-        <h1>{entry.data.title}</h1>
-        <Content />
-    </main>
+<Layout title={entry.data.title}
+    title={entry.data.title}
+    author={entry.data.author}
+    date={entry.data.date}
+    readingTime={entry.data.readTime as string}
+    
+>
+    <Content />
 </Layout>

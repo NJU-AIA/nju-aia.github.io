@@ -29,13 +29,7 @@ const activityPosts = await getCollection('activityPosts');
             </h2>
             <p class="text-sm mb-4 dark:text-gray-400 text-gray-500">{post.data.date}</p>
             <p class="mb-4 dark:text-gray-300 text-gray-600">{post.data.description}</p>
-            <div class="flex flex-wrap gap-2">
-              {post.data.tags.map((tag) => (
-                <span class="px-2 py-1 bg-[#40B3FF] bg-opacity-10 text-[#40B3FF] rounded-full text-sm">
-                  {tag}
-                </span>
-              ))}
-            </div>
+            
           </div>
         </div>
       </a>
