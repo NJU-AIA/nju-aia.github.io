@@ -4,6 +4,9 @@ import vue from '@astrojs/vue';
 import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+// import { rehypeHeadingIds } from '@astrojs/markdown-remark';
+// import remarkHeaderId from '@astrojs/markdown-remark-header-ids';
+import remarkCustomHeaderId from 'remark-custom-header-id';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import icon from "astro-icon";
@@ -14,7 +17,7 @@ export default defineConfig({
   integrations: [vue(), mdx(), react(), icon()],
 
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkCustomHeaderId,remarkMath],
     rehypePlugins: [rehypeKatex]
   },
 
