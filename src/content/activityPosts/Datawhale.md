@@ -3,9 +3,8 @@ title: Datawhale AI + X 高校行「南大场」活动回顾
 author: 南的AIA
 date: 2024-03-31
 description: Datawhale AI + X 高校行系列活动
-cover: "../../images/activities/Baituan3.jpg"
+cover: "../../images/activities/Datawhale/1.webp"
 ---
-![](../../images/activities/Datawhale/)
 ![](../../images/activities/Datawhale/1.webp) 
 
 2024年3月31日下午，Datawhale AI + X 高校行「南大场」于仙林校区择善楼顺利举行。南京大学匡亚明学院书记、院长王骏，南京大学匡亚明学院，南京大学人工智能学院等单位党政领导及学生工作负责人，来自不同专业的众多学生参加活动。本次AI+X由Datawhale主办，南京大学匡亚明学院、南京大学人工智能学院联合主办，南京大学人工智能学院学生会、南京大学人工智能协会承办，驱动云、人民邮电出版社、OpenI启智、智海Mo协办。

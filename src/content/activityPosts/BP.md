@@ -3,7 +3,7 @@ title: 2024秋第二次教学例会 —— BP
 author: 南的AIA
 description: 神经网络——反向传播算法（BP）
 date: 2024-11-23 # true date
-cover: "../../images/activities/Baituan3.jpg"
+cover: "../../assets/1.jpg"
 ---
 
 

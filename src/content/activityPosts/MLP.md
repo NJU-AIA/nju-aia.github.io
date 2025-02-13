@@ -3,7 +3,7 @@ title: 2024秋第一次教学例会 —— MLP
 author: 南的AIA
 date: 2024-10-26 # true date
 description: 神经网络--多层感知机(MLP)模型的构建
-cover: "../../images/activities/Baituan3.jpg"
+cover: "../../images/activities/MLP1.jpg"
 ---
 
 

@@ -3,7 +3,7 @@ title: "11月技术例会：上手LangChain Agent开发"
 date: 2023-11-26
 author: 南的AIA & 未来开发者协会
 description: "关于LangChain Agent开发的入门学习"
-cover: "../../images/activities/Baituan3.jpg"
+cover: "../../images/activities/LangChainAgent1.webp"
 ---
 
 

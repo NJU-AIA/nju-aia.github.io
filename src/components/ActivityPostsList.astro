@@ -2,6 +2,11 @@
 import { getCollection} from 'astro:content';
 import { Image } from "astro:assets";
 const activityPosts = await getCollection('activityPosts');
+const sortedPosts = activityPosts.sort((a, b) => {
+  const dateA = new Date(a.data.date).getTime();
+  const dateB = new Date(b.data.date).getTime();
+  return dateB - dateA;
+});
 ---
 
 <section class="py-20 md:py-32 relative">
@@ -19,7 +24,7 @@ const activityPosts = await getCollection('activityPosts');
       了解最新AI活动，参与精彩讨论
     </p>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {activityPosts.map((post) => (
+      {sortedPosts.map((post) => (
         <a href={`/activities/${post.slug}`} >
         <div class="glass-card overflow-hidden transition-all duration-300 hover:scale-105">
           {/* <img src={post.data.image || "/placeholder.svg"} alt={post.data.title} class="w-full h-48 object-cover" /> */}

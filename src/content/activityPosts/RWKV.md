@@ -3,7 +3,7 @@ title: RWKV讲座
 author: 南的AIA
 date: 2024-11-23
 description: RWKV的核心机制、发展历史和最新的多模态应用。
-cover: "../../images/activities/Baituan3.jpg"
+cover: "../../images/activities/RWKV1.jpg"
 ---
 
 
