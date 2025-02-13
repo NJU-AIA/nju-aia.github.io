@@ -3,9 +3,8 @@ import { Sun, Moon } from 'lucide-react';
 ---
 
 <button
-
   id="theme-toggle"
-  class=" p-2 glass-card-hover"
+  class=" p-2 glass-card"
   aria-label="切换主题"
 >
   <Sun className="w-5 h-5 hidden dark:block dark:text-white" />
@@ -33,3 +32,11 @@ import { Sun, Moon } from 'lucide-react';
   // 监听 Astro 的页面切换事件，确保事件重新绑定
   document.addEventListener("astro:after-swap", setupThemeToggle);
 </script>
+
+
+<style>
+  .glass-card:hover {
+    background-color: #40B3FF;
+    transition: background-color 0.2s ease-in-out;
+  }
+</style>

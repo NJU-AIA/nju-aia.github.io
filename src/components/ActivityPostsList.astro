@@ -27,7 +27,6 @@ const sortedPosts = activityPosts.sort((a, b) => {
       {sortedPosts.map((post) => (
         <a href={`/activities/${post.slug}`} >
         <div class="glass-card overflow-hidden transition-all duration-300 hover:scale-105">
-          {/* <img src={post.data.image || "/placeholder.svg"} alt={post.data.title} class="w-full h-48 object-cover" /> */}
           <Image src={post.data.cover} alt={post.data.title} class="w-full h-48 object-cover" />
           <div class="p-6">
             <h2 class="text-xl font-semibold mb-2 hover:text-[#40B3FF] transition-colors dark:text-gray-200 text-gray-800">

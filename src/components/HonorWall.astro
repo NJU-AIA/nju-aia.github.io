@@ -59,7 +59,7 @@ const honors = [
     </p>
     <div class="space-y-16">
       {honors.map((honor) => (
-        <div class="glass-card p-8 transition-all duration-300 hover:scale-105">
+        <div class="glass-card p-8 transition-all duration-300">
           <h2 class="text-2xl font-semibold mb-4 bg-gradient-to-r from-[#40B3FF] to-[#954CE9] bg-clip-text text-transparent">
             {honor.event}
           </h2>
@@ -87,12 +87,9 @@ const honors = [
   </div>
 </section>
 
+
 <style>
-  .glass-card {
-    transition: transform 0.3s ease-in-out;
-  }
   .glass-card:hover {
-    transform: translateY(-5px);
+    border: 2px solid #40B3FF;
   }
 </style>
-

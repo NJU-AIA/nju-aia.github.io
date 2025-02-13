@@ -3,15 +3,10 @@
 
 
 .glass-card{
-    @apply rounded-xl border border-white/10 bg-white/10 backdrop-blur-lg shadow-md;
+  @apply rounded-xl border border-white/10 bg-white/10 backdrop-blur-lg shadow-md;
 }
 
-.glass-card-hover{
-    @apply rounded-xl border border-white/10 bg-white/10 backdrop-blur-lg shadow-md;
-}
-.glass-card-hover:hover{
-    @apply bg-[#40B3FF] transition-colors;
-}
+
 
 
 
