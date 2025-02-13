@@ -1,29 +1,45 @@
 ---
 const honors = [
   {
-    event: "2023全国AI创新大赛",
-    date: "2023年5月",
+    event: "百团大模型挑战成功名单",
+    date: "2024年11月",
     awards: [
-      { name: "张明", award: "最佳技术创新奖" },
-      { name: "李华", award: "优秀项目奖" },
+      {name: "好吃的哈奇"},
+      {name: "星星"},
+      {name: "xk"},
+      {name: "煮糊的鱼"},
+      {name: "小黄"},
+      {name: "何向军"},
+      {name: "邹环宇"},
+      {name: "张家子谦"},
     ]
   },
   {
-    event: "国际人工智能学术研讨会",
-    date: "2023年3月",
+    event: "第一次教学例会MLP通关名单",
+    date: "2024年10月",
     awards: [
-      { name: "王芳", award: "最佳论文奖" },
-      { name: "刘伟", award: "优秀海报展示奖" },
+      {name: "onimai"},
+      {name: "zcz"},
+      {name: "chatgpt"},
+      {name: "LNR"},
+      {name: "xk_mlp"},
+      {name: "张逸泽"},
+      {name: "Diana"},
+      {name: "mengqingjia"},
+      {name: "panzk"},
+      {name: "yanyan5201314"},
+      {name: "zhaojiye"},
+      {name: "陈旭枫"},
+      {name: "eyfj111"},
+      {name: "MLP"},
+      {name: "sawr_alice"},
+      {name: "yjwl"},
+      {name: "亚麻"},
+      
     ]
   },
-  {
-    event: "2022 AI应用挑战赛",
-    date: "2022年11月",
-    awards: [
-      { name: "陈明", award: "一等奖" },
-      { name: "赵洋", award: "最佳创意奖" },
-    ]
-  }
+  
+  
 ];
 ---
 
@@ -39,7 +55,7 @@ const honors = [
       </span>
     </h1>
     <p class="text-center text-xl mb-16 dark:text-gray-300 text-gray-600">
-      记录我们的骄傲时刻，见证AI研究社的成长与成就
+      纪念在例会中现场通关的同学们 ~
     </p>
     <div class="space-y-16">
       {honors.map((honor) => (
@@ -48,17 +64,21 @@ const honors = [
             {honor.event}
           </h2>
           <p class="text-lg mb-6 dark:text-gray-400 text-gray-500">{honor.date}</p>
-          <div class="grid md:grid-cols-2 gap-6">
+          <div class="grid  grid-cols-2 md:grid-cols-4 gap-6 ">
             {honor.awards.map((award) => (
+              // <div class="flex items-center space-x-4">
+              //   <div class="w-12 h-12 rounded-full bg-gradient-to-r from-[#40B3FF] to-[#954CE9] flex items-center justify-center text-white font-bold text-lg">
+              //     {award.name[0]}
+              //   </div>
+              //   <div>
+              //     <p class="font-semibold dark:text-white text-gray-800">{award.name}</p>
+              //     <p class="dark:text-gray-300 text-gray-600">{award.award}</p>
+              //   </div>
+              // </div>
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-[#40B3FF] to-[#954CE9] flex items-center justify-center text-white font-bold text-lg">
-                  {award.name[0]}
-                </div>
-                <div>
-                  <p class="font-semibold dark:text-white text-gray-800">{award.name}</p>
-                  <p class="dark:text-gray-300 text-gray-600">{award.award}</p>
-                </div>
+                <p class="dark:text-gray-300 text-gray-600">{award.name}</p>
               </div>
+              
             ))}
           </div>
         </div>
