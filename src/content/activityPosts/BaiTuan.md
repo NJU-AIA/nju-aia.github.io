@@ -3,6 +3,7 @@ title: 百团大模型挑战成功案例集锦
 author: 南的AIA
 date: 2024-11-02 # true date
 description: 百团大战中，AIA准备了“⼤大模型趣味情境挑战”，迎接了大批勇士前来参战...
+cover: "../../images/activities/Baituan3.jpg"
 ---
 
 ![](../../images/activities/Baituan3.jpg)

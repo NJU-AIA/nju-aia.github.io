@@ -3,6 +3,7 @@ title: NJU_AIA核心成员组招新
 author: 南的AIA
 description: 2024NJU_AIA核心成员组招新
 date: 2024-09-13
+cover: "../../images/activities/Baituan3.jpg"
 ---
 
 

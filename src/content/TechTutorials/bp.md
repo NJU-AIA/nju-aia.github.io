@@ -162,11 +162,11 @@ w = f(u, v) , u = g(x, y), v = h(y, z)
 $$
  那么 
 $$
-\begin{align}
+\begin{align*}
 \Delta w &= f_u \Delta u + f_v \Delta v \\
 &= f_u(g_x \Delta x+g_y \Delta y) + f_v(h_y \Delta y+h_z \Delta z)\\
 &= f_ug_x \Delta x+ (f_ug_y+f_vh_y)\Delta y+ f_vh_z\Delta z
-\end{align}
+\end{align*}
 $$
 这其实就是所谓的链式法则啦，希望你看到这里，能有一点误差在 "反向传播的感觉"。
 
@@ -263,7 +263,7 @@ $\hat {y} $ 对应代码中的 `A2` ,
 
 求导得到： $\Delta L = -\frac{1}{ A_{2,k}}\Delta A_{2,k}$   ,$A_{2,k}$ 表示 $A_2$ 的第 k 的元素
 $$
-\begin{align}
+\begin{align*}
 A_{2,k} &= \frac{e^{z_k}}{\sum_{j = 1}^{10} e^{z_j}} ，
 记 M = \sum_{j = 1}^{10} e^{z_j}\\
 则A_{2,k}&= \frac{e^{z_k}}{M}\\
@@ -271,7 +271,7 @@ A_{2,k} &= \frac{e^{z_k}}{\sum_{j = 1}^{10} e^{z_j}} ，
 \sum_{j\not = k} -\frac{e^{z_j}}{M^2}\Delta z_j\\
 &= A_{2,k}(1-A_{2,k})\Delta z_k - \sum_{j\not = k}A_{2,k}A_{2,j}\Delta z_j\\
 &= A_{2,k} \left ( \Delta z_k - \sum_{j=1}^{10}A_{2,j}\Delta z_j \right )
-\end{align}
+\end{align*}
 $$
 将$\Delta A_{2,k}$带入 $\Delta L $ 中，得到： 
 $$

@@ -3,12 +3,13 @@ import { z, defineCollection } from 'astro:content';
 export const collections = {
     activityPosts: defineCollection({
         type: "content",
-        schema: z.object({
+        schema:({image})=> z.object({
             title: z.string(),
             date: z.date(),
             // tags: z.array(z.string()),
             description: z.string().optional(),
-            image: z.string().optional(),
+            // image: z.string().optional(),
+            cover: image(),
         }),
     }),
     TechTutorials: defineCollection({

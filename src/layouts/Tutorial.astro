@@ -13,7 +13,6 @@ export interface Props {
 
 const { title ,author,date,readingTime} = Astro.props;
 ---
-
 <Layout title={title}>
   <main class="pt-20 pb-16 w-full overflow-hidden">
     <article class="w-full mx-auto px-4 max-w-3xl">
@@ -158,6 +157,16 @@ const { title ,author,date,readingTime} = Astro.props;
     border-radius: 0.5rem;
     margin: 2rem auto;
   }
+  
+  .katex-display {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+
+  }
+
 
  
 </style> 

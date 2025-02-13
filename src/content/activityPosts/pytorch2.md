@@ -3,6 +3,7 @@ title: 2024秋第一次分享例会 —— 手搓pytorch
 author: 南的AIA
 date: 2024-11-03  # true date
 description: 自动求导框架的讨论
+cover: "../../images/activities/Baituan3.jpg"
 ---
 
 

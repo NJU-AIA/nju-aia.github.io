@@ -3,6 +3,7 @@ title: Datawhale AI + X 高校行「南大场」活动回顾
 author: 南的AIA
 date: 2024-03-31
 description: Datawhale AI + X 高校行系列活动
+cover: "../../images/activities/Baituan3.jpg"
 ---
 ![](../../images/activities/Datawhale/)
 ![](../../images/activities/Datawhale/1.webp) 
