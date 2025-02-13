@@ -168,7 +168,7 @@ $$
 &= f_ug_x \Delta x+ (f_ug_y+f_vh_y)\Delta y+ f_vh_z\Delta z
 \end{align*}
 $$
-这其实就是所谓的链式法则啦，希望你看到这里，能有一点误差在 "反向传播的感觉"。
+这其实就是所谓的链式法则了，希望你看到这里，能有一点误差在 "反向传播的感觉"。
 
 ### 梯度
 
@@ -315,7 +315,7 @@ $$
 
 - $\text{dW2} = \text{dZ2} A_1^T$ 
 - $\text{dA1} = \text{dZ2} W_2^T$ 
-- $\text{b1} = \text{dZ2}$ 
+- $\text{db1} = \text{dZ2}$ 
 
 对应到代码中就是：
 

@@ -33,7 +33,15 @@ const sortedPosts = activityPosts.sort((a, b) => {
             <h2 class="text-xl font-semibold mb-2 hover:text-[#40B3FF] transition-colors dark:text-gray-200 text-gray-800">
               {post.data.title}
             </h2>
-            <p class="text-sm mb-4 dark:text-gray-400 text-gray-500">{post.data.date}</p>
+            
+            <p class="text-sm mb-4 dark:text-gray-400 text-gray-500">
+              {new Date(post.data.date).toLocaleDateString("zh-CN", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                timeZone: "Asia/Shanghai"
+              })}
+              </p>
             <p class="mb-4 dark:text-gray-300 text-gray-600">{post.data.description}</p>
             
           </div>
