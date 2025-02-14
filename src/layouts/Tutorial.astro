@@ -166,6 +166,43 @@ const { title ,author,date,readingTime} = Astro.props;
     max-width: 100%;
 
   }
+  /* 表格外部容器 */
+table {
+  display: block;
+  overflow-x: auto; /* 允许水平滚动 */
+  white-space: nowrap; /* 防止表格自动换行 */
+  max-width: 100%; /* 避免溢出 */
+  border-collapse: collapse; /* 合并边框 */
+}
+
+/* 表格基本样式 */
+table,
+th,
+td {
+  border: 1px solid #ddd; /* 添加边框 */
+  padding: 8px;
+}
+
+/* 表头样式 */
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+/* 让表格的滚动条和代码块类似 */
+table::-webkit-scrollbar {
+  height: 8px; /* 设置滚动条高度 */
+}
+
+table::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+table::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 4px;
+}
 
 
  
