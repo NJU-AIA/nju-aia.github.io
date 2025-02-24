@@ -253,15 +253,17 @@ def backward(self, X, y):
 
 **公式预警，可以跳过**   
 
-每一个样本的误差 $L = -\sum_{i=1}^{10} y_i \log(\hat{y}_i)$ 提示：之前定义了$ \hat{y} = A_2$ 
+每一个样本的误差 $L = -\sum_{i=1}^{10} y_i \log(\hat{y}_i)$ 
 
-公式中的 y 对应代码中的 `y_onehot ` ，如果这个样本的类型是 i，那么 $y_i = 1$  ，否则$y_i = 0$ 
+> 提示：之前定义了$ \hat{y} = A_2$ 
+
+公式中的 $y$  对应代码中的 `y_onehot ` ，如果这个样本的类型是 $i$，那么 $y_i = 1$  ，否则$y_i = 0$ 
 
 $\hat {y} $ 对应代码中的 `A2` , 
 
-现在假设这个样本的类型为 k
+现在假设这个样本的类型为 $k$，那么 $L = - \log \hat y_k = -\log A_{2,k}$ 
 
-求导得到： $\Delta L = -\frac{1}{ A_{2,k}}\Delta A_{2,k}$   ,$A_{2,k}$ 表示 $A_2$ 的第 k 的元素
+求导得到： $\Delta L = -\frac{1}{ A_{2,k}}\Delta A_{2,k}$   ,$A_{2,k}$ 表示 $A_2$ 的第 k 个元素
 $$
 \begin{align*}
 A_{2,k} &= \frac{e^{z_k}}{\sum_{j = 1}^{10} e^{z_j}} ，
@@ -279,7 +281,8 @@ $$
 $$
 观察可以发现 $\Delta z_j $  前面的系数为 $A_{2,j} - y_j$ 
 
-提示：$y_k = 1, y_j = 0 ,j \not = k$ 
+> 还记得 $y$ 的定义吗？：$y_k = 1, y_j = 0 ,j \not = k$ 
+>
 
 终于，我们得到了$ L$ 关于 $Z_2$ 的梯度为 $A_2 - y$ ，挺神奇的，对吧？
 
@@ -381,7 +384,7 @@ def train(self, X, y, epochs, batch_size):
 
 🏆 **完整代码已经实现**，你可以直接运行它，并调整网络参数观察训练效果！
 
-参考代码：
+参考代码：https://github.com/NJU-AIA/Learning/blob/main/BP_Learning/MLP.py 
 
 ------
 
