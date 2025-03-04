@@ -14,8 +14,8 @@ tags: ["自学","生成模型" ]
 
 回顾一下我们用自编码器做了什么：
 
-![](../../images/tutorials/VAE/ae1.png)
 
+![](../../images/tutorials/VAE/ae1.png)
 1. 定义编码器 $E$ 将高维的输入 (784 维的图片) $x$ 编码成低维特征向量 $z=E(x)$ ，希望尽可能保留输入中的重要信息。
 
 2. 定义解码器 $D$ 使用 $z$ 重构数据，并且希望重构的数据和原始输入尽可能相等，即 $x≈D(E(x))$ 。
@@ -364,7 +364,14 @@ Epoch 10/10: loss=1411.3642
 
 不过我们的模型生成的图片几乎是随机的，有没有办法让模型生成指定数字的图片呢？
 
+### 引用声明
 
+本文章参考了以下文章和资料，特此致谢。所有引用内容归原作者所有，如有侵权，请联系删除。
+
+1. [变分自编码器（六）：从几何视角来理解VAE的尝试 - 科学空间|Scientific Spaces](https://spaces.ac.cn/archives/7725) 。
+2. [变分自编码器（一）：原来是这么一回事 - 科学空间|Scientific Spaces](https://spaces.ac.cn/archives/5253) 
+
+代码参考 [Implementing Variational Autoencoders from scratch | by Konstantin Sofeikov | Medium](https://medium.com/@sofeikov/implementing-variational-autoencoders-from-scratch-533782d8eb95)  
 
 
 

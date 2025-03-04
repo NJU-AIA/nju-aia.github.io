@@ -256,3 +256,12 @@ emmm, 似乎有两个维度在摸鱼，这是常见的维度塌陷问题。
 
 这些问题在下周的 VAE workshop 将得到解答。
 
+### 引用声明
+
+本文章参考了以下文章和资料，特此致谢。所有引用内容归原作者所有，如有侵权，请联系删除。
+
+1. [变分自编码器（六）：从几何视角来理解VAE的尝试 - 科学空间|Scientific Spaces](https://spaces.ac.cn/archives/7725) 。
+2. [闲聊：神经网络与深度学习 - 科学空间|Scientific Spaces](https://spaces.ac.cn/archives/3331) 
+
+代码参考 [Implementing Variational Autoencoders from scratch | by Konstantin Sofeikov | Medium](https://medium.com/@sofeikov/implementing-variational-autoencoders-from-scratch-533782d8eb95)  
+
