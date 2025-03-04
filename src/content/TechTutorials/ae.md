@@ -1,5 +1,5 @@
 ---
-title: 简单的编解码器
+title: 简单的自编码器
 author: "张文权"
 description: vae workshop 的预热，在实现 vae 之前不妨来看看 ae 吧。
 date: 2025-03-02
