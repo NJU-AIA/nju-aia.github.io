@@ -1,0 +1,9 @@
+---
+const { castId, autoPlay = false } = Astro.props;
+const autoplayParam = autoPlay ? "&autoplay=1" : "";
+const scriptSrc = `https://asciinema.org/a/${castId}.js${autoplayParam}`;
+---
+
+<div class="asciinema-container">
+  <script src={scriptSrc} id="asciinema-player"></script>
+</div>
