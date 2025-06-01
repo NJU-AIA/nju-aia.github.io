@@ -1,0 +1,19 @@
+---
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+
+const { content } = Astro.props;
+
+const file = await unified()
+  .use(remarkParse)
+  .use(remarkRehype)
+  .use(rehypeStringify)
+  .process(content);
+
+const html = String(file);
+---
+
+<!-- ✅ 使用 Astro 的 @html 指令 -->
+<div class="prose" set:html={html} />

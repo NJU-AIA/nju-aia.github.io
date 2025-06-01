@@ -24,4 +24,14 @@ export const collections = {
             difficulty: z.string(),
         }),
     }),
+
+    papers: defineCollection({
+    type: "data", // 👈 用于 JSON/YAML 等非 Markdown 文件
+    schema: z.array(z.object({
+      id: z.string(),
+      text: z.string(),         // 原文（支持 Markdown）
+      translation: z.string(),  // 翻译（支持 Markdown）
+      note: z.string(),         // 注释（支持 Markdown）
+    })),
+  }),
 };

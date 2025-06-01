@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p1",
+    "text": "## Introduction\n\nBERT (**Bidirectional Encoder Representations from Transformers**) is a *pre-training* method for language understanding. It leverages a **Transformer** architecture and learns from both **left and right context** in all layers.\n\nFor example:\n\n```python\n# Pseudocode example\noutput = Transformer(input)\n```\n\n> BERT was introduced by Devlin et al. (2018).",
+    "translation": "## 引言\n\nBERT（**基于 Transformer 的双向编码表示**）是一种用于语言理解的 *预训练* 方法。它使用 **Transformer** 架构，在所有层中学习来自**左右上下文**的信息。\n\n例如：\n\n```python\n# 伪代码示例\noutput = Transformer(input)\n```\n\n> BERT 由 Devlin 等人提出（2018）。",
+    "note": "段落中测试了：二级标题、粗体、斜体、代码块、引用。"
+  },
+  {
+    "id": "p2",
+    "text": "### Training Objectives\n\nBERT uses two objectives:\n\n1. **Masked Language Modeling (MLM)** — Predict randomly masked tokens.\n2. **Next Sentence Prediction (NSP)** — Predict whether two segments follow each other.\n\nMathematically, the MLM loss is defined as:\n\n```\nL = -log P(w_masked | context)\n```\n\nAnd NSP uses a binary classification head.",
+    "translation": "### 训练目标\n\nBERT 使用两个目标：\n\n1. **掩码语言建模（MLM）** —— 预测随机遮蔽的词。\n2. **下一句预测（NSP）** —— 判断两段文本是否相邻。\n\n数学上，MLM 的损失定义为：\n\n```\nL = -log P(w_masked | context)\n```\n\nNSP 使用一个二分类头。",
+    "note": "测试了：有序列表、公式、标题、代码块。"
+  },
+  {
+    "id": "p3",
+    "text": "### Tokenization\n\nBERT uses WordPiece tokenization. Example:\n\n| Word      | Tokens               |\n|-----------|----------------------|\n| playing   | `play`, `##ing`      |\n| transformers | `transform`, `##ers` |\n\nThis allows handling unknown words more robustly.",
+    "translation": "### 分词方式\n\nBERT 使用 WordPiece 分词。例如：\n\n| 单词        | 分词结果               |\n|-------------|------------------------|\n| playing     | `play`, `##ing`        |\n| transformers| `transform`, `##ers`   |\n\n这样可以更稳健地处理未登录词。",
+    "note": "测试了 Markdown 表格和代码样式。"
+  },
+  {
+    "id": "p4",
+    "text": "### Limitations\n\n- BERT is not optimized for autoregressive tasks like text generation.\n- Large memory consumption due to full attention.\n- No explicit handling of word order beyond position embeddings.",
+    "translation": "### 限制\n\n- BERT 不适合用于文本生成等自回归任务。\n- 使用全局注意力导致内存消耗大。\n- 除了位置编码外，不显式建模词序。",
+    "note": "测试了：无序列表、多点结构。$\\sqrt{x^2 + y^2}$"
+  }
+]

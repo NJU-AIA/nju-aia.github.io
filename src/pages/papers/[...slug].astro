@@ -1,0 +1,36 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import MarkdownContent from '../../components/MarkdownContent.astro';
+import Layout from '../../layouts/Layout.astro';
+import PaperLayout from '../../layouts/PaperLayout.astro';
+
+// 获取所有 JSON 文件，生成静态路由
+export async function getStaticPaths() {
+  const entries = await getCollection('papers');
+  return entries.map((entry) => ({
+    params: { slug: entry.id }, // slug 是 JSON 文件名（不带扩展名）
+    props: { entry },
+  }));
+}
+
+type Props = {
+  entry: CollectionEntry<'papers'>;
+};
+
+const { entry } = Astro.props;
+const data = entry.data; // 这是一个段落数组
+---
+<PaperLayout title={entry.id.toUpperCase()} sectionCount={data.length}>
+  {data.map((p) => (
+    <section id={p.id} class="parsed-block">
+      <MarkdownContent content={p.text} />
+      <div class="translation">
+        <MarkdownContent content={p.translation} />
+      </div>
+      <div class="note">
+        <MarkdownContent content={p.note} />
+      </div>
+    </section>
+  ))}
+</PaperLayout>

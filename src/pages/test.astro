@@ -1,13 +1,30 @@
 ---
-import AsciinemaPlayer  from '../components/asciinema.astro';
+import { getEntry } from 'astro:content';
+import MarkdownContent from '../components/MarkdownContent.astro';
+
+const paperEntry = await getEntry('papers', 'transformer');
+if (!paperEntry) {
+  throw new Error('Paper not found: transformer');
+}
+const paperData = paperEntry.data;
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html>
-  <head>
-    <title>Asciinema 终端录屏示例</title>
-  </head>
-  <body>
-    <h1>Astro + Asciinema 终端录屏</h1>
-    <script  async id="asciicast-569727" src="https://asciinema.org/a/569727.js" ></script>
-  </body>
-</html>
+
+<Layout title="论文">
+<article class="max-w-3xl mx-auto py-10 space-y-8">
+  <h1 class="text-3xl font-bold">Transformer 论文结构化段落</h1>
+
+  {paperData.map((p) => (
+    <section id={p.id} class="space-y-2 border-b pb-6">
+      <MarkdownContent content={p.text} />
+      <div class="text-gray-600 italic">
+        <MarkdownContent content={p.translation} />
+      </div>
+      <div class="text-sm text-blue-800">
+        <MarkdownContent content={p.note} />
+      </div>
+    </section>
+  ))}
+</article>
+</Layout>
