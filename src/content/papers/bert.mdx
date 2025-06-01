@@ -4,75 +4,62 @@ date: 2025-06-01
 author: "Test Author"
 ---
 
-import  PaperBlock  from '../../components/PaperBlock.astro';
+import  PaperBlock  from '../../components/paper/PaperBlock.astro';
+import  ContentBlock  from '../../components/paper/ContentBlock.astro';
+import  TranslationBlock  from '../../components/paper/TranslationBlock.astro';
+import  NoteBlock  from '../../components/paper/NoteBlock.astro';
 
 
-# BERT：结构化排版测试
+<ContentBlock id="intro" layout="vertical">
+  <PaperBlock>
+    BERT（**Bidirectional Encoder Representations from Transformers**）是一种 *深度双向* Transformer 编码器结构，广泛应用于自然语言处理任务。
+  </PaperBlock>
+  <TranslationBlock>
+    BERT 是一种利用 Transformer 实现的双向语言模型架构，能够捕捉句子中前后文的信息。
+  </TranslationBlock>
+  <NoteBlock>
+    本段是论文摘要的核心介绍，可以通过 `*斜体*`、`**加粗**`、[链接](https://arxiv.org/abs/1810.04805) 来测试 Markdown 功能。
+  </NoteBlock>
+</ContentBlock>
 
-> 本文用于测试 MDX 格式下的学术论文排版支持能力，包括 markdown 渲染、KaTeX 数学、列表、代码等。
+<ContentBlock id="objective" layout="side-by-side">
+  <PaperBlock>
+    模型训练目标包括两部分：
 
----
+    1. **Masked Language Model (MLM)**：随机掩盖输入词，预测其原始值。
+    2. **Next Sentence Prediction (NSP)**：判断两句是否连续。
 
-## 一、引言
+    损失函数定义如下：
 
-<PaperBlock id="intro" translation="BERT 是基于 Transformer 的预训练语言模型。" note="模型结构概览">
-  BERT (**Bidirectional Encoder Representations from Transformers**) 是一种 *深度双向* Transformer 模型，在多个 NLP 任务中表现出色。
-</PaperBlock>
+    $$
+    L = L_{MLM} + L_{NSP}
+    $$
+  </PaperBlock>
+  <TranslationBlock>
+    训练中引入了两个预训练任务，分别用于词级理解和句子级建模。该结构使得 BERT 可迁移性更强。
+  </TranslationBlock>
+  <NoteBlock>
+    - 使用了 `$...$` 和 `$$...$$` 测试公式渲染。
+    - 支持有序和无序列表。
+    - 可考虑引入更多任务进行对比。
+  </NoteBlock>
+</ContentBlock>
 
----
+<ContentBlock id="example" layout="side-by-side">
+  <PaperBlock>
+    示例代码：
 
-## 二、训练目标
+    ```python
+    from transformers import BertModel
 
-<PaperBlock id="objectives" translation="BERT 的两个训练目标分别为 Masked LM 与 NSP。" note="任务定义">
-  BERT 同时优化两个目标：
-
-  1. **Masked Language Model (MLM)**
-  2. **Next Sentence Prediction (NSP)**
-</PaperBlock>
-
----
-
-## 三、数学公式支持
-
-### 行内公式
-
-<PaperBlock id="inline-math" translation="损失函数为单词预测的对数似然。" note="注意 \\log 与 \\sum 的转义">
-  损失函数为：$L = -\sum_{i} \log P(w_i \mid \text{context})$
-</PaperBlock>
-
-### 块级公式
-
-<PaperBlock id="block-math" translation="完整的预训练目标。" note="显示为独立区块">
-  $$
-  L = L_{MLM} + L_{NSP}
-  $$
-</PaperBlock>
-
----
-
-## 四、代码与表格测试
-
-### 代码块
-
-<PaperBlock id="code" translation="Python 示例代码。" note="语法高亮测试">
-  ```python
-  import torch
-  from transformers import BertModel
-
-  model = BertModel.from_pretrained("bert-base-uncased")
-  outputs = model(input_ids)
-  print(outputs.last_hidden_state.shape)
-  ```
-</PaperBlock>
-
-<PaperBlock id="image" translation="模型结构图。" note="图像居中展示"> ![BERT 架构](../../images/tutorials/ae.webp) </PaperBlock>
-
-<PaperBlock
-  id="intro"
-  translation="BERT 是一个双向 Transformer 编码器结构的预训练语言模型。"
-  note="这是对 NLP 领域的重大突破。"
-  collapsible={true}
-  layout="side-by-side"
->
-  BERT (**Bidirectional Encoder Representations from Transformers**) 是一种 *深度双向* Transformer 模型。
-</PaperBlock>
+    model = BertModel.from_pretrained("bert-base-uncased")
+    outputs = model(input_ids)
+    ```
+  </PaperBlock>
+  <TranslationBlock>
+    本代码展示如何加载预训练模型并获取输出。
+  </TranslationBlock>
+  <NoteBlock>
+    使用 `transformers` 库加载 BERT 是目前主流方式，支持 TensorFlow 与 PyTorch。
+  </NoteBlock>
+</ContentBlock>
