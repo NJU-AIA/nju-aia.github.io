@@ -23,25 +23,25 @@ const papers = await getCollection('papers');
 
     <div class="space-y-8">
       {papers.map((paper) => (
-        <a href={`/papers/${paper.id}`}>
+        <a href={`/papers/${paper.slug}`}>
           <div class="glass-card p-6 transition-all duration-300 my-5">
             <div class="flex justify-between items-start mb-4">
               <h2 class="text-2xl font-semibold hover:text-[#40B3FF] transition-colors dark:text-gray-200 text-gray-800">
-                {paper.id.replace(/-/g, ' ').toUpperCase()}
+                {paper.data.title}
               </h2>
               <span class="px-3 py-1 rounded-full text-sm bg-purple-600 text-white">
-                {paper.data.length} 段
+                {new Date(paper.data.date).getFullYear()}
               </span>
             </div>
 
             <p class="mb-4 dark:text-gray-300 text-gray-600">
-              {paper.data[0]?.text.slice(0, 100)}...
+              来自：{paper.data.author ?? '未知作者'}
             </p>
 
             <div class="flex items-center space-x-6 text-sm dark:text-gray-400 text-gray-500">
               <div class="flex items-center">
                 <Book className="w-4 h-4 mr-2" />
-                ID: {paper.id}
+                Slug: {paper.slug}
               </div>
             </div>
           </div>

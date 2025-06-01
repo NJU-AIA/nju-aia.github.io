@@ -26,12 +26,11 @@ export const collections = {
     }),
 
     papers: defineCollection({
-    type: "data", // 👈 用于 JSON/YAML 等非 Markdown 文件
-    schema: z.array(z.object({
-      id: z.string(),
-      text: z.string(),         // 原文（支持 Markdown）
-      translation: z.string(),  // 翻译（支持 Markdown）
-      note: z.string(),         // 注释（支持 Markdown）
-    })),
-  }),
+        type: 'content', // ✅ 改成 content，而不是 data
+        schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        author: z.string().optional()
+        }),
+    }),
 };
