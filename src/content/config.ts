@@ -24,13 +24,4 @@ export const collections = {
             difficulty: z.string(),
         }),
     }),
-
-    papers: defineCollection({
-        type: 'content', // ✅ 改成 content，而不是 data
-        schema: z.object({
-        title: z.string(),
-        date: z.date(),
-        author: z.string().optional()
-        }),
-    }),
 };

@@ -1,24 +1,20 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
-import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-// import { rehypeHeadingIds } from '@astrojs/markdown-remark';
-// import remarkHeaderId from '@astrojs/markdown-remark-header-ids';
 import remarkCustomHeaderId from 'remark-custom-header-id';
+import rehypeMermaid from "rehype-mermaid";
 import tailwindcss from '@tailwindcss/vite';
-import react from '@astrojs/react';
 import icon from "astro-icon";
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nju-aia.github.io/',
-  integrations: [vue(), mdx(), react(), icon()],
+  integrations: [ react(),icon()],
 
   markdown: {
     remarkPlugins: [remarkCustomHeaderId,remarkMath],
-    rehypePlugins: [rehypeKatex]
+    rehypePlugins: [rehypeKatex, rehypeMermaid],
   },
 
   vite: {
