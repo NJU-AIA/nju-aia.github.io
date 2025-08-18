@@ -1,48 +1,46 @@
-# Astro Starter Kit: Basics
+# 南京大学人工智能协会官网
 
-```sh
-npm create astro@latest -- --template basics
-```
+欢迎访问南京大学人工智能协会（AIA）官方网站。本网站基于 [Astro](https://astro.build/) 框架构建，旨在展示协会动态、活动信息、技术分享等内容，促进校内外人工智能爱好者的交流与学习。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✍️ 如何添加文章
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+1. **进入文章目录**  
+   在 `src/content/TechTutorials/` 目录下，添加 Markdown 文件作为技术教程。
+   在 `src/content/activityPosts/` 目录下，添加 Markdown 文件作为活动推文。
 
-## 🚀 Project Structure
+2. **编写文章内容**  
+   每篇文章建议包含如下 Frontmatter（元信息）：
 
-Inside of your Astro project, you'll see the following folders and files:
+   ```markdown
+   ---
+   title: 文章标题
+   date: 2025-08-18
+   author: 作者名
+   description: 文章简要描述
+   ---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+   正文内容从这里开始……
+   ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+4. **保存并提交**  
+   保存文件后，网站会自动识别并展示新文章。可通过 `pnpm run dev` 本地预览效果。
+   将修改提交到 github 仓库，网站会自动更新部署。
 
-## 🧞 Commands
+## 🚀 本地开发与部署
 
-All commands are run from the root of the project, from a terminal:
+在项目根目录下，使用以下命令：
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| 命令                | 作用                         |
+|---------------------|------------------------------|
+| `pnpm install`       | 安装依赖                     |
+| `pnpm run dev`       | 启动本地开发服务器           |
+| `pnpm run build`     | 构建生产环境静态文件         |
+| `pnpm run preview`   | 预览构建后的站点             |
 
-## 👀 Want to learn more?
+## 📖 了解更多
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro 官方文档](https://docs.astro.build)
+- [南京大学人工智能协会主页](https://nju-aia.github.io)
+
+如有疑问或建议，欢迎提交 Issue 或加入协会交流！
