@@ -15,9 +15,12 @@
    ```markdown
    ---
    title: 文章标题
-   date: 2025-08-18
    author: 作者名
    description: 文章简要描述
+   date: 2025-08-18
+   difficulty: "中级"
+   readTime: "30 min"
+   tags: ["TAG1","TAG2" ]
    ---
 
    正文内容从这里开始……
