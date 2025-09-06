@@ -1,5 +1,5 @@
 ---
-title: 例会环境配置（二) - Conda
+title: 例会环境配置（二）- Conda
 author: "KBJiaHeng"
 description: 例会环境配置的第二篇教程！为了能顺利参加 AIA 学社的后续例会，让我们一起在电脑上搭建好基本的编程环境吧~
 date: 2025-09-06
