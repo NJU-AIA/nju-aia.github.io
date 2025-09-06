@@ -1,0 +1,79 @@
+---
+interface MemberGroup {
+  year: string;
+  members: (string | { name: string; description: string })[];
+}
+
+const members: MemberGroup[] = [
+  {
+    year: "2022 （JSAI筹备组）",
+    members: ["李尚敖", "刘诗琪", "班礼涛", "李冠霖", "许煜恒", "张馨月", "网名·和光·", "网名·同予者和人·"]
+  },
+  {
+    year: "2023 AIA核心成员组",
+    members: ["李尚敖", "王崧睿", "熊浚丞", "徐乾凯", "金明岳", "许煜恒", "张馨月", "张磊", "岳逸帆", "李炎培", "张凌翔"]
+  },
+  {
+    year: "2024 AIA核心成员组",
+    members: ["李尚敖", "王崧睿", "熊浚丞", "徐乾凯", "许煜恒", "张馨月", "岳逸帆", "李炎培", "张凌翔", "巫子健", "徐睿康", "张嘉伟", "冯奕康", "王心可", "魏玉泽"]
+  },
+  {
+    year: "2024 AIA志愿者",
+    members: [
+      { name: "翟诺", description: "协助参加AIA网站设计" },
+      { name: "张文权", description: "协助参加AIA网站设计，组织 vae研讨 和 ddpm例会 活动" }
+    ]
+  }
+];
+---
+
+<main class="pt-28 pb-16">
+  <article class="container mx-auto px-4 max-w-5xl">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-12">
+      <span class="bg-gradient-to-r from-[#40B3FF] to-[#954CE9] bg-clip-text text-transparent">
+        成员墙
+      </span>
+    </h1>
+    <p class="text-center text-xl mb-16 dark:text-gray-300 text-gray-600">
+      感谢每一位为社团付出的成员，你们的贡献是我们前进的动力！
+    </p>
+
+    <div class="space-y-12">
+      {members.map((group) => (
+        <section class="bg-gray-50 dark:bg-gray-900/50 rounded-xl p-6 md:p-8 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6 flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-[#40B3FF] to-[#954CE9] rounded-full text-white">
+              <i class="fa fa-users"></i>
+            </span>
+            <span>{group.year}</span>
+            <span class="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">
+              （{group.members.length}人）
+            </span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {group.members.map((member, index) => (
+              <div class="member-card bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 
+                           shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+
+                {typeof member === "string" ? (
+                  <p class="font-medium text-gray-900 dark:text-gray-100">{member}</p>
+                ) : (
+                  <>
+                    <div class="flex flex-wrap justify-between items-start gap-2">
+                      <p class="font-bold text-gray-900 dark:text-white">{member.name}</p>
+                      <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">
+                        志愿者
+                      </span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{member.description}</p>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </article>
+</main>
