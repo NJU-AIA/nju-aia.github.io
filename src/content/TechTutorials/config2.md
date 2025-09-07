@@ -54,7 +54,7 @@ Conda 提供了两种方案：
 - 如果你用的是 Windows，请在最底下的搜索栏查找 `Anaconda Prompt` 并打开。
 - 如果你用的是 Linux，请打开你的 `terminal`。
 
-在打开的终端输入 
+在打开的终端输入
 
 ```
 conda --version
@@ -74,7 +74,7 @@ conda 24.7.1
 
 #### **3.1 创造 AIA 环境**
 
-刚刚打开的终端想必你还没有关上。请你在终端输入 
+刚刚打开的终端想必你还没有关上。请你在终端输入
 
 ```
 conda create --name AIA python=3.10
@@ -100,7 +100,7 @@ conda activate AIA
 我们将会在下一次教程中告诉你要下载哪些包，所以此时你不用太在意在这个环境中要做什么，可以输入如下指令退出
 
 ```
-conda deactivate AIA
+conda deactivate
 ```
 
 如果你想要新建别的名字的环境，只需要把上述流程中的 `AIA` 替换为你喜欢的名字。
@@ -117,12 +117,11 @@ conda deactivate AIA
   conda info -e
   ```
 
-  或者 
+  或者
 
   ```
   conda env list
   ```
-
 - 譬如说你一开始打错 AIA 名字了，你写成了 `ILoveAIA`。如果想改掉这么长的名字，但是你又不想改变你已经配好的环境。那就复制这一个环境，取名叫 `AIA`，然后删除原来的环境。
 
   ```
@@ -136,13 +135,11 @@ conda deactivate AIA
   ```
   conda install <PACKAGE>
   ```
-
 - can can need 这个环境里有什么包
 
   ```
   conda list
   ```
-
 - 有时候你发现自己下载包的时候下错环境了，没关系，conda 会记录你的修改，你可以通过
 
   ```
@@ -174,15 +171,19 @@ Linux 下安装时：
 
   - 想要查看 conda 版本，需要在 conda 的目录下找到可执行文件 `conda`：
     - 终端输入：
-  
+
       ```
       /路径/Anaconda3/bin/conda --version
       ```
       其中 `路径` 替换为你的 `Anaconda3` 的存储路径；如果你安装的是 Miniconda，还需要把 `Anaconda3` 替换为 `Minconda`。
   - 想要激活虚拟环境，需要在 conda 的目录下找到可执行文件 `activate`：
     - 终端输入：
-      
+
       ```
       /路径/Anaconda3/bin/activate 虚拟环境名
       ```
-  - 其他操作同理。
+  - 其他操作同理
+
+### 附录
+
+- `2025.9.7` 感谢李奕辰同学指出 `conda deactivate` 处原有的 typo
