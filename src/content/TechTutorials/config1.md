@@ -36,6 +36,12 @@ tags: ["环境配置"]
 
 #### **2.1 安装 VSCode**
 
+提示：
+
+- **千万不要把软件安装到中文路径上。如果你在安装的时候发现选定的路径上有中文，记得换一个路径。**
+
+- **如果你是新手，选择默认安装路径将会省去很多麻烦。**
+
 浏览器中打开 [VSCode 官网](https://code.visualstudio.com/)，点击下载安装包：
 
 ![点击下载安装包](../../images/tutorials/config/VScodewebsite.png)
@@ -44,7 +50,7 @@ tags: ["环境配置"]
 
 ![运行安装包](../../images/tutorials/config/exepkg.png)
 
-VSCode 的安装位置可以自己指定，其它一路默认即可，然后点击安装：
+VSCode 的安装位置可以自己指定（如果你是新手，最好选择默认路径），其它一路默认即可，然后点击安装：
 
 ![安装](../../images/tutorials/config/install.png)
 
