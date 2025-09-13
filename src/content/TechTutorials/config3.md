@@ -80,15 +80,9 @@ README.md
 
 ### 1. 运行 `testenv.py`
 
-最下方搜索栏输入 `Anaconda Prompt`，找到并打开 Anaconda Prompt。
+打开 testenv.py 文件，在右下角选择 python 解释器，记得选择 `AIA` 环境里面的那个。
 
-激活 `AIA` 虚拟环境。
-
-进入 `TestEnv` 目录（在 clone 的时候，我们应该已经学会如何进入我们想要的目录），之后输入：
-
-```bash
-python testenv.py
-```
+之后点击右上角的运行按钮。
 
 运行结果会：
 
