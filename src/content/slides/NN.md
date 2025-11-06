@@ -64,7 +64,7 @@ AIA 人工智能学社 · 例会
 - 神经网络：实现机器学习的具体结构
 
 <p align="center">
-  <img src="../../images/activities/NN/NNforyinru.png" width="800">
+  <img src="../../images/activities/NN/nnforyinru.png" width="800">
 </p>
 
 ---
