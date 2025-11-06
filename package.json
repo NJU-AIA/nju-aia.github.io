@@ -29,6 +29,12 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
+    "@slidev/cli": "^52.6.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "@slidev/types": "^52.6.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it-attrs": "^4.3.1",
     "playwright": "^1.54.2",
     "rehype-mermaid": "^3.0.0"
   }
