@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nju-aia.github.io/sitemap-index.xml
