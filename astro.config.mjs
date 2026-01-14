@@ -7,13 +7,14 @@ import tailwindcss from '@tailwindcss/vite';
 import icon from "astro-icon";
 import react from '@astrojs/react';
 import slidevBuilder from './tools/astro-slidev-integration.js'
-
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nju-aia.github.io/',
   integrations: [ 
     react(),icon(),
+    sitemap(),
     slidevBuilder({
       contentDir: 'src/content/slides',
       outDir: 'dist/slides',

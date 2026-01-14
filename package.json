@@ -29,6 +29,7 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.6.1",
     "@slidev/cli": "^52.6.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
